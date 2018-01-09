@@ -17,8 +17,8 @@ switch($action){
 		$visiteur = $pdo->getInfosClient($mail,$mdp);
                 $comptable = $visiteur['comptable'];
 		if(!is_array( $visiteur)){
-			//ajouterErreur("Login, mot ou de passe incorrect");
-			//include("vues/v_erreurs.php");
+			ajouterErreur("Login, mot ou de passe incorrect");
+			include("vues/v_erreurs.php");
 			include("vues/v_connexionClient.php");
 		}
 		else{
