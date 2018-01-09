@@ -1,0 +1,27 @@
+body{
+ font-family: 'Helvetica';
+}
+
+
+/* Votre Style */
+
+/*ul {
+  background: #bbb;
+}
+li, [class*="grid"] > * {
+  background: #ccc;
+}*/
+header, footer {
+  background: #ddd;
+}
+main {
+  background: #eee;
+}
+aside {
+  background: #aaa;
+}
+/*.media-object{ emplacement du logo
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+}*/

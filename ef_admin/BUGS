@@ -1,0 +1,7 @@
+les champs de type text de la base de données sont potentiellement victimes d'injection de code HTML & JS
+
+activites.nom_activité utilisé comme id_activité
+
+Problème de casse des nom d'images (ex biarritz_guide.jpg au lieu de Biarritz_guide.jpg)
+
+Attention aux champs ville.id et activites.id_activite qui sont des noms de fichiers valides (et de préférence sans accents)

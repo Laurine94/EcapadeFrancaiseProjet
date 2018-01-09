@@ -1,0 +1,23 @@
+.check{
+    width:100%;float:left;
+}
+.check img{
+    max-width:100%;
+}
+.please-select{
+    width:100%;float:left;
+    position: relative;
+    margin-bottom:30px;
+}
+.please-select .check-image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #0c800c;
+    font-size:25px;
+    transform: translateX(-50%)translateY(-50%);
+    background: #fff;
+    -webkit-transform: translateX(-50%)translateY(-50%);
+    -moz-transform: translateX(-50%)translateY(-50%);
+    padding: 10px;
+}

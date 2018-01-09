@@ -1,0 +1,207 @@
+
+/* ************************** header nav bar *************** */
+
+#nav {
+    list-style-type: none;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+    white-space: nowrap;
+    overflow-y : auto;
+    border: 1px solid #e7e7e7;
+    background-color: #183e67;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+}
+
+ .button1 button{
+    margin-top: 10px;
+    margin-left: 100px;
+
+}
+
+#nav li {
+    display: inline;
+}
+
+#nav li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 17px 30px;
+    text-decoration: none;
+}
+
+#nav li a:hover:not(.active) {
+    background-color: #697f9c;
+}
+
+    
+#logo{
+    text-align: center;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+    
+#logo img {
+    max-width: 10%;
+    margin-bottom: 15px;
+    height: auto;
+}
+
+    
+body{
+    margin: 0;
+    padding: 0;
+}
+    
+body p, body input[type=button]{
+    /*font-family: 'Verdana, sans-serif;*/
+    /*font-family: 'Pacifico', cursive;*/
+    /*font-family: 'Slabo 27px', serif;*/
+    /*font-family: 'Open Sans', sans-serif;*/
+    /*font-family: 'Lobster', cursive;*/
+    /*font-family: 'Carter One', cursive;*/
+    /*font-family: 'Racing Sans One', cursive;*/
+    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Ubuntu', sans-serif;*/
+    /*font-family: 'Roboto', sans-serif;*/
+}
+
+#language-ch {
+    position: absolute;
+    z-index: 9999999999;
+    top: 10px;
+    right: 20px;
+    color: #183E67;
+    text-decoration: none;
+    font: normal 16px/16px 'Arial', serif;
+}
+
+#language-ch img {
+    position: relative;
+    max-width: none;
+    max-height: 15px;
+    top: -2px;
+}
+
+/* ****************** container 1 ******************* */
+.container1{
+    margin-left: 250px;
+    margin-right: 250px;
+    text-align: justify;
+}
+.container1 p{
+    color: #696969;
+    font-style: normal normal normal 15px/1.4em avenir-lt-w01_35-light1475496,sans-serif;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+/* ****************************case 1 ****************** */
+.case1{
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 15px;
+
+}
+
+.case1 img{
+    margin-left: 5px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+}
+
+/* **************************case 2 ******************* */
+
+.case2{
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 15px;
+    
+}
+
+/* ************************ footer ********************* */
+
+footer{
+        background-color: #183e67;
+        position:relative;
+        bottom:0;
+        width:100%;
+        padding-top:10px;
+        padding-bottom:10px;
+        text-align: center;
+        font-size: 15px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .footer3{
+        width: 33%;
+        display: inline-block;
+        color: white;
+    }
+    
+    .droite p{
+        padding: 0 10px 0px;
+        float: right;
+        margin: 0;
+    }
+    
+    .form{
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        top: 10px;
+        position: absolute;
+        width: 33%;
+    }
+    
+    .form input[type=text]{
+        width: 75%;
+        padding: 5px;
+        border: none;
+        outline: none;
+    }
+    
+    .form input[type=submit]{
+        width: 20%;
+        padding: 5px;
+        background-color: #6666ff;
+        color: white;
+        border: none;
+        font-weight: bold;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+    
+    .partenaires{
+        position: absolute;
+        bottom: 5px;
+        left: 43%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .social_media img{
+        width: auto;
+        height: 40px;
+    }
+    
+    .social_media{
+        padding-right: 10px;
+        padding-top: 0;
+        margin-top: 0;
+    }
+    
+    .liens{
+        float: left;
+        top: 10px;
+        position: absolute;
+    }
+    
+    .sous_div_footer{
+        text-align: center;
+    }
+    
+/* ******************footer css end ******************* */

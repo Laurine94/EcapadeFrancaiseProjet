@@ -1,0 +1,25 @@
+TODO:
+tester la sécurité (sql injection, html injection, csrf)
+Problème de temps d'upload ?
+Nom chambre doit etre unique
+Vérification de la taille des images, optimisation
+Optimisation base de données (indexes...)
+Ajouter une liste des villes pour les actvités (au lieu d'un input)
+Fonctionnalité de suppression des images
+
+problème de nom de villes dans villes_activites: parfois majuscule parfois minuscule
+
+BLOG
+- post1.php
+
+ADMIN:
+check upload_max_file_size & post_max_size
+
+QUESTIONS:
+Stoquer l'adresse de la mh au lieu du html google maps
+
+SECURITE:
+Utiliser html purifier pour empêcher l'injection de code
+
+BUGS:
+gestion des translations de ville vers fichier image

@@ -1,0 +1,72 @@
+body{
+     margin: 0;
+        padding: 0;
+        min-height: 100%;
+
+}
+.case1{
+    background-color: #fff;
+    width: 100%;
+    height: 100px;
+
+}
+/*case1 end here*/
+
+.case2{
+    background-color: #fff;
+    width: 100%;
+    height: 500px;
+}
+.case2 .box1{
+    margin-top: 25px;
+
+}
+.case2 .box1 img{
+    width: 530px;
+    height: 350px:;
+}
+.case2 .box1 p{
+    text-align: justify;
+    color: #310000;
+    margin-right: 28px;
+    line-height: normal;
+}
+/* case2 box1 workinf finish here*/
+
+.case2 .box2{
+    margin-top: 25px;
+}
+.case2 .box2 h1{
+    color: #320000;
+}
+.case2 .box2 p{
+    color: #320000;
+    margin-top: 10px;
+}
+
+
+.case2 .box2 #button1{
+    
+    padding: 35px;
+    color: #320000;
+    width: 550px;
+    height: 20px;
+    background-color: #B0A171;
+    color: #1B0000;
+
+}
+.case2, .box2, #button1, p{
+    font-size: normal;
+    line-height: normal;
+  
+}
+
+/* case2 end*/
+
+.case3{
+    margin-top: 400px;
+     /*background-color: #183E67;*/
+    width: 100%;
+    height: 153px;
+}
+

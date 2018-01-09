@@ -1,0 +1,78 @@
+body{
+    font-family: Helvetica;
+}
+
+#center .menu_guesthouse{
+    display: inline;
+    text-align: center;
+    color: grey;
+    font-size: 150%;
+    list-style: none;
+}
+.guesthouse_active{
+    color: #183e67;
+}
+#center ul li{
+    text-align: center;
+}
+.menu_guesthouse li{
+    margin: 15px;
+    display: inline;
+}
+
+#center{
+    text-align: center;
+    top: 20px;
+}
+
+.sous_titre h1{
+    margin-top: 50px;
+    color: #999;
+}
+
+.sous_titre{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.select_form_act{
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.select_form_act select{
+    border: none;
+    border: 3px solid grey;
+    width: auto;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    color: grey;
+    background-color: white;
+    font-weight: bolder;
+}
+
+.select_form_act input[type=submit]{
+    padding: 12px 15px 12px;
+    background-color: grey;
+    border: none;
+    color: white;
+    border-radius: 3px;
+}
+
+.slogan_gh{
+    text-align: center;
+}
+
+.slogan_gh h1{
+    margin: 50px 0 0 0;
+    padding: 0;
+    font-weight: bold;
+    color: #183e67;
+}
+
+.bloc5 img{
+    padding: 3px 2px;
+}

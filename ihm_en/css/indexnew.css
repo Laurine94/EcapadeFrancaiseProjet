@@ -1,0 +1,25 @@
+
+
+.boreder {
+	margin-left: 200px;
+	margin-right: 100px;
+	
+}
+.border1{
+	margin-left: 600px;
+	margin-right: 300px;
+}
+.border3{
+    margin-left: 50px;
+}
+/* **********for slider */
+.case3slideshow{
+    height: 300px;
+    width: auto;
+    /*background-color: #5D89FF;*/
+    margin: 0 auto;
+}
+
+.case3slideshow img{
+    float: left;
+    overflow: hidden;

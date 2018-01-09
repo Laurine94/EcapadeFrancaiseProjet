@@ -1,0 +1,202 @@
+#center .menu_guesthouse{
+    display: inline;
+    text-align: center;
+    color: grey;
+    font-size: 150%;
+    list-style: none;
+}
+.guesthouse_active{
+    color: #183e67;
+}
+#center ul li{
+    text-align: center;
+}
+.menu_guesthouse li{
+    margin: 15px;
+    display: inline;
+}
+
+#center {
+    text-align: center;
+    top: 20px;
+}
+
+.tableau_select_region{
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.bloc1, .bloc2{
+    display: inline-block;
+    width: 23%;
+    height: auto;
+    margin: 0 auto;
+    padding: 5px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+}
+
+.bloc1 img, .bloc2 img, .bloc3 img{
+    width: 100%;
+    /*height: auto;*/
+    /*border-radius: 5px;*/
+}
+    
+  /*----Reglage de l'hover du bloc1----*/
+  
+.bloc1 .overlay { /*hover (les barres)*/
+  position: absolute;
+  overflow: hidden;
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 10%;
+  border-bottom: 2.5px solid white;
+  border-top: 2.5px solid white;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0,1);
+  -ms-transform: scale(0,1);
+  transform: scale(0,1);
+}
+
+.bloc1:hover .overlay {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  color: white;
+}
+
+.bloc1:hover img {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+  filter: brightness(0.6);
+  -webkit-filter: brightness(0.6);
+  color: white;
+}
+
+.bloc1 p { /*Réglage du texte*/
+  color: white;
+  padding: 1em 0;
+  opacity: 0;
+  /*margin-top: 15%;*/
+  font-size: 30px;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.bloc1:hover p{
+  opacity: 1;
+  color: white;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+/*---Reglage de l'hover bloc2---*/
+.bloc2 .overlay { /*hover (les barres)*/
+  position: absolute;
+  overflow: hidden;
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 10%;
+  border-bottom: 2.5px solid white;
+  border-top: 2.5px solid white;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0,1);
+  -ms-transform: scale(0,1);
+  transform: scale(0,1);
+}
+
+.bloc2:hover .overlay {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  color: white;
+}
+
+.bloc2:hover img {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+  filter: brightness(0.6);
+  -webkit-filter: brightness(0.6);
+  color: red;
+}
+.bloc2 p { /*reglage du texte*/
+  color: white;
+  padding: 1em 0;
+  opacity: 0;
+  /*margin-top: 10%;*/
+  font-size: 30px;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.bloc2:hover p {
+  opacity: 1;
+  /*color: white;*/
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.titre{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.titre h1{
+    color: red;
+}
+
+.select_form_act{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.select_form_act select{
+    border: none;
+    border: 3px solid #183e67;
+    width: 50%;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    color: #183e67;
+    background-color: white;
+    font-weight: bolder;
+}
+
+.select_form_act input[type=submit]{
+    padding: 12px 15px 12px;
+    background-color: #183e67;
+    border: none;
+    color: white;
+    border-radius: 3px;
+}
+
+.slogan_act{
+    text-align: center;
+}
+
+.slogan_act h1{
+    margin: 40px 0 0 0;
+    padding: 0;
+    font-weight: bold;
+    color: #183e67;
+}

@@ -1,0 +1,172 @@
+/*---Barre d'avencement---*/
+#center .menu_guesthouse{
+    display: inline;
+    text-align: center;
+    color: grey;
+    font-size: 150%;
+    list-style: none;
+}
+.guesthouse_active{
+    color: #183e67;
+}
+#center ul li{
+    text-align: center;
+}
+.menu_guesthouse li{
+    margin: 15px;
+    display: inline;
+}
+
+#center{
+    text-align: center;
+    top: 20px;
+}
+
+/*---Affichage de du bloc description de la villa---*/
+.bloc_description_villa{
+    width: 80%;
+    /*background-color: #eeeeee;*/
+    display: table-cell;
+    /*text-align: center;*/
+    margin: 0 10px 0;
+    border-radius: 5px;
+    color: #183e67;
+    position:relative;
+    font-family: "Verdana", Times, sans-serif;
+}
+
+.bloc_description_villa .media-body p{
+    padding: 10px;
+    float: left;
+    
+}
+
+.bloc_description_villa img{
+    padding-left: 10px;
+    /*padding-top: 10px;*/
+    text-align: center;
+}
+
+.bloc_description_villa .media-media{
+    text-align: center;
+}
+
+.img_reduc{
+    width: 60%;
+    height: 150px;
+    text-align: center;
+}
+
+.container1{
+    margin: 0 auto;
+    width: 85%;
+}
+
+
+.img_70{
+    width: 95%;
+    border-radius: 5px;
+}
+
+.media-body a{
+    color: #183e67;
+}
+.media-object{
+    width: 40%;
+    float: left;
+    height: 60%;
+}
+ 
+/*---contenu de la descriptions des chambres----*/    
+.bloc_description_room{
+    width: 80%;
+    height: 10%;
+    background-color: #eeeeee;
+    display: table-cell;
+    margin: 0 10px 0;
+    border-radius: 5px;
+    color: #183e67;
+    position:relative;
+    font-family: "Verdana", Times, sans-serif;
+}
+    
+.container2{
+    margin: 0 auto;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.media-object{
+        width: 40%;
+        float: left;
+        height: 60%;
+    }
+.media-body h1{
+    text-align: center;
+}
+
+.container2 .media-body{/*contenu de la description*/
+        width: 60%;
+        height: auto;
+        float: right;
+    }
+    
+.bloc_description_room p{
+    padding: 10px;
+    padding-left: 10px;
+}
+#intro{
+    text-align: center;
+    color: #183e67;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 50px;
+}
+
+/*---Nombre de guest et service---*/
+.nb{
+    float: left;
+    display: inline;
+    
+}
+
+/*---Réservation des dates---*/
+.calendar{
+    width: 100%;
+    display: inline-block;
+    float: left;
+}
+
+.date{
+    width: 30%;
+    margin: 0px 10px 0px;
+}
+
+/*---Prix et bouton Book---*/
+.prix p{
+    float: left;
+    background-color: grey;
+    color: white;
+    display: inline-block;
+}
+
+.prix{
+    margin-top: 160px;
+}
+
+.bouton_room{
+    padding: 10px 30px 10px;
+    margin-top: 15px;
+    float: right;
+    background-color: #eeeeee;
+    color: #183e67;
+    margin-right: 5%;
+    /*margin-top: 50px;*/
+    box-shadow: none;
+}
+
+.bouton_room:hover{
+    background-color: #183e67;
+    color:white;
+}

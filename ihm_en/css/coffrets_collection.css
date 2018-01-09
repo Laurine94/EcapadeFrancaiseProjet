@@ -1,0 +1,288 @@
+.background{
+		background: url("../img/cadeaux/Mockup1.jpg");
+		background-repeat: no-repeat;
+		background-size: 1480px 800px;
+		background-position: center;
+		opacity: 1.75;
+		padding-top: 50%;
+		background-attachment: fixed;
+		
+
+}
+/*end container*/
+/* start case 1 */
+.case1{
+		width:100%;
+		height:auto;
+
+}
+.carre1{
+		/*background:rgba(0,0,0,0.3);*/
+		background:white;
+
+		left:30%;
+		right:30%;
+		top:400px;
+		padding: 5%;
+		position:absolute;
+		color:#FFF;
+		text-align: center;
+		font-size:2vw;
+		z-index:+1000;
+
+}
+.border{
+		margin-left: -60px;
+		margin-right: -60px;
+		margin-top: -60px;
+		margin-right: -60px;
+		margin-bottom: -60px;
+		border:3px solid #E21C21;
+}
+.border h1{
+		font-size: 40px;
+		line-height: 1.4em;
+		text-align: center;
+		color: #0436B3;
+}
+.border h3{
+		font-size: 15px;
+		line-height: 1.4em;
+		text-align: center;
+		color: #0436B3;
+		letter-spacing: 3px;
+}
+.border p{
+	 	border: 1px solid #E21C21;
+	 	margin-left: 100px;
+		margin-right: 100px;
+}
+
+/*end case1*/
+
+/* ****************case 02  start *************** */
+
+.case2{
+
+		width: 100%;
+		color: white;
+}
+
+.parti{
+		background-color: white;
+		width:100%;
+		height: 850px;
+		
+}
+.parti h1{
+		color: black;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 30px;
+		color: #0436B3;
+		top: 10px;
+		
+}
+
+.col-md-4 p{
+		text-align: center;
+	 	color: #0436B3;
+}
+/* **************** case 03 start ************* */
+.case3{
+
+		background:#0545E6;
+		width: 100%;
+		height: 350px;
+		
+}
+.parti02 {
+		width: 100%;
+		height: 350px;
+
+
+}
+.col-md-12  h1{
+
+		color: white;
+		text-align: center;
+		font-size: 25px;
+		margin-top: 10px;
+
+	
+}
+.col-md-12 p{
+
+		line-height: 25px;
+		margin-top: 10px;
+		margin-left: 240px;
+		margin-right: 240px;
+}
+.line{
+		margin-left: 240PX;
+		margin-right: 240px;
+		margin-top: 30px;
+
+
+
+}
+/*
+.lire nav ul{
+		list-style-type: none;
+}
+.lire nav ul li{
+		display: inline;
+		padding: 20px;
+
+
+
+}*/
+
+
+/* ****************************case 04 start ******************* */
+
+
+.case4{
+
+	background: url("../img/cadeaux/bac.jpg");
+		background-repeat: no-repeat;
+		background-size:1400px 700px;
+		background-position: center bottom;
+		opacity: 1.75;
+		padding-top: 40%;
+		background-attachment: fixed;
+		
+}
+.case4{
+		width:100%;
+		top: 300px;
+		height:auto;
+
+
+}
+
+/* **********************case 5 start *************** */
+.case5{
+
+		width: 100%;
+		color: white;
+}
+.parti2{
+	background-color: white;
+		width:100%;
+		height: 450px;
+		color: black;
+		margin-top: 25px;
+		text-align: center;
+		
+}
+.parti2 h1{
+		color: blue;
+}
+.parti2 p{
+		color: blue;
+		font-size: 30px;
+}
+
+.box{
+		margin-left: 450px;
+		margin-right: 450px;
+
+
+}
+
+.box1{
+		margin-left: -60px;
+		margin-right: 5px;
+		margin-top: -3px;
+		margin-right: -5px;
+		margin-bottom: -60px;
+		border:3px solid green;
+		padding: 10px;
+}
+
+.box2{
+	margin-left: -60px;
+		margin-right: -3px;
+		margin-top: 75px;
+		margin-right: -60px;
+		margin-bottom: -60px;
+		border:3px solid green;
+		padding: 10px;
+}
+.box3{
+	margin-left: -60px;
+		margin-right: -3px;
+		margin-top: 75px;
+		margin-right: -60px;
+		margin-bottom: -60px;
+		border:3px solid green;
+		padding: 10px;
+}
+.box4{
+	margin-left: -60px;
+		margin-right: -3px;
+		margin-top: 75px;
+		margin-right: -60px;
+		margin-bottom: -60px;
+		border:3px solid green;
+		padding: 40px;
+}
+.box5{
+	margin-left: -60px;
+		margin-right: -3px;
+		margin-top: 75px;
+		margin-right: -60px;
+		margin-bottom: -60px;
+		border:3px solid green;
+		padding: 10px;
+
+}
+
+/* ***************************** case 6 start *************** */
+
+.case6{
+		width: 100%;	
+		margin-top: 1250px;
+
+}
+
+
+
+/* for media query starting here reduce ...... */
+
+
+@media (max-width:351px) {
+	.border{
+		display: none;
+	}
+
+	#footer{
+		display: none;
+	}
+	.case3{
+		display: none;
+	}
+	.parti02{
+
+		display: none;
+	}
+
+	.case5 .pari2 h1{
+		font-size: 2px;
+	}
+	
+}
+/*
+@media (max-width: 351px) {
+
+}
+@media (max-width: 760px) {
+
+}
+@media (max-width: 960px) {
+
+}
+@media (max-width: 110px) {
+
+}*/

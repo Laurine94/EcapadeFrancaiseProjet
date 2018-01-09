@@ -1,0 +1,98 @@
+body{
+ font-family: 'Helvetica';
+}
+
+
+/* The Modal (background) */
+.popup_modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 5555555; /* Sit on top */
+    padding-top: 15%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+.popup_modal1 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 5555555; /* Sit on top */
+    padding-top: 15%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.popup_modal-content {
+    background-color: white;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    color: #183e67;
+    border-radius: 5px;
+    height: 330px;
+}
+
+/* The Close Button */
+.close {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.why_book_with_us{
+    width: 70%;
+    margin: 0 auto;
+    border: 2px solid #183e67;
+    color: #183e67;
+    text-align: center;
+}
+
+a:hover .why_book_with_us{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.why_book_with_us p{
+    padding: 20px 30px 20px;
+}
+
+.why_4{
+    width: 25%;
+    display: inline-block;
+    float: left;
+}
+
+.why_4 p{
+    padding: 0 10px 0;
+}
+
+.img_wgwu{
+    display: inline-block;
+    width: 15%;
+    float: left;
+}
+
+.img_wgwu img{
+    padding-top: 5px;
+    max-height: 60px;
+}

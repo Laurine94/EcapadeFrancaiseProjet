@@ -1,0 +1,53 @@
+var popup = (function() 
+{
+    function centrerElementAbsolu(element){
+        var largeur_fenetre = $(window).width();
+        var hauteur_fenetre = $(window).height();
+        var haut = (hauteur_fenetre - element.height()) / 2 + $(window).scrollTop();
+        var gauche = (largeur_fenetre - element.width()) / 2 + $(window).scrollLeft();
+	   element.css({position: 'absolute', top: haut, left: gauche});
+    }
+    
+    
+	function init() {
+
+		var overlay = $('.overlay');
+
+		$('.popup-button').each(function(i, el)
+		{
+			var modal = $('#' + $(el).attr('data-modal'));
+			var close = $('.close');
+
+			// fonction qui enleve la class .show de la popup et la fait disparaitre
+			function removeModal() {
+				modal.removeClass('show');
+			}
+
+			// evenement qui appelle la fonction removeModal()
+			function removeModalHandler() {
+				removeModal(); 
+			}
+
+			// au clic sur le bouton on ajoute la class .show a la div de la popup qui permet au CSS3 de prendre le relai
+			$(el).click(function()
+			{	
+				modal.addClass('show');
+				overlay.unbind("click");
+				// on ajoute sur l'overlay la fonction qui permet de fermer la popup
+				overlay.bind("click", removeModalHandler);
+                //centrerElementAbsolu(modal);
+			});
+
+			// en cliquant sur le bouton close on ferme tout et on arrête les fonctions
+			close.click(function(event)
+			{
+				event.stopPropagation();
+				removeModalHandler();
+			});
+
+		});
+	}
+
+	init();
+
+})();

@@ -1,0 +1,1 @@
+<h1>Votre transaction paypal a été annulée .</h1>
