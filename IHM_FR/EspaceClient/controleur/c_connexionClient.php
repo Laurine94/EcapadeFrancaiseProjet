@@ -3,6 +3,7 @@ if(!isset($_REQUEST['action'])){
 	$_REQUEST['action'] = 'demandeConnexion';
 }
 $action = $_REQUEST['action'];
+include("../navbar.php");
 switch($action){
 	case 'demandeConnexion':{
 		include("vues/v_connexionClient.php");
@@ -35,5 +36,6 @@ switch($action){
 		include("vues/v_connexionClient.php");
 		break;
 	}
+        include("../footer.php");
 }
 ?>

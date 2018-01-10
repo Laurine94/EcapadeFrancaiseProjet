@@ -2,7 +2,7 @@
 
 require_once ("include/class.pdoef.inc.php");
 require_once ("include/fct.inc.php");
-include("../navbar.php");
+
 session_start();
 $pdo = PdoEf::getPdoEf();
 $estConnecte = estConnecte();
@@ -16,6 +16,6 @@ switch ($uc) {
             break;
         }
 }
-include("../footer.php");
+
 ?>
 

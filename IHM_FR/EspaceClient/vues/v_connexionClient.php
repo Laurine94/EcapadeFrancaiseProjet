@@ -1,17 +1,17 @@
 <?php
-require_once ("connexion.php");
+require_once ("../connexion.php");
 ?>
 <head>
         <meta charset="UTF-8">
-        <link href="css/index.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link href="../css/index.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <!--<link href="css/styles.css" rel="stylesheet">-->
         <!-- animsition.css -->
         <!--<link rel="stylesheet" href="css/animsition.min.css">-->
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <!-- animsition.js -->
-        <script src="js/animsition.min.js"></script>
+        <script src="../../js/animsition.min.js"></script>
         <title>ESCAPADE FRANCAISE</title>
         
 </head>
@@ -22,17 +22,18 @@ require_once ("connexion.php");
             <div class="row">
                 <div class="col-md-3 col-xs-3 col-md-offset-1 col-xs-offset-1">
                     <h2>Identifiez vous:</h2>
-                    <form action="accueilClient.php" method="post">
+                    <form action="indexClient.php?uc=connexion&action=valideConnexion" method="post">
                         <div class="form-group">
-                            <label for = "mail_client">Adresse email*</label>
-                            <input id = "mail_cient" type = "mailCoClient" name = "mail_client" class="form-control">
+                            <label for = "mail">Adresse email*</label>
+                            <input id = "mail" type = "email" name = "mail" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for = "mdp">Mot de passe*</label>
-                            <input id = "mdp" type = "password" name = "mdpCoCli" class="form-control">
+                            <input id = "mdp" type = "password" name = "mdp" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-default submit" value="Se connecter"><a href="#collapse" data-toggle="collapse" type="button" class="btn btn-primary"> s'inscrire </a>
+                            <input type="submit" class="btn btn-default submit" value="Se connecter">
+                            <a href="#collapse" data-toggle="collapse" type="button" class="btn btn-primary"> s'inscrire </a>
                         </div>
                     </form>
                 </div>
@@ -321,10 +322,10 @@ require_once ("connexion.php");
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Mot de passe*</label><input type="mdp" name="mdpCli" class="form-control" placeholder="Saisissez un mot de passe" required>
+                                <label>Mot de passe*</label><input type="password" name="mdpCli" class="form-control" placeholder="Saisissez un mot de passe" required>
                             </div>
                             <div class="form-group">
-                                <label>Confirmation mot de passe*</label><input type="text" name="ConfirmMdpCli" class="form-control" id="" placeholder="Saisir à nouveau mot de passe" required>
+                                <label>Confirmation mot de passe*</label><input type="password" name="ConfirmMdpCli" class="form-control" id="" placeholder="Saisir à nouveau mot de passe" required>
                             </div>
                             <p>* Champs obligatoire</p>
                             <div>
