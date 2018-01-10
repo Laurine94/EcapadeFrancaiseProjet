@@ -1,0 +1,33 @@
+
+/**v_accueilClient**/
+
+#logo{
+   /* position:fixed; */
+}
+
+#imageEncadreBienvenue{
+    background-image: url(../img/espace_membre/dessin_ef.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /*height : 100%;*/
+    position: absolute;
+    width: 980px;
+    top: 0px;
+    bottom: 0px;
+    left: calc((100% - 980px) * 0.5);
+}
+
+#encadreBienvenue{
+    background-color: white;
+    margin-left: 52px;
+    width: 463px;
+    position: relative;
+    margin-top: 7px;
+}
+
+#encadreBienvenue:h2{
+    font-size: 42px;
+    text-align: center;
+    font-size: 10px;
+    font-family: Arial,Helvetica,sans-serif;
+}
