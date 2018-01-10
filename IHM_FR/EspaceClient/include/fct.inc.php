@@ -133,49 +133,6 @@ function estDateValide($date){
 }
 
 /**
- * Vérifie que le tableau de frais ne contient que des valeurs numériques 
- 
- * @param $lesFrais 
- * @return vrai ou faux
-*/
-function lesQteFraisValides($lesFrais){
-	return estTableauEntiers($lesFrais);
-}
-/**
- * Vérifie la validité des trois arguments : la date, le libellé du frais et le montant 
- 
- * des message d'erreurs sont ajoutés au tableau des erreurs
- 
- * @param $dateFrais 
- * @param $libelle 
- * @param $montant
- */
-function valideInfosFrais($dateFrais,$libelle,$montant){
-	if($dateFrais==""){
-		ajouterErreur("Le champ date ne doit pas être vide");
-	}
-	else{
-		if(!estDatevalide($dateFrais)){
-			ajouterErreur("Date invalide");
-		}	
-		else{
-			if(estDateDepassee($dateFrais)){
-				ajouterErreur("date d'enregistrement du frais dépassé, plus de 1 an");
-			}			
-		}
-	}
-	if($libelle == ""){
-		ajouterErreur("Le champ description ne peut pas être vide");
-	}
-	if($montant == ""){
-		ajouterErreur("Le champ montant ne peut pas être vide");
-	}
-	else
-		if( !is_numeric($montant) ){
-			ajouterErreur("Le champ montant doit être numérique");
-		}
-}
-/**
  * Ajoute le libellé d'une erreur au tableau des erreurs 
  
  * @param $msg : le libellé de l'erreur 

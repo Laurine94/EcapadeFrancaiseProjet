@@ -52,16 +52,16 @@ class PdoEf {
         
 
     /**
-     * Retourne les informations d'un visiteur
+     * Retourne les informations d'un client
 
      * @param $mail
      * @param $mdp
-     * @return l'id, le nom et le prénom sous la forme d'un tableau
+     * @return le numero, le nom et le prénom sous la forme d'un tableau
      */
     public function getInfosClient($mail, $mdp) {
-        $req = "select client.num_client as num_client, client.nom_client as nom_client, client.prenom_cliet as prenom_client, from client 
-		where client.mail_client='$mail' and visiteur.mdp='$mdp'";
-        $rs = PdoGsb::$monPdo->query($req);
+        $req = "select client.num_client as num_client, client.nom_client as nom_client, client.prenom_client as prenom_client from client 
+		where client.mail_client='$mail' and client.mdp='$mdp'";
+        $rs = PdoEf::$monPdo->query($req);
         $ligne = $rs->fetch();
         return $ligne;
     }

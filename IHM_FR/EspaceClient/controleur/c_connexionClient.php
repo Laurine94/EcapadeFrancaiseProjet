@@ -5,7 +5,7 @@ if(!isset($_REQUEST['action'])){
 $action = $_REQUEST['action'];
 switch($action){
 	case 'demandeConnexion':{
-		include("EspaceClient/vues/v_connexionClient.php");
+		include("vues/v_connexionClient.php");
 		break;
 	}
 	case 'valideConnexion':{
@@ -14,18 +14,18 @@ switch($action){
                 //Cryptage de mot de passe
                 $mdp= md5($mdp);
       
-		$visiteur = $pdo->getInfosClient($mail,$mdp);
-                $comptable = $visiteur['comptable'];
-		if(!is_array( $visiteur)){
-			ajouterErreur("Login, mot ou de passe incorrect");
+		$client = $pdo->getInfosClient($mail,$mdp);
+                var_dump($client);
+		if(!is_array( $client)){
+			ajouterErreur("Adresse mail ou mot de passe incorrect");
 			include("vues/v_erreurs.php");
 			include("vues/v_connexionClient.php");
 		}
 		else{
-                        $id = $visiteur['id'];
-			$nom =  $visiteur['nom'];
-			$prenom = $visiteur['prenom'];
-			connecter($id,$nom,$prenom);
+                        $num = $client['num_client'];
+			$nom =  $client['nom_client'];
+			$prenom = $client['prenom_client'];
+			connecter($num,$nom,$prenom);
 			include("vues/v_accueilClient.php");
                     }
 		
