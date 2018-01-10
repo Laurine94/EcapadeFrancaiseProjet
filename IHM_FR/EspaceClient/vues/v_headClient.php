@@ -87,11 +87,11 @@ body p, body input[type=button]{
 <link href="https://fonts.googleapis.com/css?family=Cutive" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+<link href="../../css/styleEspaceMembre.css" rel="stylesheet">
 <div id="navbar">
 <div id="logo">
     <a href="index.php"><img class="img_logo_1" src="../../img/logos/logo_basic.png" alt="logo_ef"></a>
-    <a href="../../../ihm/" id="language-ch"><img src="../lng/en.png" alt="english"> English</a>
+    <a href="../ihm/" id="language-ch"><img src="../../lng/en.png" alt="english"> English</a>
 </div>
 
 </div>
