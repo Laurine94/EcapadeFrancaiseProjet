@@ -36,6 +36,7 @@ switch($action){
 		include("vues/v_connexionClient.php");
 		break;
 	}
-        include("../footer.php");
+        
 }
+include("../footer.php");
 ?>
