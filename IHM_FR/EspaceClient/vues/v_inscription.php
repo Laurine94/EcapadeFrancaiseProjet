@@ -23,17 +23,17 @@
                 </div>
             </div>
             <div class="row">
-            <form>
+            <form method="POST" action="indexClient.php?uc=connexion&action=valideInscription">
                 <div class="col-md-3 col-xs-3 col-md-offset-1 col-xs-offset-1">
                     <div class="row">
                         <div class="col-md-6 col-xs-6">    
                             <div class="form-group">
-                                <label>Nom*</label><input type="text" name="nomCli" class="form-control" id="" placeholder=" Saisissez votre nom" required>
+                                <label>Nom*</label><input type="text" name="nom" class="form-control" id="" placeholder=" Saisissez votre nom" required>
                             </div>
                         </div>
                         <div class="col-md-6 col-xs-6">
                             <div class="form-group">
-                                <label>Prenom*</label><input type="text" name="prenomCli" class="form-control" id="" placeholder=" Saisissez votre prenom" required>
+                                <label>Prenom*</label><input type="text" name="prenom" class="form-control" id="" placeholder=" Saisissez votre prenom" required>
                             </div>
                         </div>
                     </div>
@@ -41,45 +41,55 @@
                             <div class="row">
                                 <div class="col-md-2 col-xs-2">
                                     <div class="form-group">
-                                         <label>M <input type="radio" name="sexeCli" class="" ></label> 
+                                         <label>M <input type="radio" name="sexe" class="" value="M" ></label> 
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-xs-2">
                                     <div class="form-group">
-                                        <label>F <input type="radio" name="sexeCli" class="" ></label>
+                                        <label>F <input type="radio" name="sexe" class="" value="F"></label>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Adresse email*</label><input type="email" name="mailCli" class="form-control" placeholder="ex : un.mail@gmail.com" required>
+                                <label>Adresse email*</label><input type="email" name="mail" class="form-control" placeholder="ex : un.mail@gmail.com" value="
+                                    <?php if(isset($mail))
+						{
+							echo $mail; 
+						} ?> "required />
+				<?php if(isset($erreurMailExiste)&& $erreurMailExiste)
+						{?>
+							<div id="bulle">
+								ce login existe déjà
+							</div>
+						<?php } ?> 
                             </div>
                             <div class="form-group">
-                                <label>Confirmation email*</label><input type="text" name="ConfirmMailCli" class="form-control" id="" placeholder="Saisir à nouveau email" required>
+                                <label>Confirmation email*</label><input type="text" name="mailconfirm" class="form-control" id="" placeholder="Saisir à nouveau email" required>
                             </div>
                 </div>
                 <div class="col-md-3 col-xs-3">
                             
                             <div class="form-group">
-                                <label>Téléphone</label><input type="text" name="telCli" class="form-control" id="" placeholder="ex : +623584868">
+                                <label>Téléphone</label><input type="text" name="tel" class="form-control" id="" placeholder="ex : +623584868">
                             </div>
                             <div class="form-group">
-                                <label>Adresse*</label><input type="email" name="adresseCli" class="form-control" id="" placeholder="Saisissez votre adresse" required>
+                                <label>Adresse*</label><input type="text" name="adresse" class="form-control" id="" placeholder="Saisissez votre adresse" required>
                             </div>
                     <div class="row">
                         <div class="col-md-6 col-xs-6">            
                             <div class="form-group">
-                                <label>Ville*</label><input type="text" name="villeCli" class="form-control" id="" placeholder="Saisissez votre ville" required>
+                                <label>Ville*</label><input type="text" name="ville" class="form-control" id="" placeholder="Saisissez votre ville" required>
                             </div>
                         </div>
                         <div class="col-md-6 col-xs-6">    
                             <div class="form-group">
-                                <label>Code postal*</label><input type="text" name="villeCli" class="form-control" id="" placeholder="Saisissez votre CP" required>
+                                <label>Code postal*</label><input type="text" name="cp" class="form-control" id="" placeholder="Saisissez votre CP" required>
                             </div>
                         </div>
                     </div>
                             <label>Pays*</label>
                             <div class="form-group">
-                                <select name="paysCli" class="form-control" required>
+                                <select name="pays" class="form-control" required>
                                     <option>selectionner pays</option>
                                     <option value="af">Afghanistan </option> 
                                     <option value="al">Albania </option> 
@@ -323,10 +333,10 @@
                 </div>
                 <div class="col-md-3 col-xs-3">
                             <div class="form-group">
-                                <label>Mot de passe*</label><input type="password" name="mdpCli" class="form-control" placeholder="Saisissez un mot de passe" required>
+                                <label>Mot de passe*</label><input type="password" name="mdp" class="form-control" placeholder="Saisissez un mot de passe" required>
                             </div>
                             <div class="form-group">
-                                <label>Confirmation mot de passe*</label><input type="password" name="ConfirmMdpCli" class="form-control" id="" placeholder="Saisir à nouveau mot de passe" required>
+                                <label>Confirmation mot de passe*</label><input type="password" name="mdpconfirm" class="form-control" id="" placeholder="Saisir à nouveau mot de passe" required>
                             </div>
                             <p>* Champs obligatoire</p>
                             <div>
