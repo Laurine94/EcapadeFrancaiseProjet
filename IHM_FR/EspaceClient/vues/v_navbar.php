@@ -87,6 +87,7 @@ body p, body input[type=button]{
 <link href="https://fonts.googleapis.com/css?family=Cutive" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="../css/styleEspaceMembre.css" rel="stylesheet">
 
 <div id="navbar">
 <div id="logo">

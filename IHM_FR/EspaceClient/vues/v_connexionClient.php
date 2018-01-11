@@ -14,12 +14,19 @@
         
 </head>
 <body>
+
+   <!--SDK Facebook pour JS-->
+
     <div id = "contenu">
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3 col-xs-3 col-md-offset-1 col-xs-offset-1">
+                <div class="col-md-12 col-xs-12 col-md-offset-1 col-xs-offset-1" id="titreconnormale">
                     <h2>Identifiez vous :</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-xs-3 col-md-offset-1 col-xs-offset-1" id="connormale">
                     <form action="indexClient.php?uc=connexion&action=valideConnexion" method="POST">
                         <div class="form-group">
                             <label for= "mail">Adresse email*</label>
@@ -30,10 +37,28 @@
                             <input id= "mdp" type= "password" name= "mdp" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-default submit" value="Se connecter">
-                            <a href="indexClient.php?uc=connexion&action=inscription" type="button" class="btn btn-primary"> s'inscrire </a>
+                            <input type="submit" class="btn btn-primary submit" value="Se connecter">
+                            <a href="#" >mot de pass oublié ?</a>
                         </div>
                     </form>
+                   
+                </div>
+                <div class="col-md-3 col-xs-3" id="connetwork" align="center">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12coFacebook">
+                            <input type="button" class="btn btn-primary coFacebook" value="Se connecter avec Facebook"><br><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <input type="button" class="btn btn-danger coGoogle" value="Se connecter avec Google+"><br><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <a href="indexClient.php?uc=connexion&action=inscription" type="button" class="btn btn-default"> s'inscrire </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
