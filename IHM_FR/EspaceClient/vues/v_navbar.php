@@ -99,6 +99,6 @@ body p, body input[type=button]{
     <li><a href="../select_activities.php"> CHOISISSEZ VOS ACTIVITES </a></li>
     <li><a href="../guide_plus.php">NOS GUIDES LOCAUX </a></li>
     <li><a href="../onglets.php">NOTRE HISTOIRE ET NOS VALEURS</a></li>
-    <li><a href="../indexClient.php">MON COMPTE</a></li>
+    <li><a href="../EspaceClient/indexClient.php"> MON COMPTE </a></li>
 </ul>
 </div>
