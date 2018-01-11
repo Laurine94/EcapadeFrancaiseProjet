@@ -59,7 +59,7 @@ class PdoEf {
      * @return le numero, le nom et le prénom sous la forme d'un tableau
      */
     public function getInfosClient($mail, $mdp) {
-        $req = "select client.num_client as num_client, client.nom_client as nom_client, client.prenom_client as prenom_client from client 
+        $req = "select client.num_client as num, client.nom_client as nom, client.prenom_client as prenom from client 
 		where client.mail_client='$mail' and client.mdp='$mdp'";
         $rs = PdoEf::$monPdo->query($req);
         $ligne = $rs->fetch();

@@ -1,5 +1,6 @@
 <?php
 require_once ("../connexion.php");
+include("vues/v_navbar.php");
 ?>
 <head>
         <meta charset="UTF-8">
@@ -12,6 +13,7 @@ require_once ("../connexion.php");
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <!-- animsition.js -->
         <script src="../../js/animsition.min.js"></script>
+        
         <title>ESCAPADE FRANCAISE</title>
         
 </head>
@@ -22,14 +24,14 @@ require_once ("../connexion.php");
             <div class="row">
                 <div class="col-md-3 col-xs-3 col-md-offset-1 col-xs-offset-1">
                     <h2>Identifiez vous:</h2>
-                    <form action="indexClient.php?uc=connexion&action=valideConnexion" method="post">
+                    <form action="indexClient.php?uc=connexion&action=valideConnexion" method="POST">
                         <div class="form-group">
-                            <label for = "mail">Adresse email*</label>
-                            <input id = "mail" type = "email" name = "mail" class="form-control">
+                            <label for= "mail">Adresse email*</label>
+                            <input id= "mail" type= "email" name= "mail" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for = "mdp">Mot de passe*</label>
-                            <input id = "mdp" type = "password" name = "mdp" class="form-control">
+                            <label for= "mdp">Mot de passe*</label>
+                            <input id= "mdp" type= "password" name= "mdp" class="form-control">
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-default submit" value="Se connecter">
@@ -344,3 +346,4 @@ require_once ("../connexion.php");
     </script>
         
 </body>
+<?php include("vues/v_footer.php"); ?>
