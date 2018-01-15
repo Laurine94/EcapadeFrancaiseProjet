@@ -1,18 +1,17 @@
 
 /**v_accueilClient**/
 #titreconormale{
-    margin-left : 50%;
+    margin-left : 20%;
 }
 #conormale{
-    margin-left : 50%;
+    margin-left : 20%;
 }
 
 .connetwork{
-    background-color: red;
-    border-radius:10px;
-    box-shadow:
-    0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset,
-    0px 2px 2px 0px rgba(255, 255, 255, 0.5);
+    border-radius:20px;
+    box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
+    padding: 20px;
+    margin-left: 100px;
 }
 #coFacebook{
     
@@ -55,38 +54,8 @@
 #bulle {
 text-align: center ;
 color: white ;
-position : relative ;
-display :inline-block;
-margin-left:40px;
-background: #DF3F3F; /** couleur du fond (se retrouve 2 fois) **/
-border: 5px solid #FFF3F3; /** taille de la bordure et couleur (se retrouve 2 fois) **/
-width:200px; height:20px;} /** dimensions de la cellule (du cadre) **/
-#bulle:after, #bulle:before {
-right: 100%; /** right pour mettre la flèche à gauche ! **/
-border: solid transparent; 
-content: ""; 
-position: absolute;
-}
-#bulle:after {
-border-right-color: #DF3F3F; /** 2e indication de couleur du fond **/
-border-width: 20px; /** grandeur de la flèche **/
-top: 50%; /** position de la flèche (se retrouve 2 fois) **/
-margin-top: -20px;
-} /** indication de la grandeur de la flèche (valeur négative) **/
-#bulle:before {
-border-right-color: #FFF3F3; /** 2e indication de la couleur de la bordure **/
-border-width: 30px; /** indication de la grandeur de la flèche +7px **/
-top: 50%; /** 2e indication de la position de la flèche **/
-margin-top: -30px; } /** indication de la grandeur de la flèche +7px (valeur négative) **/
-a.button{
-	background:url(button.gif);
-	display:block;
-	color:#555555;
-	font-size:11px;
-	font-weight:bold;
-	height:30px;
-	line-height:29px;
-	margin-bottom:14px;
-	text-decoration:none;
-	width:191px;
+background-color: #ffa238;
+border-radius:0px 0px 5px 5px;
+height: 30px;
+width: 240px;
 }
