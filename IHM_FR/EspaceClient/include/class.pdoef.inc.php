@@ -63,13 +63,13 @@ class PdoEf {
         return $ligne;
     }
 
-    public function sauvegardeClient($nom, $prenom, $sexe, $mail, $tel, $adresse, $ville, $cp, $pays, $mdp) {
+    public function sauvegardeClient($nom, $prenom, $sexe, $mail, $tel, $adresse, $ville, $cp, $pays, $mdp, $confirmkey) {
         // Hachage du mot de passe
         $mdp_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
         // Insertion
-       $req = PdoEf::$monPdo->prepare('INSERT INTO client(nom_client, prenom_client, sexe_client, tel_client, adresse_client, mdp, ville_client, zip_client, pays_client, mail_client) '
-                . 'VALUES(:nom, :prenom, :sexe, :tel, :adresse, :mdp, :ville, :cp, :pays, :mail)');
+       $req = PdoEf::$monPdo->prepare('INSERT INTO client(nom_client, prenom_client, sexe_client, tel_client, adresse_client, mdp, ville_client, zip_client, pays_client, mail_client, confirmkey) '
+                . 'VALUES(:nom, :prenom, :sexe, :tel, :adresse, :mdp, :ville, :cp, :pays, :mail,:confirmkey)');
         $req->execute(array(
             'nom' => $nom,
             'prenom' => $prenom,
@@ -80,10 +80,11 @@ class PdoEf {
             'ville' => $ville,
             'cp' => $cp,
             'pays'=> $pays,
-            'mail' => $mail));
+            'mail' => $mail,
+            'confirmkey'=>$confirmkey));
       
     }
-    //print_r($this->sauvegardeClient("el","el","m","045599559","12 rrjfjf",""));
+    
     public function mailExiste($mail)
 	{
 		$sql="select count(num_client) from client where mail_client='$mail'";
@@ -98,5 +99,16 @@ class PdoEf {
 			return false;
 		}
 	}
-
+        
+       
+    
+    public function getClient($mail,$key){
+        $req= PdoEf::$monPdo->prepare("select * from client where mail_client=? And confirmkey=?");
+        $req->execute(array($mail, $key));
+        
+    }
+    
+    public function majKey($mail,$key){
+        $req= PdoEf::$monPdo->prepare("UPDATE client set confirme=1 where mail_client=? and confirmkey=?");
+    }
 }
