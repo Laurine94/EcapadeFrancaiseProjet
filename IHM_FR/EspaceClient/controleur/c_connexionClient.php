@@ -29,7 +29,7 @@ switch ($action) {
                 $nom = $client['nom'];
                 $prenom = $client['prenom'];
                 connecter($num, $nom, $prenom);
-                include("vues/v_accueilClient.php");
+               // include("vues/v_accueilClient.php");
             }
 
             break;

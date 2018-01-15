@@ -92,7 +92,7 @@ body p, body input[type=button]{
 
 <div id="navbar">
 <div id="logo">
-    <a href="index.php"><img class="" src="../img/logos/logo_basic.png" alt="logo_ef"></a>
+    <a href="../../index.php"><img class="" src="../img/logos/logo_basic.png" alt="logo_ef"></a>
     <a href="../ihm/" id="language-ch"><img src="../../lng/en.png" alt="english"> English</a>
 </div>
 

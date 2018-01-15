@@ -156,4 +156,8 @@ function nbErreurs(){
 	   return count($_REQUEST['erreurs']);
 	}
 }
+
+function motDePasseDiff($mdp){
+    
+}
 ?>
