@@ -3,6 +3,7 @@
 require_once ("include/class.pdoef.inc.php");
 require_once ("include/fct.inc.php");
 
+
 session_start();
 $pdo = PdoEf::getPdoEf();
 $estConnecte = estConnecte();

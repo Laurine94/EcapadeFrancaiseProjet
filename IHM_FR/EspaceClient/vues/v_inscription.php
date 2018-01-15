@@ -14,6 +14,18 @@
         
 </head>
 <body>
+    <?php
+    if(!empty($_POST)){
+		
+		extract($_POST);
+		$valid=true ;
+                
+                if (!empty($mail) && !empty($mailconfirm) && $mail != $mailconfirm) {
+                            $valid = false;
+                            $erreurmaildiff = true;
+                }
+    }
+    ?>
     <div id = "contenu">
 
         <div class="container-fluid">
@@ -61,10 +73,16 @@
 							<div id="bulle">
 								ce login existe déjà
 							</div>
-						<?php } ?> 
+                                <?php } ?> 
                             </div>
                             <div class="form-group">
                                 <label>Confirmation email*</label><input type="text" name="mailconfirm" class="form-control" id="" placeholder="Saisir à nouveau email" required>
+                                    <?php if(isset($erreuremaildiff) && $erreuremaildiff){ ?>
+					<div id="bulle">
+						email différents
+					</div><br><br>
+                                    <?php } ?>
+				
                             </div>
                 </div>
                 <div class="col-md-3 col-xs-3">

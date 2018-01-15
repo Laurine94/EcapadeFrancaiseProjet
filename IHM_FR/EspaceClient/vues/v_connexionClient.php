@@ -1,7 +1,7 @@
 <head>
         <meta charset="UTF-8">
         <link href="../css/index.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+        
         <!--<link href="css/styles.css" rel="stylesheet">-->
         <!-- animsition.css -->
         <!--<link rel="stylesheet" href="css/animsition.min.css">-->
@@ -21,12 +21,12 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12 col-xs-12 col-md-offset-1 col-xs-offset-1" id="titreconnormale">
+                <div class="col-md-12 col-xs-12 col-md-offset-1 col-xs-offset-1" id="titreconormale">
                     <h2>Identifiez vous :</h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 col-xs-3 col-md-offset-1 col-xs-offset-1" id="connormale">
+                <div class="col-md-3 col-xs-3 col-md-offset-1 col-xs-offset-1" id="conormale">
                     <form action="indexClient.php?uc=connexion&action=valideConnexion" method="POST">
                         <div class="form-group">
                             <label for= "mail">Adresse email*</label>
@@ -38,20 +38,20 @@
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary submit" value="Se connecter">
-                            <a href="#" >mot de pass oublié ?</a>
+                            <a href="#" >mot de passe oublié ?</a>
                         </div>
                     </form>
                    
                 </div>
-                <div class="col-md-3 col-xs-3" id="connetwork" align="center">
+                <div class="col-md-3 col-xs-3 connetwork" id="" align="center">
                     <div class="row">
                         <div class="col-md-12 col-xs-12coFacebook">
-                            <input type="button" class="btn btn-primary coFacebook" value="Se connecter avec Facebook"><br><br>
+                            <input type="button" class="btn btn-primary " id="coFacebook" value="Se connecter avec Facebook"><br><br>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-xs-12">
-                            <input type="button" class="btn btn-danger coGoogle" value="Se connecter avec Google+"><br><br>
+                            <input type="button" class="btn btn-danger" id="coGoogle" value="Se connecter avec Google+"><br><br>
                         </div>
                     </div>
                     <div class="row">
