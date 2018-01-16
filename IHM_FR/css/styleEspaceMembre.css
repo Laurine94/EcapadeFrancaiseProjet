@@ -1,3 +1,9 @@
+/**********************
+Style général
+**********************/
+a{
+    text-decoration: none !important;
+}
 
 /**********************
 v_connexionClient
@@ -98,7 +104,7 @@ v_accueilClient
     position: absolute;
     top: 80px;
     left: 88px;
-    padding: 20px 10px 0px 10px;
+    padding: 20px 90px 0px 90px;
     width: 491px;
     height: 440px;
     letter-spacing: 0.25em;
@@ -106,8 +112,16 @@ v_accueilClient
 
 .link-w-f{
     background-color: rgba(220, 34, 68, 1);
-    text-decoration: none;
-    
+    font-size: 30px;
+    color: white !important;
+    letter-spacing: 0.25em;
+    border-radius: 0px 0px 0px 0px !important;
+    width: 130px;
+    height: 40px;
+}
+
+.link-w-f:hover{
+    background-color: #871111;
 }
 
 
