@@ -30,20 +30,20 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12 col-xs-12 col-md-offset-1 col-xs-offset-1">
+                <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
                     <h2>Inscrivez vous :</h2>
                 </div>
             </div>
             <div class="row">
             <form method="POST" action="indexClient.php?uc=connexion&action=valideInscription">
-                <div class="col-md-3 col-xs-3 col-md-offset-1 col-xs-offset-1">
+                <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
                     <div class="row">
-                        <div class="col-md-6 col-xs-6">    
+                        <div class="col-md-6 col-sm-6 col-xs-6">    
                             <div class="form-group">
                                 <label>Nom*</label><input type="text" name="nom" class="form-control" id="" placeholder=" Saisissez votre nom" required>
                             </div>
                         </div>
-                        <div class="col-md-6 col-xs-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
                             <div class="form-group">
                                 <label>Prenom*</label><input type="text" name="prenom" class="form-control" id="" placeholder=" Saisissez votre prenom" required>
                             </div>
@@ -51,12 +51,12 @@
                     </div>
                             <label>Sexe </label>
                             <div class="row">
-                                <div class="col-md-2 col-xs-2">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
                                     <div class="form-group">
                                          <label>M <input type="radio" name="sexe" class="" value="M" ></label> 
                                     </div>
                                 </div>
-                                <div class="col-md-2 col-xs-2">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
                                     <div class="form-group">
                                         <label>F <input type="radio" name="sexe" class="" value="F"></label>
                                     </div>
@@ -85,7 +85,7 @@
 				
                             </div>
                 </div>
-                <div class="col-md-3 col-xs-3">
+                <div class="col-md-3 col-sm-3 col-xs-3">
                             
                             <div class="form-group">
                                 <label>Téléphone</label><input type="text" name="tel" class="form-control" id="" placeholder="ex : +623584868">
@@ -94,12 +94,12 @@
                                 <label>Adresse*</label><input type="text" name="adresse" class="form-control" id="" placeholder="Saisissez votre adresse" required>
                             </div>
                     <div class="row">
-                        <div class="col-md-6 col-xs-6">            
+                        <div class="col-md-6 col-sm-6 col-xs-6">            
                             <div class="form-group">
                                 <label>Ville*</label><input type="text" name="ville" class="form-control" id="" placeholder="Saisissez votre ville" required>
                             </div>
                         </div>
-                        <div class="col-md-6 col-xs-6">    
+                        <div class="col-md-6 col-sm-6 col-xs-6">    
                             <div class="form-group">
                                 <label>Code postal*</label><input type="text" name="cp" class="form-control" id="" placeholder="Saisissez votre CP" required>
                             </div>
@@ -349,7 +349,7 @@
                                 </select>
                             </div>
                 </div>
-                <div class="col-md-3 col-xs-3">
+                <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="form-group">
                                 <label>Mot de passe*</label><input type="password" name="mdp" class="form-control" placeholder="Saisissez un mot de passe" required>
                             </div>

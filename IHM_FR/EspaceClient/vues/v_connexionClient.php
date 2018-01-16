@@ -21,12 +21,12 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12 col-xs-12 col-md-offset-1 col-xs-offset-1" id="titreconormale">
+                <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" id="titreconormale">
                     <h2>Identifiez vous :</h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 col-xs-3 col-md-offset-1 col-xs-offset-1" id="conormale">
+                <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" id="conormale">
                     <form action="indexClient.php?uc=connexion&action=valideConnexion" method="POST">
                         <div class="form-group">
                             <label for= "mail">Adresse email*</label>
@@ -43,19 +43,19 @@
                     </form>
                    
                 </div>
-                <div class="col-md-3 col-xs-3 connetwork" id="" align="center">
+                <div class="col-md-3 col-sm-3 col-xs-3 connetwork" id="" align="center">
                     <div class="row">
-                        <div class="col-md-12 col-xs-12coFacebook">
+                        <div class="col-md-12 col-sm-12 col-xs-12 coFacebook">
                             <input type="button" class="btn btn-primary " id="coFacebook" value="Se connecter avec Facebook"><br><br>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 col-xs-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
                             <input type="button" class="btn btn-danger" id="coGoogle" value="Se connecter avec Google+"><br><br>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 col-xs-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
                             <a href="indexClient.php?uc=connexion&action=inscription" type="button" class="btn btn-default"> s'inscrire </a>
                         </div>
                     </div>
