@@ -68,7 +68,7 @@ class PdoEf {
         $mdp_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
         // Insertion
-       $req = PdoEf::$monPdo->prepare('INSERT INTO client(nom_client, prenom_client, sexe_client, tel_client, adresse_client, mdp, ville_client, zip_client, pays_client, mail_client, confirmkey) '
+        $req = PdoEf::$monPdo->prepare('INSERT INTO client(nom_client, prenom_client, sexe_client, tel_client, adresse_client, mdp, ville_client, zip_client, pays_client, mail_client, confirmkey) '
                 . 'VALUES(:nom, :prenom, :sexe, :tel, :adresse, :mdp, :ville, :cp, :pays, :mail,:confirmkey)');
         $req->execute(array(
             'nom' => $nom,
@@ -79,36 +79,46 @@ class PdoEf {
             'mdp' => $mdp,
             'ville' => $ville,
             'cp' => $cp,
-            'pays'=> $pays,
+            'pays' => $pays,
             'mail' => $mail,
-            'confirmkey'=>$confirmkey));
-      
+            'confirmkey' => $confirmkey));
     }
-    
-    public function mailExiste($mail)
-	{
-		$sql="select count(num_client) from client where mail_client='$mail'";
-		$rs = PdoEf::$monPdo->query($sql);
-                $ligne = $rs->fetch();
-		if($ligne!=0)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-        
-       
-    
-    public function getClient($mail,$key){
-        $req= PdoEf::$monPdo->prepare("select * from client where mail_client=? And confirmkey=?");
+
+    public function mailExiste($mail) {
+        $sql = "select count(num_client) from client where mail_client='$mail'";
+        $rs = PdoEf::$monPdo->query($sql);
+        $ligne = $rs->fetch();
+        if ($ligne != 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function getClient($mail, $key) {
+        $req = PdoEf::$monPdo->prepare("select * from client where mail_client=? And confirmkey=?");
         $req->execute(array($mail, $key));
-        
+        $user = $req->fetch();
+        return $user;
     }
-    
-    public function majKey($mail,$key){
-        $req= PdoEf::$monPdo->prepare("UPDATE client set confirme=1 where mail_client=? and confirmkey=?");
+
+    public function clientExist($mail, $key) {
+        $req = PdoEf::$monPdo->prepare("select * from client where mail_client=? And confirmkey=?");
+        $req->execute(array($mail, $key));
+        $userexist = $req->rowCount();
+        return $userexist;
     }
+
+    public function majKey($mail, $key) {
+        $req = PdoEf::$monPdo->prepare("UPDATE client set confirm=1 where mail_client=? and confirmkey=?");
+        $req->execute(array($mail, $key));
+    }
+
+    public function getReservation($mail) {
+        $sql = "select * from reservation";
+        $resultat = PdoEf::$monPdo->query($sql);
+        $ligne=$resultat->fetch(PDO::FETCH_OBJ);
+        return $ligne;
+    }
+
 }

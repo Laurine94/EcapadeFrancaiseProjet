@@ -16,7 +16,11 @@ switch ($uc) {
             include("controleur/c_connexionClient.php");
             break;
         }
-}
 
+    case 'espaceClient': {
+            include("controleur/c_espaceClient.php");
+            break;
+        }
+}
 ?>
 

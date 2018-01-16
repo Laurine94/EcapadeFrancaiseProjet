@@ -27,7 +27,7 @@
             </div>
             <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" id="conormale">
-                    <form action="indexClient.php?uc=connexion&action=valideConnexion" method="POST">
+                    <form action="indexClient.php?uc=espaceClient&action=valideConnexion" method="POST">
                         <div class="form-group">
                             <label for= "mail">Adresse email*</label>
                             <input id= "mail" type= "email" name= "mail" class="form-control">

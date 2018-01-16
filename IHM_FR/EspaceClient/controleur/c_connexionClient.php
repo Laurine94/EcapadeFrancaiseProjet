@@ -12,7 +12,7 @@ switch ($action) {
             include("vues/v_connexionClient.php");
             break;
         }
-    case 'valideConnexion': {
+   /* case 'valideConnexion': {
             $mail = $_POST['mail'];
             $mdp = $_POST['mdp'];
             //Cryptage de mot de passe
@@ -24,16 +24,17 @@ switch ($action) {
                 include("vues/v_erreurs.php");
                 include("vues/v_connexionClient.php");
             } else {
-                //echo"blde";
                 $num = $client['num'];
                 $nom = $client['nom'];
                 $prenom = $client['prenom'];
                 connecter($num, $nom, $prenom);
-               // include("vues/v_accueilClient.php");
+                var_dump($action);
+                include("c_espaceClient.php");
+                exit();
             }
 
             break;
-        }
+        }*/
     case 'inscription': {
             include("vues/v_inscription.php");
             break;
@@ -95,7 +96,7 @@ switch ($action) {
             <html>
                 <body>
                     <div align="center">
-                    <a href="http://localhost/escapadefrancaise/IHM_FR/EspaceClient/indexClient.php?mail='.urlencode($mail).'&key='.$key.'">Confirmez votre compte.</a> 
+                    <a href="http://localhost/escapadefrancaise/IHM_FR/EspaceClient/indexClient.php?mail='.urlencode($mail).'&key='.$key.'&uc=connexion&action=confirmationMail">Confirmez votre compte.</a> 
                         Nous vous remercions pour votre inscription sur notre site Escapade Française.<br/>
                         Veuillez confirmer votre inscription en cliquant sur le lien ci-dessous.<br/>
                         <a href="localhost/escapadefrancaise/ihm_fr/EspaceClient/indexClient.php> retour vers le site </a>"
@@ -106,16 +107,43 @@ switch ($action) {
             </html>
             ';
             mail($mail, "Confirmation du compte", $message, $header);
-
-
-            //affichage de la vue qui previent le client qu'il faut confirmer par mail
+            
             include('vues/v_confirmationMail.php');
-            //}
-
 
             break;
         }
+    
+    case 'confirmationMail':{
+        $mail = $_REQUEST['mail'];
+        $key=$_REQUEST['key'];
+        if (isset($mail, $key)AND ! empty($mail)AND ! empty($key)) {
+                $mail = htmlspecialchars(urldecode($mail));
+                $key = htmlspecialchars($key);
+                $userexist=$pdo->clientExist($mail,$key);
+               
+                var_dump($action);
+                //verification de l'existance du client dans la bdd
+                if ($userexist == 1) {
+                    $user = $pdo->getClient($mail,$key);
+                    //verification de la confirmation du compte
+                    if ($user['confirm'] == 0) {
+                        $updateuser =$pdo-> majKey($mail, $key);
+                        
+                        
+                        include('vues/v_connexionClient.php');
+                        echo"<p>Votre compte a bien été confirmé!</p> ";
+                    } else {
+                        echo "Votre compte a déjà été confirmé!";
+                    }
+                } else {
+                    echo"L'utilisateur n'existe pas.";
+                }
+            }
+            break;
+            
+    }
     default : {
+            
             include("vues/v_connexionClient.php");
             break;
         }
