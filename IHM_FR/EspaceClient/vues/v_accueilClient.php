@@ -35,4 +35,18 @@ include("v_headClient.php");
             </div>
         </div>
     </div>
+    <div class="row" id="">
+        <div class="col-md-6 col-sm-6 col-xs-6" id="resa-a-venir">
+            <div class="">
+                
+                
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-6" id="resa-passees">
+            <div class="">
+                
+            </div>
+        </div>
+    </div>
 </div>
+
