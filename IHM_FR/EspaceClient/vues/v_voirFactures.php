@@ -1,8 +1,4 @@
-<?php
-session_start();
-include ("../../connexion.php");
-include ("include/class.pdoef.inc.php");
-?>
+
 <!DOCTYPE html>
 <head>
     <title> Mes factures</title>

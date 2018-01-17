@@ -26,8 +26,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" id="conormale">
+
+                <div class="col-md-3 col-xs-3 col-md-offset-1 col-xs-offset-1" id="conormale">
                     <form action="indexClient.php?uc=espaceClient&action=valideConnexion" method="POST">
+
                         <div class="form-group">
                             <label for= "mail">Adresse email*</label>
                             <input id= "mail" type= "email" name= "mail" class="form-control">
@@ -57,6 +59,7 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <a href="indexClient.php?uc=connexion&action=inscription" type="button" class="btn btn-default"> s'inscrire </a>
+
                         </div>
                     </div>
                 </div>

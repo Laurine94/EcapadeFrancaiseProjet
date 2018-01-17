@@ -17,6 +17,7 @@ switch ($action) {
             $mdp = $_POST['mdp'];
             //Cryptage de mot de passe
             //$mdp= md5($mdp);
+            echo"didididiidididdi";
 
             $client = $pdo->getInfosClient($mail, $mdp);
             if (!is_array($client)) {
@@ -96,7 +97,7 @@ switch ($action) {
             <html>
                 <body>
                     <div align="center">
-                    <a href="http://localhost/escapadefrancaise/IHM_FR/EspaceClient/indexClient.php?mail='.urlencode($mail).'&key='.$key.'&uc=connexion&action=confirmationMail">Confirmez votre compte.</a> 
+                    <a href="http://localhost/escapadefrancaisev2/IHM_FR/EspaceClient/indexClient.php?mail=' . urlencode($mail) . '&key=' . $key . '&uc=connexion&action=confirmationMail">Confirmez votre compte.</a> 
                         Nous vous remercions pour votre inscription sur notre site Escapade Française.<br/>
                         Veuillez confirmer votre inscription en cliquant sur le lien ci-dessous.<br/>
                         <a href="localhost/escapadefrancaise/ihm_fr/EspaceClient/indexClient.php> retour vers le site </a>"
@@ -107,29 +108,29 @@ switch ($action) {
             </html>
             ';
             mail($mail, "Confirmation du compte", $message, $header);
-            
+
             include('vues/v_confirmationMail.php');
 
             break;
         }
-    
-    case 'confirmationMail':{
-        $mail = $_REQUEST['mail'];
-        $key=$_REQUEST['key'];
-        if (isset($mail, $key)AND ! empty($mail)AND ! empty($key)) {
+
+    case 'confirmationMail': {
+            $mail = $_REQUEST['mail'];
+            $key = $_REQUEST['key'];
+            if (isset($mail, $key)AND ! empty($mail)AND ! empty($key)) {
                 $mail = htmlspecialchars(urldecode($mail));
                 $key = htmlspecialchars($key);
-                $userexist=$pdo->clientExist($mail,$key);
-               
-                var_dump($action);
+                $userexist = $pdo->clientExist($mail, $key);
+
+
                 //verification de l'existance du client dans la bdd
                 if ($userexist == 1) {
-                    $user = $pdo->getClient($mail,$key);
+                    $user = $pdo->getClient($mail, $key);
                     //verification de la confirmation du compte
                     if ($user['confirm'] == 0) {
-                        $updateuser =$pdo-> majKey($mail, $key);
-                        
-                        
+                        $updateuser = $pdo->majKey($mail, $key);
+
+
                         include('vues/v_connexionClient.php');
                         echo"<p>Votre compte a bien été confirmé!</p> ";
                     } else {
@@ -140,10 +141,8 @@ switch ($action) {
                 }
             }
             break;
-            
-    }
+        }
     default : {
-            
             include("vues/v_connexionClient.php");
             break;
         }

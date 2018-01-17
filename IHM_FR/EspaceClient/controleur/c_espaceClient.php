@@ -33,6 +33,10 @@ switch ($action) {
             include("vues/v_accueilClient.php");
             break;
         }
+     case 'voirFacture': {
+            include("vues/v_voirFactures.php");
+            break;
+    }
     default:{
         include("vues/v_accueilVClient.php");
         
