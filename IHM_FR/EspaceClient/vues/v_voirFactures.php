@@ -13,7 +13,6 @@
 
         <div id="pdf">
             <?php
-            $mail = "cousinlaurine94260@gmail.com";
             /* while ($reservation = $pdo->getReservation($mail)) {
               $id = $reservation->num_res;
               echo "<li><div class='titre'>" . $reservation->nom_chambre . "</div>
@@ -29,11 +28,12 @@
                 $prenomClient = $uneFacture['prenom_client'];
                 $nomChambre=$uneFacture['nom_chambre'];
                 $nomMh=$uneFacture['nom_mh'];
+                $activite=$uneFacture['nom_activite'];
                 $dateDebut=$uneFacture['date_debut'];
                 $dateFin=$uneFacture['date_fin'];
                 $prix=$uneFacture['prix_res'];
-                echo "<li><div class='titre'>" . $nomChambre . "</div>
-                <div class='date'>" . $dateDebut . " - " . $dateFin . "</div>
+                echo "<li><div class='titre'>" . $nomChambre . " - ".$nomMh." - ".$activite."</div>
+                <div class='date'> Du " . $dateDebut . " au " . $dateFin . "</div>
                 <div class='prix'>" . $prix . "€ </div>
                 <div class='span'> <a href='indexClient.php?uc=espaceClient&action=genererpdf'>Télécharger pdf</a></div>
                         </li> ";
