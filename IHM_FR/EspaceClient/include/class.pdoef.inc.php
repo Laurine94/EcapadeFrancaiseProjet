@@ -114,10 +114,10 @@ class PdoEf {
         $req->execute(array($mail, $key));
     }
 
-    public function getReservation($mail) {
-        $sql = "select * from reservation";
+    public function getReservationDisponible($id) {
+        $sql = "select * from reservation join client on reservation.num_client=client.num_client where reservation.num_client='$id'";
         $resultat = PdoEf::$monPdo->query($sql);
-        $ligne=$resultat->fetch(PDO::FETCH_OBJ);
+        $ligne=$resultat->fetchAll();
         return $ligne;
     }
 

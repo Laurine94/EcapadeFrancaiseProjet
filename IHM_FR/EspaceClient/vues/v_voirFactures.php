@@ -14,13 +14,29 @@
         <div id="pdf">
             <?php
             $mail = "cousinlaurine94260@gmail.com";
-            while ($reservation = $pdo->getReservation($mail)) {
-                $id = $reservation->id;
-                echo "<li><div class='titre'>" . $reservation->nom_chambre . "</div>
-                <div class='image'><img src='" . $reservation->photo . "'/></div>
-                <div class='date'>" . $reservation->date_debut . " - " . $reservation->date_fin . "</div>
-                <div class='prix'>" . $reservation->prix_res . "€ </div>
-                <div class='span'><a href='ajout_panier.php?id=$id'><button> Télécharger </button> </a></div></li> ";
+            /* while ($reservation = $pdo->getReservation($mail)) {
+              $id = $reservation->num_res;
+              echo "<li><div class='titre'>" . $reservation->nom_chambre . "</div>
+              <div class='date'>" . $reservation->date_debut . " - " . $reservation->date_fin . "</div>
+              <div class='prix'>" . $reservation->prix_res . "€ </div>
+              <div class='span'> <a href='indexClient.php?uc=espaceClient&action=genererpdf'><img src='images/telecharger.png' WIDTH='20%' HEIGHT='20%'></a></div>
+              </li> ";
+              } */
+
+            foreach ($lesFactures as $uneFacture) {
+                $mail = $uneFacture['mail_client'];
+                $nomClient = $uneFacture['nom_client'];
+                $prenomClient = $uneFacture['prenom_client'];
+                $nomChambre=$uneFacture['nom_chambre'];
+                $nomMh=$uneFacture['nom_mh'];
+                $dateDebut=$uneFacture['date_debut'];
+                $dateFin=$uneFacture['date_fin'];
+                $prix=$uneFacture['prix_res'];
+                echo "<li><div class='titre'>" . $nomChambre . "</div>
+                <div class='date'>" . $dateDebut . " - " . $dateFin . "</div>
+                <div class='prix'>" . $prix . "€ </div>
+                <div class='span'> <a href='indexClient.php?uc=espaceClient&action=genererpdf'>Télécharger pdf</a></div>
+                        </li> ";
             }
             ?>
 

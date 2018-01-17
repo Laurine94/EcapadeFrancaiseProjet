@@ -6,9 +6,10 @@ if (!isset($_REQUEST['action'])) {
     $_REQUEST['action'] = 'accueil';
 }
 $action = $_REQUEST['action'];
+$id = $_SESSION['mail'];
 include("vues/v_headClient.php");
 switch ($action) {
-   case 'valideConnexion': {
+    case 'valideConnexion': {
             $mail = $_POST['mail'];
             $mdp = $_POST['mdp'];
             //Cryptage de mot de passe
@@ -33,13 +34,30 @@ switch ($action) {
             include("vues/v_accueilClient.php");
             break;
         }
-     case 'voirFacture': {
+    case 'voirFacture': {
+        echo $id;
+            $lesFactures = $pdo->getReservationDisponible($id);
+            $Cles = array_keys($lesFactures);
+            $factureASelectionner = $Cles[0];
             include("vues/v_voirFactures.php");
             break;
-    }
-    default:{
-        include("vues/v_accueilVClient.php");
-        
-        break;
-    }
+        }
+    case 'genererpdf': {
+
+            $fraisf = $pdo->getLesFraisForfait($idV, $leMois);
+            $subtotalff = $pdo->getSubtotalFraisF($fraisf);
+
+            $fraisHF = $pdo->getLesFraisHorsForfait($idV, $leMois);
+            $subtotalfhf = $pdo->getSubtotalFraisHF($fraisHF);
+
+            $infoVisiteur = $pdo->getVisiteur($idV);
+            include("vues/v_pdf.php");
+            creerPdf($fraisf, $fraisHF, $leMois, $infoVisiteur);
+            break;
+        }
+    default: {
+            include("vues/v_accueilVClient.php");
+
+            break;
+        }
 }
