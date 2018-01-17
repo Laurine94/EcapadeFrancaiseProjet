@@ -61,3 +61,4 @@ switch ($action) {
             break;
         }
 }
+include("vues/v_footer.php");
