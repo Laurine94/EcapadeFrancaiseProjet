@@ -120,5 +120,12 @@ class PdoEf {
         $ligne=$resultat->fetchAll();
         return $ligne;
     }
+    
+    public function getReservation($id, $numRes){
+        $req="select * from reservation join client on reservation.num_client=client.num_client where reservation.num_client='$id' and reservation.num_res='$numRes'";
+        $res = PdoEf::$monPdo->query($req);
+        $laLigne = $res->fetch();
+        return $laLigne;
+    }
 
 }

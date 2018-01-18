@@ -43,14 +43,15 @@ switch ($action) {
             break;
         }
     case 'genererpdf': {
+        
+            $numRes=$_REQUEST['numRes'];//faire un champs caché dans v_voirFacture.php
+            $reservationf = $pdo->getReservation($id, $numRes);
+           // $subtotalff = $pdo->getSubtotalFraisF($fraisf);
 
-            $fraisf = $pdo->getLesFraisForfait($idV, $leMois);
-            $subtotalff = $pdo->getSubtotalFraisF($fraisf);
+           // $fraisHF = $pdo->getLesFraisHorsForfait($idV, $leMois);
+            //$subtotalfhf = $pdo->getSubtotalFraisHF($fraisHF);
 
-            $fraisHF = $pdo->getLesFraisHorsForfait($idV, $leMois);
-            $subtotalfhf = $pdo->getSubtotalFraisHF($fraisHF);
-
-            $infoVisiteur = $pdo->getVisiteur($idV);
+            $infoClient = $pdo->getVisiteur($idV);
             include("vues/v_pdf.php");
             creerPdf($fraisf, $fraisHF, $leMois, $infoVisiteur);
             break;
