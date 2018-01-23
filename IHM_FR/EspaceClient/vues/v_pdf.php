@@ -1,80 +1,95 @@
 <?php
 
 include_once('include/pdf.class.php');
-$buffer=ob_get_clean();
+$buffer = ob_get_clean();
 
-$pdf = new PDF();
+//adresse de l'entreprise
+$adresse = "76 Bis Rue de Rennes ";
+$cp = "75006 Paris FRANCE";
+$mail = "info@escapadefrancaise.com";
+$tel = "Tel: +33 7 69 50 95 88";
+
+$pdf = new PDF('P', 'mm', 'A4');
 $pdf->AddPage();
+
+//affichage de l'adresse d'escapade francaise
+$pdf->SetFillColor(232, 232, 232);
+$pdf->SetFont('Arial', 'B', 12);
+$pdf->Text(10, 55, $adresse);
+$pdf->Text(10, 60, $cp);
+$pdf->SetFont('Arial', '', 12);
+$pdf->Text(10, 65, $mail);
+$pdf->Text(10, 70, $tel);
+
+//affichage des informations du client
+$pdf->Text(150, 60, utf8_decode($reservationf['prenom_client']) . ' ' . utf8_decode($reservationf['nom_client']));
+$pdf->Text(150, 65, utf8_decode($reservationf['adresse_client']));
+$pdf->Text(150, 70, $reservationf['zip_client'] . ' ' . utf8_decode($reservationf['ville_client']));
+$pdf->Ln(10);
+
 //Ajoute une image
-$pdf->Image('images/logo.jpg',80,10, 50, 35);
+$pdf->Ln(10);
+$pdf->Image('../img/logos/logo_basic.JPEG', 10, 10, 50, 35);
 $pdf->Ln(48);
 
-$pdf->SetFillColor(232,232,232);
-$pdf->SetFont('Arial','B',10);
-$pdf->Cell(185,10,'REMBOURSEMENT DE FRAIS ENGAGES',1,1,'C');
+$pdf->SetFillColor(232,0, 232);
+//$pdf->SetDrawColor(229, 134, 105);
+$pdf->SetFont('Arial', 'B', 14);
+$pdf->Cell(190, 10, utf8_decode('Facture n°' . $reservationf['num_res'] . ' du ' . $reservationf['date_res']), 1, 1, 'C');
 
-$pdf->Ln();
-$pdf->Cell(60,10,'Visiteur : ');
-$pdf->Cell(60,10,$infoVisiteur['id']);
-$pdf->Cell(60,10,$infoVisiteur['prenom']." ".$infoVisiteur['nom']);
-$pdf->Ln();
+$pdf->Ln(10);
+$pdf->SetFillColor(232, 232, 232);
+$pdf->SetFont('Arial', 'B', 12);
+$pdf->Text(10, 95,  utf8_decode("Maison d hôte : ". $reservationf['nom_mh']));
+$pdf->Ln(50);
 
-$pdf->Cell(60,10,'Mois : ');
-$pdf->Cell(60,10,$leMoisformat);
-
-$pdf->Ln(48);
-
-
-$entete= array('Frais Forfaitaires', 'Quantité', 'Montant unitaire', 'Total');
+$entete = array('Reservation', 'Descriptif', 'Nombre de voyageurs', 'Total');
 $pdf->entete($entete);
-$pdf->Ln(10);
+$pdf->Ln(30);
 
-//
-$pdf->table($entete, $fraisf);
+$pdf->table($entete, $donneeRes);
 
-$pdf->Ln(10);
-
-$pdf->SetFillColor(232,232,232);
-$pdf->SetFont('Arial','B',10);
-
-$pdf->Cell(180,10,'Autres frais',0,1,'C');
-
-$entete2= array('Date', 'Libelle', 'Montant');
-$pdf->entete2($entete2);
-
-$pdf->Ln(10);
-
-
-$pdf->table2($entete2, $fraisHF);
-
-
-$pdf->Ln(10);
-
-
-$pdf->SetX(110);
-$pdf->Cell(40,10, "TOTAL ".$leMoisformat,1, 0 , 'C' );
-$pdf->Cell(40,10, $subtotalff+$subtotalfhf,1, 0 , 'C' );
-
-
-//$pdf->Cell(40,10, print_r(array_map("array_sum", $fraisf)),1, 0 ,'C' );
-//$pdf->Cell(40,10, print_r($subtotalff),1, 0 ,'C' );
-
-$pdf->Ln(10);
 $pdf->Ln(10);
 
 $pdf->SetX(110);
-$pdf->Cell(60,10, "Fait à Paris le  ".$dateActuelle,'C' );
+$pdf->Cell(40, 10, utf8_decode("TOTAL HT " ), 1, 0, 'C');
+$pdf->Cell(40, 10, $reservationf['prix_res'], 1, 0, 'C');
 $pdf->Ln(10);
 
 $pdf->SetX(110);
-$pdf->Cell(60,10, "Vu l'agent comptable  ",'C' );
+$pdf->Cell(40, 10, utf8_decode("Taxe séjour ") , 1, 0, 'C');
+$pdf->Cell(40, 10, 0, 1, 0, 'C');
+$pdf->Ln(10);
 
 $pdf->SetX(110);
-$pdf->Image('images/signature.jpg',110,250, 50, 35);
+$pdf->Cell(40, 10, "Montant de TVA " , 1, 0, 'C');
+$pdf->Cell(40, 10, $reservationf['prix_res']*0.20, 1, 0, 'C');
+$pdf->Ln(10);
+$pdf->SetFont('Arial', 'B', 10);
+$pdf->SetX(110);
+$pdf->Cell(40, 10, "TOTAL TTC" , 1, 0, 'C');
+$pdf->Cell(40, 10, $reservationf['prix_res']+$reservationf['prix_res']*0.20." euros", 1, 0, 'C');
+
+/*
+  //$pdf->Cell(40,10, print_r(array_map("array_sum", $fraisf)),1, 0 ,'C' );
+  //$pdf->Cell(40,10, print_r($subtotalff),1, 0 ,'C' );
+
+  $pdf->Ln(10);
+  $pdf->Ln(10);
+
+  $pdf->SetX(110);
+  $pdf->Cell(60,10, "Fait à Paris le  ".$dateActuelle,'C' );
+  $pdf->Ln(10);
+
+  $pdf->SetX(110);
+  $pdf->Cell(60,10, "Vu l'agent comptable  ",'C' );
+
+  $pdf->SetX(110);
+  $pdf->Image('images/signature.jpg',110,250, 50, 35); */
 
 
 
 
- 
+
 $pdf->Output(); //Salida al navegador
 

@@ -122,10 +122,26 @@ class PdoEf {
     }
     
     public function getReservation($id, $numRes){
-        $req="select * from reservation join client on reservation.num_client=client.num_client where reservation.num_client='$id' and reservation.num_res='$numRes'";
+        $req="select * from client join reservation on reservation.num_client=client.num_client where reservation.num_client=$id and reservation.num_res=$numRes";
         $res = PdoEf::$monPdo->query($req);
         $laLigne = $res->fetch();
         return $laLigne;
     }
+    
+    public function getChambre($numRes){
+        $req="select * from chambre join reservation on reservation.nom_chambre=chambre.nom_chambre where reservation.num_res=$numRes";
+        $res = PdoEf::$monPdo->query($req);
+        $laLigne = $res->fetch();
+        return $laLigne;
+    }
+    
+    public function getReservationPdf($id,$numRes){
+        $req="select reservation.nom_chambre, reservation.date_debut,reservation.date_fin,reservation.prix_res from reservation join client on reservation.num_client=client.num_client where reservation.num_client=$id and reservation.num_res=$numRes";
+        $res = PdoEf::$monPdo->query($req);
+        $laLigne = $res->fetchAll();
+        return $laLigne;
+        
+    }
+  
 
 }

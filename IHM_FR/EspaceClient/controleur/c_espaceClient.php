@@ -43,23 +43,29 @@ switch ($action) {
             break;
         }
     case 'genererpdf': {
-        
-            $numRes=$_REQUEST['numRes'];//faire un champs caché dans v_voirFacture.php
+            $numRes=$_REQUEST['numRes'];
             $reservationf = $pdo->getReservation($id, $numRes);
-           // $subtotalff = $pdo->getSubtotalFraisF($fraisf);
+            $chambref = $pdo->getChambre($numRes);
 
-           // $fraisHF = $pdo->getLesFraisHorsForfait($idV, $leMois);
+           $donneeRes = $pdo->getReservationPdf($id, $numRes);
             //$subtotalfhf = $pdo->getSubtotalFraisHF($fraisHF);
 
-            $infoClient = $pdo->getVisiteur($idV);
+            //$infoClient = $pdo->getVisiteur($idV);
             include("vues/v_pdf.php");
-            creerPdf($fraisf, $fraisHF, $leMois, $infoVisiteur);
+            creerPdf($reservationf);
             break;
         }
+     
+    case 'reservationsAVenir':{
+        
+        include('vues/v_reservationsAVenir');
+        break;
+    }
     default: {
             include("vues/v_accueilVClient.php");
 
             break;
         }
+        
 }
 include("vues/v_footer.php");
