@@ -94,6 +94,7 @@ body p, body input[type=button]{
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js'></script>
+<script type="text/javascript" src="script/jquery.parallax-1.1.js"></script>
 
 <div id="navbar">
 <div id="logo">

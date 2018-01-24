@@ -51,9 +51,9 @@
                 <div class="col-md-6 col-sm-6 col-xs-6 r_div" id="">
                     <a href="#" style="cursor:pointer"><h1>Mes réservations passées</h1></a>
                 </div>
-            </div>
+            </div>      
         </div>
-    </div>
+    </div>  
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12" id="white_div">
             

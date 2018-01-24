@@ -27,8 +27,8 @@
 					</ol>
 					
 					<!--Carroussel-->
-					<div class="carousel-inner  ">
-                                                <div class="item  active" id="img-slide1" style="background-image: url(../img/espace_membre/mes_reservations_passees.jpg);">
+					<div class="carousel-inner">
+                                                <div class="item active img-slide" id="" style="background-image: url(../img/espace_membre/mes_reservations_passees.jpg);">
                                                     <div class="carousel-caption" >
                                                         <h3 data-animation="animated zoomIn" style="font-family: 'Arial', serif;"></h3>
                                                         <h1>Ici téléchargez les factures</h1>
@@ -47,7 +47,7 @@
                                                 $dateFin=$uneFacture['date_fin'];
                                                 $prix=$uneFacture['prix_res'];
                                             ?>
-						<div class="item" id="img-slide1" style="background-image: url(../img/espace_membre/mes_reservations_a_venir_3.jpg);">
+						<div class="item img-slide" id="" style="background-image: url(../img/espace_membre/mes_reservations_a_venir_3.jpg);">
                                                     <div class="carousel-caption" >
                                                         <h3 data-animation="animated zoomIn" style="font-family: 'Arial', serif;">Nom ville</h3>
                                                         <h2><?php echo $nomMh ?></h2>
