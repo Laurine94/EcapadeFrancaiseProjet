@@ -8,7 +8,7 @@ class PDF extends FPDF {
         
         $this->SetFillColor(25, 89, 0);
         $this->SetDrawColor(96,147,186);
-        $this->SetXY(10, 100);
+        $this->SetXY(10, 130);
         $this->SetLineWidth(.3);
         $this->SetFont('Arial', 'B', 10);
         foreach ($entete as $fil) {
@@ -18,14 +18,14 @@ class PDF extends FPDF {
 
     function data($data) {
         
-        $this->SetXY(10, 110);
+        $this->SetXY(10, 140);
         $this->SetFont('Arial', '', 10);
 
         foreach ($data as $fil) {
             $this->Cell(45, 10, utf8_decode($fil['nom_chambre']), 1, 0, 'C');
-            $this->Cell(45, 10, utf8_decode($fil['date_debut']), 1, 0, 'C');
-            $this->Cell(45, 10, utf8_decode($fil['date_fin']), 1, 0, 'C');
-            $this->Cell(45, 10, utf8_decode($fil['prix_res'] . ' euros'), 1, 0, 'C');
+            $this->Cell(45, 10, utf8_decode($fil['nombrePersonnes']), 1, 0, 'C');
+            $this->Cell(45, 10, utf8_decode($fil['nombre_nuits']), 1, 0, 'C');
+            $this->Cell(45, 10, utf8_decode($fil['prix_chambre'] . ' euros'), 1, 0, 'C');
             $this->Ln();
         }
     }

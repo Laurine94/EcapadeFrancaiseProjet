@@ -32,7 +32,7 @@ $pdf->Ln(10);
 $pdf->Image('../img/logos/logo_basic.JPEG', 10, 10, 50, 35);
 $pdf->Ln(48);
 
-$pdf->SetFillColor(232,0, 232);
+$pdf->SetFillColor(232, 0, 232);
 //$pdf->SetDrawColor(229, 134, 105);
 $pdf->SetFont('Arial', 'B', 14);
 $pdf->Cell(190, 10, utf8_decode('Facture n°' . $reservationf['num_res'] . ' du ' . $reservationf['date_res']), 1, 1, 'C');
@@ -40,10 +40,27 @@ $pdf->Cell(190, 10, utf8_decode('Facture n°' . $reservationf['num_res'] . ' du 
 $pdf->Ln(10);
 $pdf->SetFillColor(232, 232, 232);
 $pdf->SetFont('Arial', 'B', 12);
-$pdf->Text(10, 95,  utf8_decode("Maison d hôte : ". $reservationf['nom_mh']));
+$pdf->Text(10, 95, utf8_decode("Maison d hôte : " . $reservationf['nom_mh']));
+
+$pdf->SetFont('Arial', 'B', 10);
+$pdf->Text(10, 105, utf8_decode("Voyageurs : "));
+$pdf->Ln();
+$pdf->SetFont('Arial', '', 10);
+foreach ($lesVoyageurs as $unVoyageur) {
+    $nomVoyageur = $unVoyageur['nom_voyageur'];
+    $prenomVoyageur = $unVoyageur['prenom_voyageur'];
+    $pdf->MultiCell(60, 5, utf8_decode($nomVoyageur . " " . $prenomVoyageur));
+}
+$pdf->Ln(10);
+$pdf->SetFont('Arial', 'B', 10);
+$pdf->Text(120, 105, utf8_decode("Réservation du ".$reservationf['date_debut']) . ' au ' . utf8_decode($reservationf['date_fin']));
+$pdf->Ln(10);
+
 $pdf->Ln(50);
 
-$entete = array('Reservation', 'Descriptif', 'Nombre de voyageurs', 'Total');
+
+
+$entete = array('Reservation', 'Nombre de voyageurs', 'Nombre de nuit', 'Total');
 $pdf->entete($entete);
 $pdf->Ln(30);
 
@@ -52,23 +69,23 @@ $pdf->table($entete, $donneeRes);
 $pdf->Ln(10);
 
 $pdf->SetX(110);
-$pdf->Cell(40, 10, utf8_decode("TOTAL HT " ), 1, 0, 'C');
+$pdf->Cell(40, 10, utf8_decode("TOTAL HT "), 1, 0, 'C');
 $pdf->Cell(40, 10, $reservationf['prix_res'], 1, 0, 'C');
 $pdf->Ln(10);
 
 $pdf->SetX(110);
-$pdf->Cell(40, 10, utf8_decode("Taxe séjour ") , 1, 0, 'C');
+$pdf->Cell(40, 10, utf8_decode("Taxe séjour "), 1, 0, 'C');
 $pdf->Cell(40, 10, 0, 1, 0, 'C');
 $pdf->Ln(10);
 
 $pdf->SetX(110);
-$pdf->Cell(40, 10, "Montant de TVA " , 1, 0, 'C');
-$pdf->Cell(40, 10, $reservationf['prix_res']*0.20, 1, 0, 'C');
+$pdf->Cell(40, 10, "Montant de TVA ", 1, 0, 'C');
+$pdf->Cell(40, 10, $reservationf['prix_res'] * 0.20, 1, 0, 'C');
 $pdf->Ln(10);
 $pdf->SetFont('Arial', 'B', 10);
 $pdf->SetX(110);
-$pdf->Cell(40, 10, "TOTAL TTC" , 1, 0, 'C');
-$pdf->Cell(40, 10, $reservationf['prix_res']+$reservationf['prix_res']*0.20." euros", 1, 0, 'C');
+$pdf->Cell(40, 10, "TOTAL TTC", 1, 0, 'C');
+$pdf->Cell(40, 10, $reservationf['prix_res'] + $reservationf['prix_res'] * 0.20 . " euros", 1, 0, 'C');
 
 /*
   //$pdf->Cell(40,10, print_r(array_map("array_sum", $fraisf)),1, 0 ,'C' );

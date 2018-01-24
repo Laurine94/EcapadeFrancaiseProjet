@@ -82,8 +82,10 @@ switch ($action) {
               if ($valid) { */
             $longueurkey = 15;
             $key = "";
-            for ($i = 1; $i < $longueurkey; $i++) {
-                $key .= mt_rand(0, 9);
+            
+           for ($i = 1; $i < $longueurkey; $i++) {
+                $key =$key. mt_rand(0, 9);
+             
             }
             $pdo->sauvegardeClient($nom, $prenom, $sexe, $mail, $tel, $adresse, $ville, $cp, $pays, $mdp, $key);
 
@@ -138,6 +140,7 @@ switch ($action) {
                     }
                 } else {
                     echo"L'utilisateur n'existe pas.";
+                    var_dump($userexist);
                 }
             }
             break;

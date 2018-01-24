@@ -44,23 +44,28 @@ switch ($action) {
         }
     case 'genererpdf': {
             $numRes=$_REQUEST['numRes'];
+            $lesVoyageurs=$pdo->getVoyageur($numRes);
             $reservationf = $pdo->getReservation($id, $numRes);
-            $chambref = $pdo->getChambre($numRes);
-
+            $voyageurf=$pdo->getVoyageur($numRes);
            $donneeRes = $pdo->getReservationPdf($id, $numRes);
-            //$subtotalfhf = $pdo->getSubtotalFraisHF($fraisHF);
-
-            //$infoClient = $pdo->getVisiteur($idV);
+           
             include("vues/v_pdf.php");
             creerPdf($reservationf);
             break;
         }
      
-    case 'reservationsAVenir':{
+    case 'menuReservationsAVenir':{
         
-        include('vues/v_reservationsAVenir');
+        include('vues/v_menuReservationsAVenir');
+        include('vues/v_toutesReservationsAVenir');
         break;
     }
+    
+    case 'voirToutesLesResAVenir':{
+        include('vues/v_toutesReservationsAVenir');
+        break;
+    }
+    
     default: {
             include("vues/v_accueilVClient.php");
 
