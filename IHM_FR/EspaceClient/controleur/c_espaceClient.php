@@ -80,18 +80,24 @@ switch ($action) {
     case 'voirActivitesLesResAVenir': {
             include('vues/v_menuReservationsAVenir.php');
             $lesRes = $pdo->getActiviteReservationAVenir($id);
+             if (empty($lesRes)) {
+                echo"Il n'y a aucune réservation à venir.";
+            } else {
             $Cles = array_keys($lesRes);
             $resASelectionner = $Cles[0];
-            include('vues/v_ActiviteReservationsAVenir.php');
+            include('vues/v_ActiviteReservationsAVenir.php');}
             break;
         }
 
     case 'voirHebergementLesResAVenir': {
             include('vues/v_menuReservationsAVenir.php');
-            $lesRes = $pdo->getReservationAVenir($id);
+            $lesRes = $pdo->getHebergementReservationAVenir($id);
+             if (empty($lesRes)) {
+                echo"Il n'y a aucune réservation à venir.";
+            } else {
             $Cles = array_keys($lesRes);
             $resASelectionner = $Cles[0];
-            include('vues/v_toutesReservationsAVenir.php');
+            include('vues/v_hebergementsReservationsAVenir.php');}
             break;
         }
 
