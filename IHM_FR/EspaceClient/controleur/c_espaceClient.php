@@ -34,6 +34,10 @@ switch ($action) {
             include("vues/v_accueilClient.php");
             break;
         }
+    case 'wishlist': {
+            include("vues/v_wishlist.php");
+            break;
+    }
     case 'voirFacture': {
             echo $id;
             $lesFactures = $pdo->getReservationDisponible($id);
