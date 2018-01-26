@@ -42,7 +42,7 @@
         <div class="col-md-6 col-sm-6 col-xs-6" id="resa-a-venir">
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-6 r_div" id="">
-                    <a href="#" style="cursor:pointer"><h1>Mes réservations à venir</h1></a>
+                    <a href="indexClient.php?uc=espaceClient&action=menuReservationsAVenir" style="cursor:pointer"><h1>Mes réservations à venir</h1></a>
                 </div>
             </div>
         </div>

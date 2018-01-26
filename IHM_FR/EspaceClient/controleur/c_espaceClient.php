@@ -35,42 +35,66 @@ switch ($action) {
             break;
         }
     case 'voirFacture': {
-        echo $id;
+            echo $id;
             $lesFactures = $pdo->getReservationDisponible($id);
+            $lesFactures2 = $pdo->getReservationDisponible($id);
             $Cles = array_keys($lesFactures);
+            $factureASelectionner = $Cles[0];
+            $Cles = array_keys($lesFactures2);
             $factureASelectionner = $Cles[0];
             include("vues/v_voirFactures.php");
             break;
         }
     case 'genererpdf': {
-            $numRes=$_REQUEST['numRes'];
-            $lesVoyageurs=$pdo->getVoyageur($numRes);
+            $numRes = $_REQUEST['numRes'];
+            var_dump($numRes);
+            $lesVoyageurs = $pdo->getVoyageur($numRes);
             $reservationf = $pdo->getReservation($id, $numRes);
-            $voyageurf=$pdo->getVoyageur($numRes);
-           $donneeRes = $pdo->getReservationPdf($id, $numRes);
-           
+            $voyageurf = $pdo->getVoyageur($numRes);
+            $donneeRes = $pdo->getReservationPdf($id, $numRes);
+
             include("vues/v_pdf.php");
             creerPdf($reservationf);
             break;
         }
-     
-    case 'menuReservationsAVenir':{
-        
-        include('vues/v_menuReservationsAVenir');
-        include('vues/v_toutesReservationsAVenir');
-        break;
-    }
-    
-    case 'voirToutesLesResAVenir':{
-        include('vues/v_toutesReservationsAVenir');
-        break;
-    }
-    
+
+    case 'menuReservationsAVenir': {
+
+            include('vues/v_menuReservationsAVenir.php');
+
+            $lesRes = $pdo->getReservationAVenir($id);
+            if (empty($lesRes)) {
+                echo"Il n'y a aucune réservation à venir.";
+            } else {
+                $Cles = array_keys($lesRes);
+                $resASelectionner = $Cles[0];
+                include('vues/v_toutesReservationsAVenir.php');
+            }
+            break;
+        }
+
+    case 'voirActivitesLesResAVenir': {
+            include('vues/v_menuReservationsAVenir.php');
+            $lesRes = $pdo->getActiviteReservationAVenir($id);
+            $Cles = array_keys($lesRes);
+            $resASelectionner = $Cles[0];
+            include('vues/v_ActiviteReservationsAVenir.php');
+            break;
+        }
+
+    case 'voirHebergementLesResAVenir': {
+            include('vues/v_menuReservationsAVenir.php');
+            $lesRes = $pdo->getReservationAVenir($id);
+            $Cles = array_keys($lesRes);
+            $resASelectionner = $Cles[0];
+            include('vues/v_toutesReservationsAVenir.php');
+            break;
+        }
+
     default: {
             include("vues/v_accueilVClient.php");
 
             break;
         }
-        
 }
 include("vues/v_footer.php");

@@ -135,6 +135,8 @@ class PdoEf {
         return $ligne;
     }
 
+    
+    
     public function getReservationPdf($id, $numRes) {
         $req = "select reservation.nom_chambre, reservation.nombre_nuits,reservation.nombrePersonnes,chambre.prix_chambre from client join reservation on reservation.num_client=client.num_client join chambre on reservation.nom_chambre=chambre.nom_chambre where reservation.num_client=$id and reservation.num_res=$numRes";
         $res = PdoEf::$monPdo->query($req);
@@ -143,7 +145,20 @@ class PdoEf {
     }
 
     public function getReservationAVenir($id) {
-        $req = "select * from reservation where date_debut> NOW()";
+        $req = "select * from reservation where date_debut> NOW() and num_client=$id";
+        $res = PdoEf::$monPdo->query($req);
+        $laLigne = $res->fetchAll();
+        return $laLigne;
+    }
+    
+    public function getActiviteReservationAVenir($id){
+        $req = "select nom_activite, prix_res from reservation where date_debut> NOW() and num_client=$id";
+        $res = PdoEf::$monPdo->query($req);
+        $laLigne = $res->fetchAll();
+        return $laLigne;
+    }
+    public function getHebergementReservationAVenir($id){
+        $req = "select nom_chambre, nom_mh, prix_res from reservation where date_debut> NOW() and num_client=$id";
         $res = PdoEf::$monPdo->query($req);
         $laLigne = $res->fetchAll();
         return $laLigne;
