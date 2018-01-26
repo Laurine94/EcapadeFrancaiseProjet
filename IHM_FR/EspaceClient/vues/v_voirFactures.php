@@ -56,18 +56,6 @@
                                                     </div>
 						</div>
                                             <?php } ?>
-						<!--<div class="item " id="img-slide2" style="background-image: url(../img/espace_membre/mes_reservations_passees.jpg);">
-                                                    <div class="carousel-caption">
-                                                        <h3 data-animation="animated zoomIn" style="font-family: 'Arial', serif;">Nom ville</h3>
-                                                        <a href='indexClient.php?uc=espaceClient&action=genererpdf'><input type="button" class="bouton_ef" data-animation="animated zoomIn" value="Télécharger la facture " style="font-family: 'Arial', serif;"></a>
-                                                    </div>
-						</div>
-						<div class="item " id="img-slide3" style="background-image: url(../img/espace_membre/mes_factures.jpg);">
-                                                    <div class="carousel-caption">
-                                                        <h3 data-animation="animated zoomIn" style="font-family: 'Arial', serif;">Nom ville</h3>
-                                                        <a href="guesthouse.php"><input type="button" class="bouton_ef" data-animation="animated zoomIn" value="Télécharger la facture " style="font-family: 'Arial', serif;"></a>
-                                                    </div>
-						</div>-->
 					</div>
                     </div>
                 </div>
@@ -102,6 +90,7 @@
                     </div>
                 <?php } ?>
                 </ul>
+                </div>
             </div>
         </div>
     </body>

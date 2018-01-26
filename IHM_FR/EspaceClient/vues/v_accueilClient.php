@@ -23,7 +23,7 @@
                     <h1>Ma Wishlist</h1><br>
                     <hr class="hr"><br>
                     <h2>Tous vos coups de coeur pour vos futures séjours en France</h2><br>
-                    <a href="#"><input type="button" class="btn link-w-f" name="btn-voirFactures" value="Voir"></a>
+                    <a href="indexClient.php?uc=espaceClient&action=voirWishlist""><input type="button" class="btn link-w-f" name="btn-voirFactures" value="Voir"></a>
                 </div>
             </div>
         </div>
