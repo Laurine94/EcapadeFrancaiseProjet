@@ -34,7 +34,7 @@ switch ($action) {
             include("vues/v_accueilClient.php");
             break;
         }
-    case 'wishlist': {
+    case 'voirWishlist': {
             include("vues/v_wishlist.php");
             break;
     }
@@ -96,7 +96,7 @@ switch ($action) {
         }
 
     default: {
-            include("vues/v_accueilVClient.php");
+            include("vues/v_accueilClient.php");
 
             break;
         }
