@@ -49,7 +49,7 @@
         <div class="col-md-6 col-sm-6 col-xs-6" id="resa-passees">
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-6 r_div" id="">
-                    <a href="#" style="cursor:pointer"><h1>Mes réservations passées</h1></a>
+                    <a href="indexClient.php?uc=espaceClient&action=menuReservationsPassees" style="cursor:pointer"><h1>Mes réservations passées</h1></a>
                 </div>
             </div>      
         </div>

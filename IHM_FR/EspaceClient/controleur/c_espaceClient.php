@@ -100,6 +100,44 @@ switch ($action) {
             include('vues/v_hebergementsReservationsAVenir.php');}
             break;
         }
+        
+    case 'menuReservationsPassees':{
+        include('vues/v_menuReservationsPassees.php');
+
+            $lesRes = $pdo->getReservationPassees($id);
+            if (empty($lesRes)) {
+                echo"Il n'y a aucune réservation passée.";
+            } else {
+                $Cles = array_keys($lesRes);
+                $resASelectionner = $Cles[0];
+                include('vues/v_toutesReservationsPassees.php');
+            }
+        break;
+    }
+    
+    case 'voirHebergementLesResPassee': {
+            include('vues/v_menuReservationsPassees.php');
+            $lesRes = $pdo-> getHebergementReservationPassees($id);
+             if (empty($lesRes)) {
+                echo"Il n'y a aucune réservation d'hebergement Passées.";
+            } else {
+            $Cles = array_keys($lesRes);
+            $resASelectionner = $Cles[0];
+            include('vues/v_hebergementsReservationsPassees.php');}
+            break;
+        }
+        
+        case 'voirActivitesPassees': {
+            include('vues/v_menuReservationsPassees.php');
+            $lesRes = $pdo->getActiviteReservationPassees($id);
+             if (empty($lesRes)) {
+                echo"Il n'y a aucune reservation d'activité passée.";
+            } else {
+            $Cles = array_keys($lesRes);
+            $resASelectionner = $Cles[0];
+            include('vues/v_ActiviteReservationsPassees.php');}
+            break;
+        }
 
     default: {
             include("vues/v_accueilClient.php");

@@ -163,5 +163,26 @@ class PdoEf {
         $laLigne = $res->fetchAll();
         return $laLigne;
     }
+    
+    public function getReservationPassees($id) {
+        $req = "select * from reservation where date_debut< NOW() and num_client=$id";
+        $res = PdoEf::$monPdo->query($req);
+        $laLigne = $res->fetchAll();
+        return $laLigne;
+    }
+    
+    public function getHebergementReservationPassees($id){
+        $req = "select nom_chambre, nom_mh, prix_res from reservation where date_debut< NOW() and num_client=$id";
+        $res = PdoEf::$monPdo->query($req);
+        $laLigne = $res->fetchAll();
+        return $laLigne;
+    }
+    
+    public function getActiviteReservationPassees($id){
+        $req = "select nom_activite, prix_res from reservation where date_debut< NOW() and num_client=$id";
+        $res = PdoEf::$monPdo->query($req);
+        $laLigne = $res->fetchAll();
+        return $laLigne;
+    }
 
 }
