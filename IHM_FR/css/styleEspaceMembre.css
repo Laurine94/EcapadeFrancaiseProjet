@@ -203,17 +203,34 @@ v_voirFactures
     margin-bottom: 10px;
 }
 
+/**********************
+v_wishlist
+**********************/
 
+#titreWish{
+    text-align: center;
+    letter-spacing: 0.25em;
+    margin-top: 20px;
+    font-size: 20px;
+}
+    
+/*Carousel*/
 
-
-    
-    
-    
-    
-    
-    
-    
-    
+  .carousel {
+    margin: 0 auto;
+    width:800px;
+    height: 300px;
+    display: relative;
+  }
+  .carousel img {
+    display: hidden; /* hide images until carousel prepares them */
+    cursor: pointer; /* not needed if you wrap carousel items in links */
+  }
+  
+  
+  
+  
+     
 #bulle {
     text-align: center ;
     color: white ;
