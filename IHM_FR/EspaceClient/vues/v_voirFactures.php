@@ -20,8 +20,7 @@
 					<!--puces-->
 					<ol class="carousel-indicators ">
 						<li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-                                                <?php $c = count($lesFactures); 
-                                                for($i = 1; $i <= $c; $i++){?>
+                                                <?php for($i = 1; $i <= 3; $i++){?>
 						<li data-target="#bs-carousel" data-slide-to="<?php echo $i ?>" ></li>
                                                 <?php } ?>
 					</ol>
@@ -36,16 +35,16 @@
                                                     </div>
 						</div>
                                             <?php
-                                            foreach ($lesFactures as $uneFacture) {
-                                                $mail = $uneFacture['mail_client'];
-                                                $nomClient = $uneFacture['nom_client'];
-                                                $prenomClient = $uneFacture['prenom_client'];
-                                                $nomChambre=$uneFacture['nom_chambre'];
-                                                $nomMh=$uneFacture['nom_mh'];
-                                                $activite=$uneFacture['nom_activite'];
-                                                $dateDebut=$uneFacture['date_debut'];
-                                                $dateFin=$uneFacture['date_fin'];
-                                                $prix=$uneFacture['prix_res'];
+                                            foreach ($lesFactures2 as $uneFacture2) {
+                                                $mail = $uneFacture2['mail_client'];
+                                                $nomClient = $uneFacture2['nom_client'];
+                                                $prenomClient = $uneFacture2['prenom_client'];
+                                                $nomChambre=$uneFacture2['nom_chambre'];
+                                                $nomMh=$uneFacture2['nom_mh'];
+                                                $activite=$uneFacture2['nom_activite'];
+                                                $dateDebut=$uneFacture2['date_debut'];
+                                                $dateFin=$uneFacture2['date_fin'];
+                                                $prix=$uneFacture2['prix_res'];
                                             ?>
 						<div class="item img-slide" id="" style="background-image: url(../img/espace_membre/mes_reservations_a_venir_3.jpg);">
                                                     <div class="carousel-caption" >
@@ -65,31 +64,37 @@
 
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                <ul class="" >
-                <?php
-                foreach ($lesFactures as $uneFacture) {
-                    $mail = $uneFacture['mail_client'];
-                    $nomClient = $uneFacture['nom_client'];
-                    $prenomClient = $uneFacture['prenom_client'];
-                    $nomChambre=$uneFacture['nom_chambre'];
-                    $nomMh=$uneFacture['nom_mh'];
-                    $activite=$uneFacture['nom_activite'];
-                    $dateDebut=$uneFacture['date_debut'];
-                    $dateFin=$uneFacture['date_fin'];
-                    $prix=$uneFacture['prix_res'];
-                ?>
-                    <div class="row">
-                        <div class="col-md-2 col-sm-2 col-xs-2" id="pdf">
-                            <li id="pdf_li">
-                                <div class=''><?php echo $nomChambre ?> - <?php echo $nomMh ?> - <?php echo $activite ?></div>
-                                <div class=''> Du <?php echo $dateDebut ?> au <?php echo $dateFin ?></div>
-                                <div class=''><?php echo $prix ?>€ </div>
-                                <div class=''> <a href='indexClient.php?uc=espaceClient&action=genererpdf'>Télécharger pdf</a></div>
-                            </li>
+                    <nav class="navbar navbar">
+                        <div class="container-fluid">
+                            <ul class="nav navbar-nav listeReservation">
+                                <?php
+                                foreach ($lesFactures as $uneFacture) {
+                                    $mail = $uneFacture['mail_client'];
+                                    $nomClient = $uneFacture['nom_client'];
+                                    $prenomClient = $uneFacture['prenom_client'];
+                                    $nomChambre=$uneFacture['nom_chambre'];
+                                    $nomMh=$uneFacture['nom_mh'];
+                                    $activite=$uneFacture['nom_activite'];
+                                    $dateDebut=$uneFacture['date_debut'];
+                                    $dateFin=$uneFacture['date_fin'];
+                                    $prix=$uneFacture['prix_res'];
+                                ?>
+<!--                                    <div class="row">
+                                        <div class="col-md-2 col-sm-2 col-xs-2" id="pdf">-->
+                                            <li id="pdf_li">
+                                                <div class=''><?php echo $nomChambre ?> - <?php echo $nomMh ?> - <?php echo $activite ?></div>
+                                                <div class=''> Du <?php echo $dateDebut ?> au <?php echo $dateFin ?></div>
+                                                <div class=''><?php echo $prix ?>€ </div>
+                                                <div class=''> <a href='indexClient.php?uc=espaceClient&action=genererpdf'>Télécharger pdf</a></div>
+                                                <hr class="hr">
+                                            </li>
+                                            
+<!--                                        </div>
+                                    </div>-->
+                                <?php } ?>
+                            </ul>
                         </div>
-                    </div>
-                <?php } ?>
-                </ul>
+                    </nav>
                 </div>
             </div>
         </div>

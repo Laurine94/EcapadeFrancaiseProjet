@@ -7,6 +7,7 @@ if (!isset($_REQUEST['action'])) {
 }
 $action = $_REQUEST['action'];
 $id = $_SESSION['mail'];
+//include("vues/v_menu.html");
 include("vues/v_headClient.php");
 switch ($action) {
     case 'valideConnexion': {
@@ -39,13 +40,12 @@ switch ($action) {
             break;
     }
     case 'voirFacture': {
-            echo $id;
             $lesFactures = $pdo->getReservationDisponible($id);
-            $lesFactures2 = $pdo->getReservationDisponible($id);
+            $lesFactures2 = $pdo->getReservationDisponibleCarousel($id);
             $Cles = array_keys($lesFactures);
             $factureASelectionner = $Cles[0];
-            $Cles = array_keys($lesFactures2);
-            $factureASelectionner = $Cles[0];
+            $Cles2 = array_keys($lesFactures2);
+            $factureASelectionner2 = $Cles2[0];
             include("vues/v_voirFactures.php");
             break;
         }

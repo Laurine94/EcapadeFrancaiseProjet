@@ -10,12 +10,15 @@
     </head>
 
     <body>
-        <div class="container-fluid"
+        
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 carousel"
                     <h1 id="titreWish">Réservez vos activités favorites</h1>
                     <div class=""> 
-
+                    <?php
+                        //foreach ($array as $key){
+                    ?>
                         <a href="#"><img src="../img/villes_activites/Marseille_activites-min.jpg" alt="Image 1" /></a>
                         <a href="#"><img src="../img/villes_activites/Deauville_activites-min-1.jpg" alt="Image 2" /></a>
                         <a href="#"><img src="../img/villes_activites/French-Riviera_activites-min-1.jpg" alt="Image 3" /></a>
@@ -23,10 +26,11 @@
                         <a href="#"><img src="../img/villes_activites/Lyon_activites-min-1.jpg" alt="Image 5" /></a>
                         <a href="#"><img src="../img/villes_activites/Martinique_activites-min-1.jpg" alt="Image 6" /></a>
                         <a href="#"><img src="../img/villes_activites/saint-barthelemy_activites-min-1.jpg" alt="Image 6" /></a>
-
+                        <?php //} ?>
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>  
+                
     </body>
 </html>

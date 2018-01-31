@@ -7,7 +7,7 @@
     
     footer{
         background-color: #183e67;
-        position:relative;
+        position:fixed;
         bottom:0;
         width:100%;
         padding-top:10px;
@@ -131,3 +131,4 @@
         </div>
     </div>
 </footer>
+</div>

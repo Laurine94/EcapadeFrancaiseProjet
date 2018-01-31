@@ -146,8 +146,8 @@ switch ($action) {
             break;
         }
     default : {
-            /*include ("controleur/c_espaceClient.php");
-            exit();*/
+//            include ("controleur/c_espaceClient.php");
+//            exit();
             include("vues/v_connexionClient.php");
             break;
         }

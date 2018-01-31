@@ -95,6 +95,8 @@ body p, body input[type=button]{
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js'></script>
 
+    
+            
 <div id="navbar">
 <div id="logo">
     <a href="index.php"><img class="img_logo_1" src="../img/logos/logo_basic.png" alt="logo_ef"></a>
@@ -102,3 +104,4 @@ body p, body input[type=button]{
 </div>
 
 </div>
+    

@@ -120,6 +120,12 @@ class PdoEf {
         $ligne = $resultat->fetchAll();
         return $ligne;
     }
+    public function getReservationDisponibleCarousel($id) {
+        $sql = "SELECT * FROM reservation join client on reservation.num_client=client.num_client where reservation.num_client='$id' order by YEAR(date_debut) desc, month(date_debut) desc, day(date_debut)desc limit 3";
+        $resultat = PdoEf::$monPdo->query($sql);
+        $ligne = $resultat->fetchAll();
+        return $ligne;
+    }
 
     public function getReservation($id, $numRes) {
         $req = "select * from  chambre join reservation on reservation.nom_chambre=chambre.nom_chambre join client on reservation.num_client=client.num_client where reservation.num_client=$id and reservation.num_res=$numRes";
