@@ -35,13 +35,7 @@
                                     <div>€<?php echo $prix ?></div>
                                 </div>
                             </div>
-                            <?php } ?>
-                                
-
-
-                            <a href='indexClient.php?uc=espaceClient&action=#'><input type="button" class="bouton_ef" data-animation="animated zoomIn" value="Voir la commande " style="font-family: 'Arial', serif;"></a>
-
-                            <?php
+                            <?php } 
                             }
 
                             if ($nomActivite != ""){
@@ -64,10 +58,7 @@
                                         <div class="row">€ <?php echo $prix?></div>
                                     </div>
                                 </div>
-                                <?php }  ?>
-
-                            <a href='indexClient.php?uc=espaceClient&action=#'><input type="button" class="bouton_ef" data-animation="animated zoomIn" value="Voir la commande " style="font-family: 'Arial', serif;"></a>
-                            <?php
+                                <?php }  
                             }
                             ?>
                             <li>

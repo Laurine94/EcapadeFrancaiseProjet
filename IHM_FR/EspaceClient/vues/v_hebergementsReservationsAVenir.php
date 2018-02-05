@@ -33,11 +33,7 @@
                                     <div class="row"><h4>€<?php echo $prix ?></h4></div>
                                 </div>
                             </div>
-                            <?php } ?>
-
-                            <a href='indexClient.php?uc=espaceClient&action=#'><input type="button" class="bouton_ef" data-animation="animated zoomIn" value="Voir la commande " style="font-family: 'Arial', serif;"></a>
-
-                            <?php
+                            <?php } 
                         }
                         ?>
                             </li>

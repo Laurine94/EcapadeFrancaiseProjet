@@ -34,6 +34,7 @@ switch ($action) {
         }
     case 'accueil': {
             include("vues/v_accueilClient.php");
+//            include("../../index.php");
             break;
         }
     case 'voirWishlist': {

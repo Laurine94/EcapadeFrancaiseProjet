@@ -9,6 +9,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <!-- animsition.js -->
         <script src="../../js/animsition.min.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         
         <title>ESCAPADE FRANCAISE</title>
         
@@ -48,19 +49,19 @@
                 <div class="col-md-3 col-sm-3 col-xs-3 connetwork" id="" align="center">
                     <blockquote id="blockquote">
                     <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12 coFacebook">
-                            <input type="button" class="btn btn-primary " id="coFacebook" value="Se connecter avec Facebook"><br><br>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <button type="button" class="btn btn-primary" id="coFacebook" ><span class="iconNetwork"><i class="fab fa-facebook-f"></i></span> Se connecter avec Facebook</button><br><br>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            <input type="button" class="btn btn-danger" id="coGoogle" value="Se connecter avec Google+"><br><br>
+                            <button type="button" class="btn btn-danger" id="coGoogle"><span class="iconNetwork"><i class="fab fa-google-plus-g"></i></span> Se connecter avec Google+</button><br><br>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <a href="indexClient.php?uc=connexion&action=inscription" type="button" class="btn btn-default"> s'inscrire </a>
-
+                           
                         </div>
                     </div>
                     </blockquote>
