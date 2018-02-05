@@ -102,6 +102,13 @@ body p, body input[type=button]{
     <a href="index.php"><img class="img_logo_1" src="../img/logos/logo_basic.png" alt="logo_ef"></a>
     <a href="../ihm/" id="language-ch"><img src="../../lng/en.png" alt="english"> English</a>
 </div>
-
+    <ul id="nav">
+        <li><a href="indexClient.php?uc=espaceClient&action=voirWishlist">ACCUEIL  </a></li>
+        <li><a href="indexClient.php?uc=espaceClient&action=voirWishlist">MA WISHLIST  </a></li>
+        <li><a href="indexClient.php?uc=espaceClient&action=voirFacture">MES FACTURES </a></li>
+        <li><a href="indexClient.php?uc=espaceClient&action=menuReservationsAVenir">MES RÉSERVATIONS</a></li>
+        <li><a href="indexClient.php?uc=espaceClient&action=menuReservationsPassees"> RÉSERVATIONS PASSÉES </a></li>
+        <li><a href="#">DECONNEXION </a></li>
+    </ul>
 </div>
     

@@ -4,8 +4,8 @@
 ?>
 <div class="container-fluid">
     <div class="row" id="imageEncadreBienvenue">
-        <div class="col-md-12 col-sm-12 col-xs-12" >
-                <div class="col-md-12 col-xs-12" id="encadreBienvenue">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12" id="encadreBienvenue">
                     <h2 id="h2_encadreBienvenue">Bienvenue sur votre espace client <?php echo $prenom ;?></h2>
 
                 </div>
@@ -23,7 +23,7 @@
                     <h1>Ma Wishlist</h1><br>
                     <hr class="hr"><br>
                     <h2>Tous vos coups de coeur pour vos futures séjours en France</h2><br>
-                    <a href="indexClient.php?uc=espaceClient&action=voirWishlist""><input type="button" class="btn link-w-f" name="btn-voirFactures" value="Voir"></a>
+                    <a href="indexClient.php?uc=espaceClient&action=voirWishlist"><input type="button" class="btn link-w-f" name="btn-voirFactures" value="Voir"></a>
                 </div>
             </div>
         </div>

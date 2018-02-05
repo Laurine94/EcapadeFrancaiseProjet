@@ -1,4 +1,4 @@
-        <div class="col-md-8 col-sm-8 col-xs-8 listeReservationChambre" id="">
+        <div class="col-md-12 col-sm-12 col-xs-12 listeReservationChambre" id="">
             <nav class="navbar navbar">
                 <div class="container-fluid">
                     <ul class="nav navbar-nav listeReservation">
@@ -20,9 +20,10 @@
                             shuffle($tab); // Mélange le tableau
                             $tab = array_slice($tab, 0, 1); // Garde la première image
                             // Enfin on fait une boucle du tableau pour l'affichage
-                    ?>
+                        ?>
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <hr class="hr">
                                 <?php
                                 foreach ($tab as $img) {
                                 ?>
@@ -38,9 +39,12 @@
 
                             <?php
                         }
+                        ?>
+                            </li>
+                    <?php
                     }
                     ?>
-                        </li>
+                        
                     </ul>
                 </div>
             </nav>

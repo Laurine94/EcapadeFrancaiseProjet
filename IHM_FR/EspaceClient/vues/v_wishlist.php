@@ -25,7 +25,7 @@
                         <a href="#"><img src="../img/villes_activites/Haute-Savoie_activites-min-1.jpg" alt="Image 4" /></a>
                         <a href="#"><img src="../img/villes_activites/Lyon_activites-min-1.jpg" alt="Image 5" /></a>
                         <a href="#"><img src="../img/villes_activites/Martinique_activites-min-1.jpg" alt="Image 6" /></a>
-                        <a href="#"><img src="../img/villes_activites/saint-barthelemy_activites-min-1.jpg" alt="Image 6" /></a>
+                        <a href="#"><img src="../img/villes_activites/saint-barthelemy_activites-min-1.jpg" alt="Image 7" /></a>
                         <?php //} ?>
                     </div>
                 </div>

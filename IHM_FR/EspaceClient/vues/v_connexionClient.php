@@ -46,6 +46,7 @@
                    
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-3 connetwork" id="" align="center">
+                    <blockquote id="blockquote">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 coFacebook">
                             <input type="button" class="btn btn-primary " id="coFacebook" value="Se connecter avec Facebook"><br><br>
@@ -62,6 +63,7 @@
 
                         </div>
                     </div>
+                    </blockquote>
                 </div>
             </div>
         </div>

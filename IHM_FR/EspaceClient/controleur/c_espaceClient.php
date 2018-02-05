@@ -8,15 +8,16 @@ if (!isset($_REQUEST['action'])) {
 $action = $_REQUEST['action'];
 $id = $_SESSION['mail'];
 //include("vues/v_menu.html");
+//echo "<div class='site-wrap'>";
 include("vues/v_headClient.php");
 switch ($action) {
     case 'valideConnexion': {
             $mail = $_POST['mail'];
             $mdp = $_POST['mdp'];
             //Cryptage de mot de passe
-            //$mdp= md5($mdp);
+//            $mdp = sha1($mdp);
 
-            $client = $pdo->getInfosClient($mail, $mdp);
+            $client = $pdo->getInfosClient($mail, sha1($mdp));
             if (!is_array($client)) {
                 ajouterErreur("Adresse mail ou mot de passe incorrect");
                 include("vues/v_erreurs.php");

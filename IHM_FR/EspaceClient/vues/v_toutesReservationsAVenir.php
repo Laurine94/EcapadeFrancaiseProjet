@@ -1,4 +1,4 @@
-        <div class="col-md-8 col-sm-8 col-xs-8 listeReservationChambre">
+        <div class="col-md-12 col-sm-12 col-xs-12 listeReservationChambre">
             <nav class="navbar navbar">
                 <div class="container-fluid">
                     <ul class="nav navbar-nav listeReservation">
@@ -23,20 +23,20 @@
                             $tab = array_slice($tab, 0, 1); // Garde la première image
                             // Enfin on fait une boucle du tableau pour l'affichage
                             ?>
-                            <div id="Espace_foto">
-                                <div id="SMEspace_foto">
-                                    <hr class="separationH_foto">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <hr class="hr">
                             <?php
                             foreach ($tab as $img) {
                             ?>
-
-                                    <div class="float_foto"><img src="<?php echo $path ?><?php echo $img ?>" width=250 alt="" /></div>
-                                    <h4 class="ST1Espace_foto"><?php echo $nomMh ?> - <?php echo $nomChambre ?></h4></br>
+                                    <div class="row"><img src="<?php echo $path ?><?php echo $img ?>" width=250 alt="" /></div>
+                                    <div class="row"><h4 class=""><?php echo $nomMh ?> - <?php echo $nomChambre ?></h4></div></br>
                           <!--      <hr class="separationH_foto">-->
-                                    €<?php echo $prix ?>
-                            <?php } ?>
+                                    <div>€<?php echo $prix ?></div>
                                 </div>
                             </div>
+                            <?php } ?>
+                                
 
 
                             <a href='indexClient.php?uc=espaceClient&action=#'><input type="button" class="bouton_ef" data-animation="animated zoomIn" value="Voir la commande " style="font-family: 'Arial', serif;"></a>
@@ -51,27 +51,30 @@
                             shuffle($tab); // Mélange le tableau
                             $tab = array_slice($tab, 0, 1); // Garde la première image
                 // Enfin on fait une boucle du tableau pour l'affichage
-                            ?>
-                            <div id="Espace_foto">
-                                <div id="SMEspace_foto">
-                                    <hr class="separationH_foto">
+                            ?>  
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <hr class="hr">
                                         <?php
                                         foreach ($tab as $img) {
                                         ?>
-                                        <div class="float_foto"><img src="<?php echo $path ?><?php echo $img ?>" width=250 alt="" /></div>
-                                        <h4 class="ST1Espace_foto"><?php echo $nomActivite ?></h4></br>
+                                        <div class="row"><img src="<?php echo $path ?><?php echo $img ?>" width=250 alt="" /></div>
+                                        <div class="row"><h4 class=""><?php echo $nomActivite ?></h4></div></br>
                             <!--        <hr class="separationH_foto">-->
-                                        € <?php echo $prix ;
-                                        }  ?>
+                                        <div class="row">€ <?php echo $prix?></div>
+                                    </div>
                                 </div>
-                            </div>
+                                <?php }  ?>
 
                             <a href='indexClient.php?uc=espaceClient&action=#'><input type="button" class="bouton_ef" data-animation="animated zoomIn" value="Voir la commande " style="font-family: 'Arial', serif;"></a>
                             <?php
                             }
+                            ?>
+                            <li>
+                        <?php
                         }
                         ?>
-                        <li>
+                        
                     </ul>
                 </div>
             </nav>
