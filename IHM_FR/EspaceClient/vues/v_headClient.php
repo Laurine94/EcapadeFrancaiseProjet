@@ -108,7 +108,7 @@ body p, body input[type=button]{
         <li><a href="indexClient.php?uc=espaceClient&action=voirFacture">MES FACTURES </a></li>
         <li><a href="indexClient.php?uc=espaceClient&action=menuReservationsAVenir">MES RÉSERVATIONS</a></li>
         <li><a href="indexClient.php?uc=espaceClient&action=menuReservationsPassees"> RÉSERVATIONS PASSÉES </a></li>
-        <li><a href="#">DECONNEXION </a></li>
+        <li><a href="indexClient.php?uc=espaceClient&action=deconnexion">DECONNEXION </a></li>
     </ul>
 </div>
     
