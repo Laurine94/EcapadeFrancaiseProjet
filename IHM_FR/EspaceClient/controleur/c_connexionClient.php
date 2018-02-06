@@ -243,6 +243,11 @@ switch ($action) {
         header("Location:http://localhost/escapadefrancaisev3/ihm_fr/EspaceClient/indexClient.php?uc=espaceClient&action=valideConnexion&mail=".$_SESSION['mail']."");
         break;                
     }
+    case'deconnexion': {
+            deconnecter();
+            include("vues/v_connexionClient.php");
+            break;
+        }
     default : {
             include("vues/v_connexionClient.php");
             break;

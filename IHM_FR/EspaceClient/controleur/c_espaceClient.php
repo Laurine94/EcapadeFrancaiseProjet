@@ -143,11 +143,7 @@ switch ($action) {
             break;
         }
         
-        case'deconnexion': {
-            deconnecter();
-            include("vues/v_connexionClient.php");
-            break;
-        }
+        
 
     default: {
             include("vues/v_accueilClient.php");

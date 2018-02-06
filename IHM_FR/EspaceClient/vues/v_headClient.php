@@ -103,12 +103,12 @@ body p, body input[type=button]{
     <a href="../ihm/" id="language-ch"><img src="../../lng/en.png" alt="english"> English</a>
 </div>
     <ul id="nav">
-        <li><a href="indexClient.php?uc=espaceClient&action=accueil&mail=<?php echo $_SESSION['mail']?>">ACCUEIL  </a></li>
+        <li><a href="indexClient.php?uc=espaceClient&action=accueil">ACCUEIL  </a></li>
         <li><a href="indexClient.php?uc=espaceClient&action=voirWishlist">MA WISHLIST  </a></li>
         <li><a href="indexClient.php?uc=espaceClient&action=voirFacture">MES FACTURES </a></li>
         <li><a href="indexClient.php?uc=espaceClient&action=menuReservationsAVenir">MES RÉSERVATIONS</a></li>
         <li><a href="indexClient.php?uc=espaceClient&action=menuReservationsPassees"> RÉSERVATIONS PASSÉES </a></li>
-        <li><a href="indexClient.php?uc=espaceClient&action=deconnexion">DECONNEXION </a></li>
+        <li><a href="indexClient.php?uc=connexion&action=deconnexion">DECONNEXION </a></li>
     </ul>
 </div>
     
