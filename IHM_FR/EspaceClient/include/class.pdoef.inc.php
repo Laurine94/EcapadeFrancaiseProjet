@@ -63,6 +63,14 @@ class PdoEf {
         return $ligne;
     }
 
+    public function getMailClient($mail) {
+        $req = "select client.num_client as num, client.nom_client as nom, client.prenom_client as prenom from client 
+		where client.mail_client='$mail'";
+        $rs = PdoEf::$monPdo->query($req);
+        $ligne = $rs->fetch();
+        return $ligne;
+    }
+
     public function sauvegardeClient($nom, $prenom, $sexe, $mail, $tel, $adresse, $ville, $cp, $pays, $mdp, $confirmkey) {
         // Hachage du mot de passe
         $mdp_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
@@ -141,8 +149,6 @@ class PdoEf {
         return $ligne;
     }
 
-    
-    
     public function getReservationPdf($id, $numRes) {
         $req = "select reservation.nom_chambre, reservation.nombre_nuits,reservation.nombrePersonnes,chambre.prix_chambre from client join reservation on reservation.num_client=client.num_client join chambre on reservation.nom_chambre=chambre.nom_chambre where reservation.num_client=$id and reservation.num_res=$numRes";
         $res = PdoEf::$monPdo->query($req);
@@ -156,39 +162,72 @@ class PdoEf {
         $laLigne = $res->fetchAll();
         return $laLigne;
     }
-    
-    public function getActiviteReservationAVenir($id){
+
+    public function getActiviteReservationAVenir($id) {
         $req = "select nom_activite, prix_res from reservation where date_debut> NOW() and num_client=$id";
         $res = PdoEf::$monPdo->query($req);
         $laLigne = $res->fetchAll();
         return $laLigne;
     }
-    public function getHebergementReservationAVenir($id){
+
+    public function getHebergementReservationAVenir($id) {
         $req = "select nom_chambre, nom_mh, prix_res from reservation where date_debut> NOW() and num_client=$id";
         $res = PdoEf::$monPdo->query($req);
         $laLigne = $res->fetchAll();
         return $laLigne;
     }
-    
+
     public function getReservationPassees($id) {
         $req = "select * from reservation where date_debut< NOW() and num_client=$id";
         $res = PdoEf::$monPdo->query($req);
         $laLigne = $res->fetchAll();
         return $laLigne;
     }
-    
-    public function getHebergementReservationPassees($id){
+
+    public function getHebergementReservationPassees($id) {
         $req = "select nom_chambre, nom_mh, prix_res from reservation where date_debut< NOW() and num_client=$id";
         $res = PdoEf::$monPdo->query($req);
         $laLigne = $res->fetchAll();
         return $laLigne;
     }
-    
-    public function getActiviteReservationPassees($id){
+
+    public function getActiviteReservationPassees($id) {
         $req = "select nom_activite, prix_res from reservation where date_debut< NOW() and num_client=$id";
         $res = PdoEf::$monPdo->query($req);
         $laLigne = $res->fetchAll();
         return $laLigne;
     }
 
+    public function recupMailExist($recup_mail) {
+        $recup_mail_exist = PdoEf::$monPdo->prepare('select id from recuperation where mail=?');
+        $recup_mail_exist->execute(array($recup_mail));
+        return $recup_mail_exist->rowCount();
+    }
+
+    public function recupInsert($recup_mail, $recup_code) {
+        $recup_insert = PdoEf::$monPdo->prepare('insert into recuperation(mail,code) values (?,?)');
+        $recup_insert->execute(array($recup_mail, $recup_code));
+    }
+
+    public function recupUpdate($recup_mail, $recup_code) {
+        $recup_insert = PdoEf::$monPdo->prepare('update recuperation set code=? where mail=?');
+        $recup_insert->execute(array($recup_code, $recup_mail));
+    }
+
+    function recuperCode($recup_mail, $verif_code) {
+        $verif_req = PdoEf::$monPdo->prepare('select id from recuperation where mail=? and code=?');
+        $verif_req->execute(array($recup_mail, $verif_code));
+        $verif_req = $verif_req->rowCount();
+        return $verif_req;
+    }
+
+    function deleteCode($recup_mail){
+        $del_req= PdoEf::$monPdo->prepare('delete from recuperation where mail=?');
+        $del_req->execute(array($recup_mail));
+        
+    }
+    function insertNouveauMdp($mdp,$recup_mail){
+        $ins_mdp=PdoEf::$monPdo->prepare('update client set mdp=? where mail_client=?');
+        $ins_mdp->execute(array($mdp,$recup_mail));
+    }
 }

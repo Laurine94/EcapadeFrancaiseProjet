@@ -7,6 +7,7 @@ if (!isset($_REQUEST['action'])) {
 }
 $action = $_REQUEST['action'];
 $id = $_SESSION['mail'];
+var_dump($id);
 //include("vues/v_menu.html");
 //echo "<div class='site-wrap'>";
 include("vues/v_headClient.php");
@@ -33,6 +34,7 @@ switch ($action) {
             break;
         }
     case 'accueil': {
+            
             include("vues/v_accueilClient.php");
 //            include("../../index.php");
             break;

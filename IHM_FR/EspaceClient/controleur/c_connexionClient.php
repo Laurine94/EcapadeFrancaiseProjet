@@ -12,30 +12,7 @@ switch ($action) {
             include("vues/v_connexionClient.php");
             break;
         }
-   /* case 'valideConnexion': {
-            $mail = $_POST['mail'];
-            $mdp = $_POST['mdp'];
-            //Cryptage de mot de passe
-            //$mdp= md5($mdp);
-            echo"didididiidididdi";
-
-            $client = $pdo->getInfosClient($mail, $mdp);
-            if (!is_array($client)) {
-                ajouterErreur("Adresse mail ou mot de passe incorrect");
-                include("vues/v_erreurs.php");
-                include("vues/v_connexionClient.php");
-            } else {
-                $num = $client['num'];
-                $nom = $client['nom'];
-                $prenom = $client['prenom'];
-                connecter($num, $nom, $prenom);
-                var_dump($action);
-                include("c_espaceClient.php");
-                exit();
-            }
-
-            break;
-        }*/
+  
     case 'inscription': {
             include("vues/v_inscription.php");
             break;
@@ -99,10 +76,10 @@ switch ($action) {
             <html>
                 <body>
                     <div align="center">
-                    <a href="http://localhost/escapadefrancaisev2/IHM_FR/EspaceClient/indexClient.php?mail=' . urlencode($mail) . '&key=' . $key . '&uc=connexion&action=confirmationMail">Confirmez votre compte.</a> 
+                    <a href="http://localhost/escapadefrancaisev3/IHM_FR/EspaceClient/indexClient.php?mail=' . urlencode($mail) . '&key=' . $key . '&uc=connexion&action=confirmationMail">Confirmez votre compte.</a> 
                         Nous vous remercions pour votre inscription sur notre site Escapade Française.<br/>
                         Veuillez confirmer votre inscription en cliquant sur le lien ci-dessous.<br/>
-                        <a href="localhost/escapadefrancaise/ihm_fr/EspaceClient/indexClient.php> retour vers le site </a>"
+                        <a href="localhost/escapadefrancaisev3/ihm_fr/EspaceClient/indexClient.php> retour vers le site </a>"
                        <br/>---------------<br/>
                         Ceci est un mail automatique, Merci de ne pas y répondre.
                     </div>
@@ -145,9 +122,128 @@ switch ($action) {
             }
             break;
         }
+        case 'valideEmailMdpOublie': {
+            if (isset($_GET['section'])) {
+                $section = htmlspecialchars($_GET['section']);
+            } else {
+                $section = "";
+            }
+            if (isset($_POST['recup_submit'], $_POST['recup_mail'])) {
+
+                if (!empty($_POST['recup_mail'])) {
+                    $recup_mail = htmlspecialchars($_REQUEST['recup_mail']);
+                    if (filter_var($recup_mail, FILTER_VALIDATE_EMAIL)) {
+                        $verifMail = $pdo->getMailClient($recup_mail);
+                        if (!empty($verifMail)) {
+                            $client = $pdo->getMailClient($recup_mail);
+                            $nomClient = $client['nom'];
+                            $prenomClient = $client['prenom'];
+                            var_dump($nomClient, $prenomClient);
+                            $_SESSION['recup_mail'] = $recup_mail;
+                            $recup_code = "";
+                            for ($i = 0; $i <= 8; $i++) {
+                                $recup_code .= mt_rand(0, 9);
+                            }
+                            $_SESSION['recup_code'] = $recup_code;
+
+                            $mail_recup_exist = $pdo->recupMailExist($recup_mail);
+                            if ($mail_recup_exist == 1) {
+                                $pdo->recupUpdate($recup_mail, $recup_code);
+                            } 
+                            else {
+                                $pdo->recupInsert($recup_mail, $recup_code);
+                            }
+                            $header = "MIME-Version: 1.0\r\n";
+                            $header .= 'From:"EscapadeFrancaise.com"<support@escapadefrancaise.com>' . "\n";
+                            $header .= 'Content-Type:text/html; charset="uft-8"' . "\n";
+                            $header .= 'Content-Transfer-Encoding: 8bit';
+
+                            $message = '
+                                <html>
+                                <head>
+                                    <title>Récupération de mot de passe- Escapade Française</title>
+                                </head>
+                                    <body>
+                                        <div align="center">
+                                            Bonjour <b>' . $nomClient . ' ' . $prenomClient . '</b>,            </div><br/>
+                                                Voici  votre code de récupératon: <b>' . $recup_code . '</b><br/>
+
+                                                A bientôt sur notre site d escapade francaise!<br/>
+                                                <br/><br/><br/><br/>
+
+
+                                            Ceci est un mail automatique, Merci de ne pas y répondre.
+
+                                    </body>
+                                </html>
+                                    ';
+                            mail($recup_mail, "Récupération de mot de passe", $message, $header);
+                            header("Location:http://localhost/escapadefrancaisev3/ihm_fr/EspaceClient/indexClient.php?uc=connexion&action=valideEmailMdpOublie&section=code");
+                        }
+                        //si le mail n'existe pas dans la BDD
+                        else {
+                            echo "<span style='color:red'>Vous n'êtes pas inscrit sur notre site.</span>";
+                        }
+                        
+                    }
+                }
+                //si le client n'a rien saisi
+                else {
+                    echo "<span style='color:red'>Vous n'avez pas saisi de mail.</span>";
+                }
+            }
+
+
+            if (isset($_POST['verif_submit'], $_POST['verif_code'])) {
+                if (!empty($_POST['verif_code'])) {
+                    $verif_code= htmlspecialchars($_POST['verif_code']);
+                    $verif_req=$pdo->recuperCode($_SESSION['recup_mail'], $verif_code);
+                    var_dump($verif_req);
+                    if($verif_req==1){
+                        $del_req=$pdo->deleteCode($_SESSION['recup_mail']);
+                        header('Location:http://localhost/escapadefrancaisev3/ihm_fr/EspaceClient/indexClient.php?uc=connexion&action=valideEmailMdpOublie&section=changemdp');
+                    }
+                    else{
+                        echo"<span style='color:red'>Code invalide</span>";
+                    }
+                } else {
+                    echo "<span style='color:red'>Veuillez entrer votre code de confirmation..</span>";
+                }
+            }
+            
+            if(isset($_POST['change_submit'])){
+                if(isset($_POST['change_mdp'],$_POST['change_mdpc'])){
+                    $mdp= htmlspecialchars($_POST['change_mdp']);
+                    $mdpc= htmlspecialchars($_POST['change_mdpc']);
+                    if(!empty($mdp)and !empty($mdpc)){
+                        if($mdp==$mdpc){
+                            $mdp=sha1($mdp);
+                            $ins_mdp=$pdo->insertNouveauMdp($mdp,$_SESSION['recup_mail']);
+                            header("Location:http://localhost/escapadefrancaisev3/ihm_fr/EspaceClient/indexClient.php");
+                        }
+                        else{
+                             echo"<span style='color:red'>Vos mots de passe de correspondent pas.</span>";
+                        }
+                    }
+                    else{
+                        echo"<span style='color:red'>Veuillez remplir tous les champs</span>";
+                    }
+                }
+                else{
+                    echo"<span style='color:red'>Veuillez remplir tous les champs.</span>";
+                }
+            }
+
+
+            include('vues/v_demandeDEmailMdpOublie.php');
+            break;
+        }
+    case 'valideConnexion':{
+        include ("controleur/c_espaceClient.php");
+        header("Location:http://localhost/escapadefrancaisev3/ihm_fr/EspaceClient/indexClient.php?uc=espaceClient&action=valideConnexion&mail=".$_SESSION['mail']."");
+        break;                
+    }
     default : {
-//            include ("controleur/c_espaceClient.php");
-//            exit();
             include("vues/v_connexionClient.php");
             break;
         }

@@ -40,8 +40,8 @@
                             <input id= "mdp" type= "password" name= "mdp" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-primary submit" value="Se connecter">
-                            <a href="#" >mot de passe oublié ?</a>
+                            <input type="submit" class="btn btn-primary submit" value="Se connecter"  name="client_submit">
+                            <a href="indexClient.php?uc=connexion&action=valideEmailMdpOublie" >mot de passe oublié ?</a>
                         </div>
                     </form>
                    
