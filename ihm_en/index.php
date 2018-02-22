@@ -6,7 +6,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 <html>
     <head>
          <?php include 'connexion.php';?>
-
+         <meta name="google-site-verification" content="ToDizTW9k4tXp_FWjnU7ji-KmO4nQPvsNr0Vzw9keMc" /> <!-- SAS pour mesurer le trafic-->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">          
         <meta name="viewport" content="width=device-width, initial-scale=1">

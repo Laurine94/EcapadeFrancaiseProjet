@@ -36,3 +36,177 @@ div.panier:hover a{
     text-decoration: none;
     color: #183e67;
 }
+
+body{
+ font-family: 'Helvetica';
+}
+
+    table td{
+        padding: 10px;
+        border: 1px solid #183e67;
+    }
+    
+    table .td1{
+        width: 40%;
+    }
+
+    table .td2{
+        width:20%;
+    }
+
+    table .td3{
+        width:20%;
+    }
+
+    table .td4{
+        width:10%;
+        text-align:center;
+    }
+
+    table .td5{
+        width:10%;
+        text-align:center;
+    }
+
+    table .td6{
+        width:10%;
+        text-align:center;
+    }
+    
+    table .td7{
+        width: 20%;
+    }
+    
+    table .td8{
+        width: 5%;
+        text-align: center;
+    }
+    
+    table .no_border > td{
+        border: none;
+    }
+    
+    table{
+        border-collapse: collapse;
+    }
+
+    table a{
+        text-decoration: none;
+        font-weight: bold;
+        color: #183e67;
+    }
+    
+    table .td_titre{
+        text-align: center;
+        font-weight: bold;
+        border: 5px solid #183e67;
+        color: #183e67;
+    }
+    
+    table .titre_colonnes > td{
+        text-decoration: underline;
+        text-align: center;
+        font-weight: bold;
+        color: #183e67;
+    }
+    
+    table .sous_titre{
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        background-color: #183e67;
+    }
+
+    .payment_btn{
+        width: 90%;
+        margin: auto;
+    }
+    
+    .payment_btn .submit_btn{
+        float: right;
+        border: none;
+        color: white;
+        background-color: #183e67;
+        padding: 10px 30px 10px;
+        width: 25%;
+        border: 3px solid #183e67;
+        outline: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    
+    .payment_btn a:hover .submit_btn{
+        color: #183e67;
+        background-color: white;
+    }
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    margin-top:-7.5%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}

@@ -1,0 +1,166 @@
+body{
+     margin: 0;
+        padding: 0;
+        min-height: 100%;
+
+}
+
+.case1{
+    background-color: #fff;
+    width: 100%;
+    height: 100px;
+
+}
+/*case1 end here*/
+
+.case2{
+    background-color: #fff;
+    width: 100%;
+    height: 500px;
+}
+.case2 .box1{
+    margin-top: 25px;
+
+}
+.case2 .box1 img{
+    width: 530px;
+    height: 350px:;
+}
+.case2 .box1 p{
+    text-align: justify;
+    color: #310000;
+    margin-right: 28px;
+    line-height: normal;
+}
+/* case2 box1 workinf finish here*/
+
+.case2 .box2{
+    margin-top: 25px;
+}
+.case2 .box2 h1{
+    color: #320000;
+}
+.case2 .box2 p{
+    color: black;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.case2 .box2 #button1{
+    
+    padding: 35px;
+    color: black;
+    width: 555px;
+    height: 20px;
+    background-color: #183e67;
+    color: #1B0000;
+    text-align: center;
+}
+.case2, .box2, #button1, p{
+    font-size: normal;
+    line-height: normal;
+  
+}
+
+#button1 p{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+.qte{
+    width:67px;
+    height:35px;
+}
+
+/*.case2, .box2, h5{
+    text-align: center;
+}*/
+
+
+#btn{
+    width:170px;
+    height:40px;
+    background-color: #183e67;
+}
+
+#btn p{
+    color: white;
+}
+
+
+
+/* case2 end*/
+
+.case3{
+    margin-top: 400px;
+    background-color: #183e67;
+    width: 100%;
+    height: 143px;
+}
+
+/*Modal dialog - panier*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 0px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.titre {
+    padding: 5px;
+    background-color: #183e67;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}

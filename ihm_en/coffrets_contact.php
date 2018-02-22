@@ -19,39 +19,44 @@
      
     </head>
     <!-- end heade part-->
-<body>
+<body style="font-family:'Montserrat', sans-serif;">
 	<?php include 'coffrets_navbar.php'; ?>
      <div class="col-md-3"></div>
      <div class="col-md-6">
-       <div class="case5" id=contact name=contact>
+       <div class="case5" id="contact" name="contact">
          <div class="parti2">
            <h1>Contact</h1>
            <p>For special requests and orders</p>
-           <br>
+           <br> 
            <form>
+            <p style="text-align:left; font-size:10pt;">Name :</p>
                <div class="form-group">
-                     <input type="name" class="form-control" id="name" name="name" placeholder="Name :" style="border:2px solid #7C7A00;">
+                     <input type="name" class="form-control" id="name" name="name" placeholder="Write your first name and your last name" style="border:2px solid #7C7A00;">
                </div>
-
+            <p style="text-align:left; font-size:10pt;">Email :</p>
               <div class="form-group">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email : " style="border:2px solid #7C7A00;">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Write your email address" style="border:2px solid #7C7A00;">
               </div>
-              
+            <p style="text-align:left; font-size:10pt;">Subject : </p>
               <div class="form-group">
-                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject :" style="border:2px solid #7C7A00;">
+                <input type="text" class="form-control" id="subject" name="subject" placeholder="What is the purpose of your request?" style="border:2px solid #7C7A00;">
               </div>
-
+            <p style="text-align:left; font-size:10pt;">Message : </p>
               <div class="form-group">
-                <input type="text" class="form-control" id="message" name="message" placeholder="Message : " style="border:2px solid #7C7A00;">
-              </div>
-
-              <div class="form-group">
-                <input type="text" class="form-control" name="textarea" placeholder="Text :" style="border:2px solid #7C7A00">
+                <textarea type="text" class="form-control" id="message" name="message" row="10" cols="50" placeholder="Write the message" style="border:2px solid #7C7A00; height:120px;"></textarea>
               </div>
               <button type="submit" class="btn btn-default" style="border:2px solid #7C7A00; color: white; background-color: #7C7A00;">Submit</button>
           </form>       
          </div>
        </div>
      </div>
+
+
 <br style="clear:both" />
+<div class="case6">
      <?php include 'footer.php'; ?>
+</div>
+
+
+</body>
+</html>

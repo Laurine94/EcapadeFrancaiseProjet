@@ -1,0 +1,170 @@
+<link rel="stylesheet" type="text/css" href="css/w3.css">
+        <link rel="stylesheet" type="text/css" href="css/select_room.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/datepicker.css">
+        <link href="css/guesthouse.css" rel="stylesheet">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="css/calendar2.js"></script>
+        <script>
+            $( function() {
+                $( "#date_debut" ).datepicker();
+            } );
+        </script>
+        <script>
+            $( function() {
+                $( "#date_fin" ).datepicker();
+            } );
+        </script>
+
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+<div class="repertoire">
+                                <h3>Directory of the best guest houses, guides and activities of France.</h3>
+                    </div>
+
+
+
+
+                    <div class="rapide">
+
+
+
+
+                        <div class="genre">
+                            <p>Where do you want to go ?<p>
+                                <div class="select_form_act">
+                                    <form method="get" action="">
+                                        <select name="genre" id="genre">
+                                        <option selected="selected" value="genre" disabled>Where ?</option>
+                                            <?php
+                                                $reponse = $bdd->query('SELECT DISTINCT genre FROM ville'); // On récupère les valeurs des villes dans la bdd
+                                                while ($donnees = $reponse->fetch())
+                                                {
+                                            ?>
+                                        <option value="<?php echo $donnees['genre']; ?>" ><?php echo $donnees['genre']; ?></option>
+                                            <?php
+                                                }
+                                            ?>
+                                        </select>
+                                    </form>
+                                </div>
+                        </div>
+
+
+
+                        <div class="destination">
+                            <p>Destination :</p>
+                            <div class="select_form_act">
+                                <form method="get" action="">
+                                    <select name="ville" id="ville">
+                                    <option selected="selected" value="default1" disabled>Destination</option>
+                                        <?php
+                                            $reponse = $bdd->query("SELECT ville FROM ville WHERE genre='$genre'"); // On récupère les valeurs des villes dans la bdd
+                                            while ($donnees = $reponse->fetch())
+                                            {
+                                        ?>
+                                    <option value="<?php echo $donnees['ville']; ?>" ><?php echo $donnees['ville']; ?></option>
+                                        <?php
+                                            }
+                                        ?>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="choix">
+                            <p>Your choice :</p>
+                            <div class="select_form_act">
+                                <form method="post" action="">                                       
+                                       <select name="choix" id="choix">
+                                           <option value="Guest House">Guest House</option>
+                                           <option value="Activity">Activity</option>
+                                           <option value="Guide">Guide</option>
+                                       </select>
+                                </form>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="arrive">
+                                <p>Arrival Date :</p>
+                                <form method="get" action="">
+                                    <input type="text" class="calendrier" id="date_debut<?php echo $a; ?>" name="date_debut">
+                                </form>
+                        </div>
+
+
+
+
+                        <div class="depart">
+                                <p>Departure Date :</p>
+                                <form method="get" action="">
+                                    <input type="text" class="calendrier" id="date_fin<?php echo $a; ?>" name="date_fin"/>
+                                </form>
+                        </div>
+
+
+                            
+
+
+                        <div class="guest">
+                            <p>Guest :</p>
+                            <div class="select_form_act">
+                                <form method="post" action="">
+                                       <select name="guest" id="guest">
+                                           <option value="1">1</option>
+                                           <option value="2">2</option>
+                                           <option value="3">3</option>
+                                           <option value="4">4</option>
+                                           <option value="5">5</option>
+                                           <option value="6">6</option>
+                                       </select>
+                                </form>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="ok">
+                            <div class="select_form_act">
+                                <br>
+                                <input type="image" src="img/loupe.png" alt="ok"  />
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <script src="js/jquery-1.9.1.min.js"></script>
+                            <script src="js/bootstrap-datepicker.js"></script>
+                            <script type="text/javascript">
+                                // When the document is ready
+                                $(document).ready(function () {
+
+                                    $('#date_debut<?php echo $a; ?>').datepicker({
+                                        format: "dd/mm/yyyy",
+                                        startDate: "today",
+                                        autoclose: true
+
+                                    });
+                                    
+                                    $('#date_fin<?php echo $a; ?>').datepicker({
+                                        format: "dd/mm/yyyy",
+                                        startDate: "today",
+                                        autoclose: true
+
+                                    });  
+                                });
+                            </script>

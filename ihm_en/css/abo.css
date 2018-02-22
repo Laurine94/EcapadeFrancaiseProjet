@@ -1,32 +1,32 @@
 .background{
-		background: url("img/bbr.jpg");
-		background-repeat: no-repeat;
-		background-position: center bottom;
-		opacity: 1.75;
-		padding-top: 40%;
-		background-attachment: fixed;
-       
+	background: url("img/bbr.jpg");
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	opacity: 1.75;
+	padding-top: 40%;
+	background-attachment: fixed;
+   
 }
 
 .case1{
-		width:100%;
-		height:auto;
+	width:100%;
+	height:auto;
 
 }
 
 .carre1{
-		background:rgba(0,0,0,0.3);
-		left:15%;
-		right:15%;
-		top:300px;
-        padding: 5%;
-		position:absolute;
-		color:#FFF;
-		text-align: center;
-		font-size:1vw;
-		z-index:+1000;
-    
-        font-family:Open sans;
+	background:rgba(0,0,0,0.3);
+	left:15%;
+	right:15%;
+	top:300px;
+	padding: 5%;
+	position:absolute;
+	color:#FFF;
+	text-align: center;
+	font-size:1vw;
+	z-index:+1000;
+
+	font-family:Open sans;
 }
 
 
@@ -37,143 +37,143 @@
 
 .case2{
 
-		width: 100%;
-		color: white;
+	width: 100%;
+	color: white;
 }
 
 .partie1{
-		background-color: white;
-		width:100%;
-		height: 925px;
-		
+	background-color: white;
+	width:100%;
+	height: 925px;
+	
 }
 
- .tarif_title{
-		font-size: 75px;
-		text-align: left;
-		margin-left: 300px;
-		color: #0300AD;
+.tarif_title{
+	font-size: 75px;
+	text-align: left;
+	margin-left: 300px;
+	color: #0300AD;
 font-family:Open sans;
 }
 
 .box1{
-		display: block;
-		position: relative;
-		
-		margin-left: 45px;
-		vertical-align: top;
-		text-align: justify;
-		line-height: normal;
-		letter-spacing: normal;
-		margin-left: 50px;
-		font-family:Open sans;
+	display: block;
+	position: relative;
+	
+	margin-left: 45px;
+	vertical-align: top;
+	text-align: justify;
+	line-height: normal;
+	letter-spacing: normal;
+	margin-left: 50px;
+	font-family:Open sans;
 }
 .box1 h1{
-		font-size: 165px;
-		color: #E21C21;
-		margin-left: 40px;
-		letter-spacing: 25px;
-		font-family:Open sans;
+	font-size: 165px;
+	color: #E21C21;
+	margin-left: 40px;
+	letter-spacing: 25px;
+	font-family:Open sans;
 }
 .box1 .trait{
-		background-color: #0300AD;
-		height: 3pt;
-		width: 60%;
-		margin-left: 40px;
+	background-color: #0300AD;
+	height: 3pt;
+	width: 60%;
+	margin-left: 40px;
 }
 
 .box1 p{
-		font-size: 30px;
-		color: #E21C21;
-		margin-left: 40px;
-		font-family:Open sans;
+	font-size: 30px;
+	color: #E21C21;
+	margin-left: 40px;
+	font-family:Open sans;
 }
 .box1 #s{
-		font-size: 18px;
-		color: #0300AD;
-		margin-right: 130px;
-		font-family:Open sans;
-		
+	font-size: 18px;
+	color: #0300AD;
+	margin-right: 130px;
+	font-family:Open sans;
+	
 
 }
 
 .box2{
-	
-		display: block;
-		position: relative;
-		vertical-align: top;
-		text-align: justify;
-		line-height: normal;
-		letter-spacing: normal;
-		font-family:Open sans;
 
-}
-.box2 h1{
-		color: #E21C21;
-		font-size: 165px;
-		margin-left: 10px;
-		letter-spacing: 25px;
-		font-family:Open sans;
-	
-}
-
-.box2 .trait{
-		background-color: #0300AD;
-		height: 3pt;
-		width: 60%;
-}
-
-.box2 p{
-		font-size: 30px;
-		color: #E21C21;
-		font-family:Open sans;
-}
-
-.box2 #s{
-		font-size: 18px;
-		color: #0300AD;
-		margin-right: 130px;
-		font-family:Open sans;
-
-}
-
-.box3{
 	display: block;
 	position: relative;
 	vertical-align: top;
 	text-align: justify;
 	line-height: normal;
 	letter-spacing: normal;
-	margin-right: 45px;
+	font-family:Open sans;
+
+}
+.box2 h1{
+	color: #E21C21;
+	font-size: 165px;
+	margin-left: 10px;
+	letter-spacing: 25px;
+	font-family:Open sans;
+
+}
+
+.box2 .trait{
+	background-color: #0300AD;
+	height: 3pt;
+	width: 60%;
+}
+
+.box2 p{
+	font-size: 30px;
+	color: #E21C21;
 	font-family:Open sans;
 }
 
+.box2 #s{
+	font-size: 18px;
+	color: #0300AD;
+	margin-right: 130px;
+	font-family:Open sans;
+
+}
+
+.box3{
+display: block;
+position: relative;
+vertical-align: top;
+text-align: justify;
+line-height: normal;
+letter-spacing: normal;
+margin-right: 45px;
+font-family:Open sans;
+}
+
 .box3 h1{
-		color: #E21C21;
-		font-size: 165px;
-		margin-left: 10px;
-		letter-spacing: 25px;
-		font-family:Open sans;
-	
+	color: #E21C21;
+	font-size: 165px;
+	margin-left: 10px;
+	letter-spacing: 25px;
+	font-family:Open sans;
+
 }
 
 .box3 .trait{
-		background-color: #0300AD;
-		height: 3pt;
-		width: 70%;
+	background-color: #0300AD;
+	height: 3pt;
+	width: 70%;
 }
 
 .box3 p{
-		font-size: 30px;
-		color: #E21C21;
-		font-family:Open sans;
+	font-size: 30px;
+	color: #E21C21;
+	font-family:Open sans;
 }
 
 .box3 #s{
-		font-size: 18px;
-		color: #0300AD;
-		margin-right: 70px;
-		font-family:Open sans;
+	font-size: 18px;
+	color: #0300AD;
+	margin-right: 70px;
+	font-family:Open sans;
 
 }
 
@@ -183,117 +183,117 @@ font-family:Open sans;
 /* start case3*/
 
 .case3{
-		background: #5E90E3;
-		width: 100%;
-		height: 1680px;
-		color: white;
-    
+	background: #5E90E3;
+	width: 100%;
+	height: 1680px;
+	color: white;
+
 
 }
 
 .case3 .tarif_title{
-    
-	color:white;
-    font-family:Open sans;
-    margin-left: 10%
-       	
-    
+
+color:white;
+font-family:Open sans;
+margin-left: 10%
+	   
+
 }
 
 .case3 .col-sm-6 img{
-		margin-left: 100px;
-		margin-top:41px;
+	margin-left: 100px;
+	margin-top:41px;
 
-    padding-top:0;
-    padding-bottom:0px; ;
-       
-       
+padding-top:0;
+padding-bottom:0px; ;
+   
+   
 
 }
 
 .case3 .col-sm-6 h2{
-		margin-left: 1px;
-		font-size: 30px;
-		font-family:Open sans;
-		margin-right: 100px;
+	margin-left: 1px;
+	font-size: 30px;
+	font-family:Open sans;
+	margin-right: 100px;
 }
 
 .case3 .col-sm-6 p{
-		font-size: 20px;
-		font-family:Open sans;
-		line-height: normal;
-		letter-spacing: normal;
-		margin-right: 30%;
-    
+	font-size: 20px;
+	font-family:Open sans;
+	line-height: normal;
+	letter-spacing: normal;
+	margin-right: 30%;
+
 
 }
 
 .ben{
-    width: auto;
-    height: 20%;
+width: auto;
+height: 20%;
 }
 
 .pen{
-    width: auto;
-    height: 20%;
+width: auto;
+height: 20%;
 }
- 
+
 .men{
-    width: auto;
-    height: 20%;
+width: auto;
+height: 20%;
 }
 
 /*end case3*/
 
 /* start case4*/
-	
-.case4{
-		background: white;
-		width: 100%;
-		height:433px;
 
-		color: #0C4199;
-		text-align:center;
-		font-family:Open sans;
-	
+.case4{
+	background: white;
+	width: 100%;
+	height:433px;
+
+	color: #0C4199;
+	text-align:center;
+	font-family:Open sans;
+
 }
 
 .case4 .tarif_title{
 
-		font-size: 6vw;
-		letter-spacing: 4px;
-		/*text-align: center;*/
-		margin-left: 170px;
-		margin-top: 20px;
-		color:#0C4199;
+	font-size: 6vw;
+	letter-spacing: 4px;
+	/*text-align: center;*/
+	margin-left: 170px;
+	margin-top: 20px;
+	color:#0C4199;
 font-family:Open sans;
-       	
+	   
 
 }
 
 .tarif_prix{
-		width: 50%;
-		font-size: 38px;
-		text-align: center;
-		font-family:Open sans;
-		margin-left: 320px;
+	width: 50%;
+	font-size: 38px;
+	text-align: center;
+	font-family:Open sans;
+	margin-left: 320px;
 
 }
 .mois_gratuit{
-		width: 50%;
-		font-size: 38px;
-		text-align: center;
-		font-family:Open sans;
-		margin-left: 320px;
-		color: #0C4199;
+	width: 50%;
+	font-size: 38px;
+	text-align: center;
+	font-family:Open sans;
+	margin-left: 320px;
+	color: #0C4199;
 
 }
 
 .adhesion{
-		font-size: 28px;
-		text-align: justify-all;
-		font-family:Open sans;
-		color: #6184BD;
+	font-size: 28px;
+	text-align: justify-all;
+	font-family:Open sans;
+	color: #6184BD;
 }
 
 /*end case 4*/
@@ -301,95 +301,89 @@ font-family:Open sans;
 /* start case5*/
 
 .case5{
-	
-		background: #0C4199;
-		font-family:Open sans;
-		width: 100%;
-		height: 820px;
-		/*height:250vh;*/
-		color: white;
-		text-align:center;
 
-	
+	background: #0C4199;
+	font-family:Open sans;
+	width: 100%;
+	height: 820px;
+	/*height:250vh;*/
+	color: white;
+	text-align:center;
+
+
 }
- .cand_title{
+.cand_title{
 
-		/*margin-top: 3px;*/
-		margin-bottom: 25px;
-		text-align: center;
-		font-size: 70px;
-		color: white;
-		font-family:Open sans;
+	/*margin-top: 3px;*/
+	margin-bottom: 25px;
+	text-align: center;
+	font-size: 70px;
+	color: white;
+	font-family:Open sans;
 }
 /*
 .pave{
-	opacity: 5;
-	transition: opacity 2s linear;	
+opacity: 5;
+transition: opacity 2s linear;	
 }*/
 
 .border{
-		margin-left: 300px;
-		margin-top: -100px;
-		border-right: 5px solid white;
-		width: 50px;
-		height: 95px;
-		
+	margin-left: 300px;
+	margin-top: -100px;
+	border-right: 5px solid white;
+	width: 50px;
+	height: 95px;
+	
 
 } 
 
- .col-sm-4 .pave1{
- 		line-height: 175%;
- 		font-size: 20px;
- 		text-align: left;	
- 		margin-left: 50px;
- 		margin-right: 30px; 
- 		font-family:Open sans;
+.col-sm-4 .pave1{
+	 line-height: 175%;
+	 font-size: 20px;
+	 text-align: left;	
+	 margin-left: 50px;
+	 margin-right: 30px; 
+	 font-family:Open sans;
 
 }
 
 
- .col-sm-4 .pave2{
- 		line-height: 175%;
- 		font-size: 20px;
- 		text-align: left;
- 		margin-left: 20px;
- 		margin-right: 20px;
- 		font-family:Open sans;
+.col-sm-4 .pave2{
+	 line-height: 175%;
+	 font-size: 20px;
+	 text-align: left;
+	 margin-left: 20px;
+	 margin-right: 20px;
+	 font-family:Open sans;
 }
- 		
- .col-sm-4 .pave3{
-		line-height: 175%;
- 		font-size: 20px ;
- 		text-align: left;
- 		margin-left: 30px;
- 		margin-right: 50px;
- 		font-family:Open sans;
+	 
+.col-sm-4 .pave3{
+	line-height: 175%;
+	 font-size: 20px ;
+	 text-align: left;
+	 margin-left: 30px;
+	 margin-right: 50px;
+	 font-family:Open sans;
 }
 /* end case5*/
 
 /*form*/
 .case6{
-		background: white;
-		width: 100%;
-		height: 750px;
-		font-family:Open sans;
-		/*
-		margin-left: 20%;
-		margin-top: 5%;*/	
+	background: white;
+	width: 100%;
+	height: 750px;
+	font-family:Open sans;
+	/*
+	margin-left: 20%;
+	margin-top: 5%;*/	
 }
 
 .case6 h4{
-		font-size: 60px;
-		text-align: center;
-		line-height:1em;
-		color: #D61043;
-		margin-top: 30px;
-		margin-bottom: 40px;
-		font-family:Open sans;
+	font-size: 60px;
+	text-align: center;
+	line-height:1em;
+	color: #D61043;
+	margin-top: 30px;
+	margin-bottom: 40px;
+	font-family:Open sans;
 }
-
-
-
-
-
-

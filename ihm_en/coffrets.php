@@ -1,3 +1,4 @@
+<?php include 'connexion.php';?>
 
 <html>
     <head>
@@ -15,13 +16,15 @@
         <!--css link-->
         <link rel="stylesheet" type="text/css" href="css/coffrets_collection.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
          <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <!-- animsition.js -->
         <script src="js/animsition.min.js"></script>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+
 
         <!--script for form-->
        <script> 
@@ -34,23 +37,240 @@
               $(this).css("background-color", "#CDD128");
           });
         });
+
       </script>
       <!-- end script-->
-      
 
      
     </head>
     <!-- end heade part-->
-<body>
+<body style="font-family:'Montserrat', sans-serif;">
 	<!-- add navigation boar-->
 	<?php include 'coffrets_navbar.php'; ?>
 
+<div id="circle" style="position:fixed;">
+  <i class="icon1 fa fa-cog fa-lg"></i>
+  <i class="icon2 fa fa-cog fa-lg"></i>
+</div>
+<div id="sub" style="position:fixed;">
+  <div id="circle">
+    <i class="icon1 fa fa-home fa-lg"></i>
+    <i class="icon2 fa fa-home fa-lg"></i>
+    <a href="coffrets.php">HOME</a>
+  </div>
+  <div id="circle">
+    <i class="icon1 fa fa-shopping-cart fa-lg" style="font-size:17px;"></i>
+    <i class="icon2 fa fa-shopping-cart fa-lg" style="font-size:17px;"></i>
+    <a href="coffrets.php #shop">SHOP</a>
+  </div>
+  <div id="circle">
+    <i class="icon1 fa fa-question-circle fa-lg"></i>
+    <i class="icon2 fa fa-question-circle fa-lg"></i>
+    <a href="coffrets.php #about">ABOUT</a>
+  </div>
+  <div id="circle">
+    <i class="icon1 fa fa-envelope fa-lg" style="font-size:15px;"></i>
+    <i class="icon2 fa fa-envelope fa-lg" style="font-size:15px;"></i>
+    <a href="coffrets.php #contact">CONTACT US</a>
+  </div>
+</div>
+
+<style>
+#circle {
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    background: #E40404;
+    position: absolute;
+    z-index:2;
+    top: 75px;
+    left: 5px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .11), 0 4px 8px rgba(0, 0, 0, .22);
+    cursor: pointer;
+}
+#circle:after {
+    content:'';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-radius: 50%;
+    background: #E40404;
+    left: 35px;
+    top: 35px;
+}
+#circle i {
+    font-size: 25px;
+    color: #fff;
+    position: absolute;
+    top: 16px;
+    left: 15px;
+    z-index: 1;
+}
+#circle i.icon1 {
+    opacity: 1;
+}
+#circle i.icon2 {
+    opacity: 0;
+    top: 22px;
+    left: 15px;
+}
+/* ANIMATION */
+#circle, #circle i, #circle:after {
+    -webkit-transition: all .2s cubic-bezier(.4, 0, .2, 1);
+    transition: all .2s cubic-bezier(.4, 0, .2, 1);
+}
+/* HOVER */
+#circle:hover {
+    background: #E40404;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .15), 0 4px 8px rgba(0, 0, 0, .30);
+}
+#circle:hover:after {
+    width: 50px;
+    height: 50px;
+    left: 0;
+    top: 0;
+}
+#circle:hover > i {
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720deg);
+}
+#circle:hover > i.icon1 {
+    opacity: 0;
+}
+#circle:hover > i.icon2 {
+    opacity: 1;
+}
+
+/* ///// SUB CIRCLES ///// */
+ #sub {
+  width: 100px;
+  height: 50%;
+  z-index: 1;
+  position: absolute;
+  visibility:hidden;
+}
+#sub #circle {
+    width: 35px;
+    height: 35px;
+    top: 0;
+    left: 11px;
+    opacity: 0;
+    transition: 0.2s opacity;
+}
+#sub #circle:nth-child(1) {
+    top: -50px;
+    background: #E40404;
+}
+#sub #circle:nth-child(2) {
+    top: -10px;
+    background: #E40404;
+}
+#sub #circle:nth-child(3) {
+    top: 30px;
+    background: #E40404;
+}
+#sub #circle:nth-child(4) {
+    top: 70px;
+    background: #E40404;
+}
+#sub #circle:nth-child(1):after {
+    background: #E40404;
+}
+#sub #circle:nth-child(2):after {
+    background: #E40404;
+}
+#sub #circle:nth-child(3):after {
+    background: #E40404;
+}
+#sub #circle:nth-child(4):after {
+    background: #E40404;
+}
+#sub #circle:after {
+    left: 20px;
+    top: 20px;
+}
+#sub #circle i {
+    font-size: 20px;
+    top: 10px;
+    left: 9px;
+}
+#sub #circle i.icon1 {
+    opacity: 1;
+}
+#sub #circle i.icon2 {
+    opacity: 0;
+}
+/* HOVER */
+#sub #circle:hover:after {
+    width: 35px;
+    height: 35px;
+    left: 0;
+    top: 0;
+}
+#circle:hover + #sub #circle:nth-child(1) {
+    opacity:1;
+    transition-delay:0.05s;
+}
+#circle:hover + #sub #circle:nth-child(2) {
+    opacity:1;
+    transition-delay:0.1s;
+}
+#circle:hover + #sub #circle:nth-child(3) {
+    opacity:1;
+    transition-delay:0.15s;
+}
+#circle:hover + #sub #circle:nth-child(4) {
+    opacity:1;
+    transition-delay:0.15s;
+}
+#sub #circle:hover > i {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+#sub #circle:hover > i.icon1 {
+    opacity: 0;
+}
+#sub #circle:hover > i.icon2 {
+    opacity: 1;
+}
+#circle:hover + #sub {
+visibility:visible;
+}
+#sub:hover {
+visibility:visible;
+}
+#sub:hover > #circle {
+    opacity:1;
+}
+/* ///// SUB TITLES ///// */
+#circle a {
+  display: block;
+  margin-right: -200px;
+  margin-top: 16px;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:bold;
+  text-transform: uppercase;
+  text-align: left;
+  padding-left: 60px;
+  letter-spacing: 0.25em;
+  opacity: 0;
+  -webkit-transition: all .4s cubic-bezier(.4, 0, .2, 2);
+  transition: all .4s cubic-bezier(.4, 0, .2, 2);
+  font-size:10pt;
+}
+/* HOVER */
+#sub #circle:hover > a {
+    opacity: 1;
+    padding-left: 40px;
+}
+</style>
 
  <div class="case1 background">
         <div class="carre1">
         	<div class="border">
-        		<h1>The collection <br>of Escapade <br>Coffrets</h1>
-          		<h3>HAND MADE -MADE WITH LOVE</h3>
+        		<h1 style="color: #183e67;">The collection <br>of Escapade <br>Coffrets</h1>
+          		<h3 style="color: #183e67;">HAND MADE - MADE WITH LOVE</h3>
         	</div>
         </div>
   </div>
@@ -58,93 +278,89 @@
   <div class="case2" id=shop name=shop>
   		<div class="parti">
       <br>
-  			<h1>The collection by Lisa Bouillon</h1>
+  			<h1 style="color: #183e67;">The collection by Lisa Bouillon</h1>
+        <br>
+        <br>
+        <br>
   				<div class="container">
   					<div class="row">
-  						<div class="col-md-4 col-sm-6 col-xs-12">
-                <figure>
-                  <br>
-                  <a href="coffrets_panier.php"><img src="img/cadeaux/cadeau.jpg" alt="coffret cote d'azur" class="img-thumbnail" width="400px" height=" 250px" ></a>
-                  <br>
-                  <br>
-                  <br>
-                  <p>COFFRET COTE D'AZUR</p>
-                  <p>25 euro</p>
-                  <br>
-                </figure>
-              </div>
-  							
-  						<!--<div class="col-md-4 col-sm-4 col-xs-4">-->
+              <?php $coffret = $DB->query('SELECT * FROM coffret'); ?>
+              <?php foreach ($coffret as $coffret): ?>
                 <div class="col-md-4 col-sm-6 col-xs-12">
-  							<figure>
-  								<br>
-  								<a href="coffrets_panier.php"><img src="img/cadeaux/cadeau2.jpg" alt="coffret haute-savoie" class="img-thumbnail" alt ="coffret haute-savoie" width="400px" height="250px"></a>
-  								<br>
-  								<br>
-  								<p>COFFRET HAUTE-SAVOIE</p>
-  								<p>150 euro</p>
-  								<br>
-  							</figure>
-  						</div>
-
-  						<div class="col-md-4 col-sm-6 col-xs-12">
-  							<figure>
-  								<br>
-  								<a href="coffrets_panier.php"><img src="img/cadeaux/cadeau3.jpg" alt="coffret ile de la reunion" class="img-thumbnail" alt="coffret ile de la reunion" width="400px" height="250px"></a>
-  								<br>
-  								<br>
-  				 				<p>COFFRET ILE DE LA REUNION</p>
-  								<p>85 euro</p>
-  								<br>
-
-  							</figure>
-  						</div>
-  					</div>
-  				</div>
-  			<!-- second image line start-->
-  			<div class="container">
-  				<div class="row">
-  					<div class="col-md-4 col-sm-6 col-xs-12">
-  						<figure>
-  							<br>
-  							<a href="coffrets_panier.php"><img src="img/cadeaux/Mockup1.jpg"  alt="coffret paris" class="img-thumbnail" alt="coffret paris" width="400px" height="245px"></a>
-  							<br>
-  							<br>
-  							<p>COFFRET PARIS</p>
-  							<P>200 euro</P>
-  							<br>
-  						</figure>
-					</div>
-
-  					<div class="col-md-4 col-sm-6 col-xs-12">
-  						<figure>
-  							<br>
-  							<a href="coffrets_panier.php"><img src="img/cadeaux/cadeau4.jpg" alt="coffret marseille" class="img-thumbnail"  alt="coffret marseille" width="400px" height="250px"></a>
-  							<br>
-  							<br>
-  							<p>COFFRET MARSEILLE</p>
-  							<P>80.75 EURO</P>
-  							<br>
-  						</figure>
-  					</div>
-
-  					<div class="col-md-4 col-sm-6 col-xs-12">
-  						<figure>
-  							<br>
-  							<a href="coffrets_panier.php"><img src="img/cadeaux/cadeau5.jpg" class="img-thumbnail" alt="coffret normandie bretagne" width="400px" height="250px"></a>
-  							<br>
-  							<br>
-  							<P>COFFRET NORMANDIE BRETAGNE</P>
-  							<p>150 euro</p>
-  							<br>
-  						</figure>
-  					</div>
+                  <div class="view">
+                    <a href="coffrets_<?= $coffret->id; ?>.php"><img src="img/cadeaux/<?= $coffret->id; ?>.jpg" class="img-thumbnail" width="400px" height=" 250px">
+                    <div class="middle">
+                      <button class="text"><a href="coffrets_<?= $coffret->id; ?>.php">SEE THIS BOX</a></button>
+                    </div>
+                    <div class="description">
+                      <p><?= $coffret->nom_coffret; ?></p>
+                      <p class="price" style="color:#183e67; text-align:center; font-family:'Montserrat', sans-serif;"><?= number_format($coffret->prix,2,',',''); ?> €</p>
+                    </div>
+                    <div id="button1" style="background-color:#183e67; height:25px;">
+                      <a class="add addPanier" href="addpanier.php?id=<?= $coffret->id; ?>">
+                      <p style="margin-top:-2%; color:white;">ADD TO CART</p></a>
+                    </div>  
+                    <br>
+                    <br>     
+                    <br>  
+                    <br>           
+                  </div>
+                </div>
+              <?php endforeach ?>
   				</div>
   			</div>
 
-
+        
   		<!--end case 02-->
-  		<div class="case3" id=about name=about>
+      <!--Création menu vertical-->
+      <!--<nav class="style-ih1tlgxx" id="comp-igqd3whf" style="top: -208px; bottom: 0px; right: 5px; position: fixed; margin: auto; z-index: 50; width: 123px; height: 84px; font-family:'Montserrat', sans-serif; font-size:9pt;">
+        <ul class="style-ih1tlgxx_orientation-right style-ih1tlgxx_text-align-right style-ih1tlgxxmenuContainer" id="comp-igqd3whfmenuContainer">
+          <li class="style-ih1tlgxx_item">
+            <a class="style-ih1tlgxx_link" aria-labelledby="anchor-label_1" href="#" target="_self" data-keep-roots="true" data-anchor="SCROLL_TO_TOP">
+              <svg width="12" height="12" viewBox="0 0 24 24" class="style-ih1tlgxx_symbol" style="cursor:pointer; fill:transparent; stroke:#E40404;">
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+              <span class="style-ih1tlgxx_text-wrapper">
+                <span id="anchor-label_1" class="style-ih1tlgxx_label" style="color:#E40404;">HOME</span>
+              </span>
+            </a>
+          </li>
+          <li class="style-ih1tlgxx_item style-ih1tlgxx_active">
+            <a class="style-ih1tlgxx_link" aria-labelledby="anchor-label_2" href="#shop" target="_self" data-keep-roots="true" data-anchor="dataItem-igqd45sx">
+              <svg width="12" height="12" viewBox="0 0 24 24" class="style-ih1tlgxx_symbol" style="cursor:pointer; fill:transparent; stroke:#E40404;">
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+              <span class="style-ih1tlgxx_text-wrapper">
+                <span id="anchor-label_2" class="style-ih1tlgxx_label" style="color:#E40404;">SHOP</span>
+              </span>
+            </a>
+          </li>
+          <li class="style-ih1tlgxx_item">
+            <a class="style-ih1tlgxx_link" aria-labelledby="anchor-label_3" href="#about" target="_self" data-keep-roots="true" data-anchor="dataItem-igqd85721">
+              <svg width="12" height="12" viewBox="0 0 24 24" class="style-ih1tlgxx_symbol" style="cursor:pointer; fill:transparent; stroke:#E40404;">
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+              <span class="style-ih1tlgxx_text-wrapper">
+                <span id="anchor-label_3" class="style-ih1tlgxx_label" style="color:#E40404;">ABOUT</span>
+              </span>
+            </a>
+          </li>
+          <li class="style-ih1tlgxx_item">
+            <a class="style-ih1tlgxx_link" aria-labelledby="anchor-label_4" href="#contact" target="_self" data-keep-roots="true" data-anchor="dataItem-igqd8xa9">
+              <svg width="12" height="12" viewBox="0 0 24 24" class="style-ih1tlgxx_symbol" style="cursor:pointer; fill:transparent; stroke:#E40404;">
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+              <span class="style-ih1tlgxx_text-wrapper">
+                <span id="anchor-label_4" class="style-ih1tlgxx_label" style="color:#E40404;">CONTACT US</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>-->
+
+      <!--Fin du menu vertical-->
+
+  		<div class="case3" id="about" name="about">
   			<div class="parti02">
   				<!-- paragraphe-->
   				<div class="container">
@@ -153,7 +369,7 @@
                 <br>
    						 	<h1>ABOUT</h1>
    						 	<br>
-   						 	<p style="text-align: justify-all;">Fantastic, joyful, friendly and full of unforgettable surprises. Our first edition of Escapade Coffret will make you discover among the best tastes and flavors of the French home produce. From the design of the box to its contents, our Coffrets in limited edition were all worked individually. To offer or for oneself, Escapade Coffrets contain an incredible panel of memories to remember, or create in your next French Escapade.</p>
+   						 	<p style="text-align: center;">Fantastic, joyful, friendly and full of unforgettable surprises. Our first edition of Escapade Coffret will make you discover among the best tastes and flavors of the French home produce. From the design of the box to its contents, our Coffrets in limited edition were all worked individually. To offer or for oneself, Escapade Coffrets contain an incredible panel of memories to remember, or create in your next French Escapade.</p>
 
   						</div>
   					</div>
@@ -193,32 +409,29 @@
      <div class="col-md-3">
        
      </div>
-
      <div class="col-md-6">
-       <div class="case5" id=contact name=contact>
+       <div class="case5" id="contact" name="contact">
          <div class="parti2">
+          <form method="post" action="contact_recup.php">
            <h1>Contact</h1>
            <p>For special requests and orders</p>
-           <br>
+           <br> 
            <form>
+            <p style="text-align:left; font-size:10pt;">Name :</p>
                <div class="form-group">
-                     <input type="name" class="form-control" id="name" name="name" placeholder="Name :" style="border:2px solid #7C7A00;">
+                     <input type="text" class="form-control" id="name" name="nom" placeholder="Write your first name and your last name" style="border:2px solid #7C7A00;">
                </div>
-
+            <p style="text-align:left; font-size:10pt;">Email :</p>
               <div class="form-group">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email : " style="border:2px solid #7C7A00;">
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Write your email address" style="border:2px solid #7C7A00;">
               </div>
-              
+            <p style="text-align:left; font-size:10pt;">Subject : </p>
               <div class="form-group">
-                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject :" style="border:2px solid #7C7A00;">
+                <input type="text" class="form-control" id="subject" name="objet" placeholder="What is the purpose of your request?" style="border:2px solid #7C7A00;">
               </div>
-
+            <p style="text-align:left; font-size:10pt;">Message : </p>
               <div class="form-group">
-                <input type="text" class="form-control" id="message" name="message" placeholder="Message : " style="border:2px solid #7C7A00;">
-              </div>
-
-              <div class="form-group">
-                <input type="text" class="form-control" name="textarea" placeholder="Text :" style="border:2px solid #7C7A00">
+                <textarea type="text" class="form-control" id="message" name="message" row="10" cols="50" placeholder="Write the message" style="border:2px solid #7C7A00; height:120px;"></textarea>
               </div>
               <button type="submit" class="btn btn-default" style="border:2px solid #7C7A00; color: white; background-color: #7C7A00;">Submit</button>
           </form>       
@@ -231,6 +444,7 @@
      </div>
    </div>
  </div>
+
 <!--end case5-->
  <!--<div class="case5">
   		<div class="parti2">
@@ -273,10 +487,10 @@
 </div>
 <!--end case5-->
 <div class="case6">
-<!--		<?php include 'footer.php'; ?>-->
+<!--		<?php /*include 'footer.php'*/; ?>-->
 <!-- footer new one-->
 
-    <style>
+    <!--<style>
     body{
         margin: 0;
         padding: 0;
@@ -364,50 +578,16 @@
         text-align: center;
     }
     
-</style>
+</style>-->
 
 <br />
 <br />
 <br />
+ 
+</div>
 
-<footer id="footer">
-    <div class="footer3 droite">
-        <br>
-        <br>
-        <br>
-        <a href="contactus.php?"><input type="button" style="color:white; background-color:#183e67" value="CONTACT US" style='font-size:13px;width:118px;'></a>
-
-        <a href="travel_agency.php?"><input type="button" style="color:white; background-color:#183e67" value="TRAVEL AGENCY" style='font-size:13px;width:118px;'></a>
-
-            <a href="abo.php?"><input type="button" style="color:white; background-color:#183e67" value="DEVENIR MEMBRE ESCAPADE FRANCAISE" style='font-size:13px;width:118px;'></a>
-
-            <a href="point.php?"><input type="button" style="color:white; background-color:#183e67" value="PRESSE" style='font-size:13px;width:118px;'></a>
-    </div>
-    <div class="footer3 milieu">
-        <div class="sous_div_footer">
-            <div class="form">
-                <p>Be the first to discover our new members and new French destination.</p>
-                <form>
-                    <input type="text" placeholder="Email" style="color:black;">
-                    <input type="submit" value="Subscribe"  style="background-color: #f7f7f9;color: #183e67" title="S'abonner à la newsletter" class="bouton_newsletter">
-                </form>
-                <br>
-            </div>
-        </div>
-    </div>
-    <div class="footer3 gauche">
-        <div class="liens" style="left:73%">
-            <span class="social_media"><a href="https://www.facebook.com/EscapadeFrancaise" target="_blank" title="Our Facebook page"><img src="img/logos/fb_logo.svg"></a></span>
-            <span class="social_media"><a href="http://instagram.com/escapadefrancaise" target="_blank" title="Our Instagram page"><img src="img/logos/instagram.svg"></a></span>
-            <span class="social_media"><a href="https://twitter.com/Fr_Escapade" target="_blank" title="Our Twitter page"><img src="img/logos/Twitter%20Filled.svg"></a></span>
-            <span class="social_media"><a href="https://vk.com/id422103524" target="_blank" title="Our VK page"><img src="img/logos/VK.com-logo.svg"></a></span>
-            <div style="float: float;position:absolute;     bottom: -93px; width: 400px;right: -47%;">
-                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     &copy; 2017 par escapadefrançaise.com &nbsp;|&nbsp; <a href="terms_of_use.php" style="text-decoration: underline; color:white;">Terms of use</a>
-                </div>
-        </div>
-        
-    </div>
-</footer>
+<div class="case6">
+ <?php include 'footer.php'; ?>
 </div>
 
 </body>

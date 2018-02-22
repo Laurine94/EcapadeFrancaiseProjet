@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php include 'connexion.php';
-
+        
 // Si tout va bien, on peut continuer
 //On récupère la valeur de la maison d'hote sélectionnée
 $nom_mh = $_GET['nom_mh'];
@@ -20,7 +20,7 @@ $reponse = $bdd->query('SELECT * FROM chambre inner join maison_hote on chambre.
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="css/calendar2.js"></script>
-        <script>
+        <!--<script>
             $( function() {
                 $( "#date_debut" ).datepicker();
             } );
@@ -29,7 +29,7 @@ $reponse = $bdd->query('SELECT * FROM chambre inner join maison_hote on chambre.
             $( function() {
                 $( "#date_fin" ).datepicker();
             } );
-        </script>
+        </script>-->
 
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     </head>
@@ -75,18 +75,18 @@ $reponse = $bdd->query('SELECT * FROM chambre inner join maison_hote on chambre.
         <br>
         <div id="center">
             <ul class="menu_guesthouse">
-                <li><a href="guesthouse.php" style="text-decoration:none;color:grey;">1. Choose your city</a></li>
+                <li><a href="guesthouse.php" style="text-decoration:none;color:grey;">Choose your city</a></li>
                 
                 <?php
                     $back = $bdd->query('SELECT ville FROM maison_hote where nom_mh="' . $nom_mh . '"');
                     while ($ville = $back->fetch()){
                         $nom_ville = $ville['ville'];
-                        echo '<li><a href="select_guesthouse.php?ville=' . $ville . '" style="text-decoration:none;color:grey;">2. Choose your guest houses</a></li>';
+                        echo '<li><a href="select_guesthouse.php?ville=' . $nom_ville . '" style="text-decoration:none;color:grey;">Choose your guesthouse</a></li>';
                     }
                 ?>
                 
-                <li class="guesthouse_active">3. Book your room</li>
-                <li>4. Confirm</li>
+                <li class="guesthouse_active">Book your room</li>
+                <li>Confirm</li>
             </ul>
         </div>
         <br /><br />
@@ -114,11 +114,12 @@ $reponse = $bdd->query('SELECT * FROM chambre inner join maison_hote on chambre.
                                                 echo '<p>' . $donnees['description_mh'] . '</p>';
                                                 echo '<br>';
                                                 echo '<br>';
-                                                echo '<p><b>Number of rooms: ' . $donnees['rooms_nbr'] . '</b></p>';
+                                                echo '<p><b>Nombre de chambres: ' . $donnees['rooms_nbr'] . '</b></p>';
                                                 $roomNbr = intval($donnees['rooms_nbr']);
                                             }
                                              $desc->closeCursor(); // Termine le traitement de la requête
                                                 echo '<br>';
+                                                echo  "<h3> All descriptions are exclusively the total property from our partners. </h3>";
                                                 echo '<br>';
                                                 $desc = $bdd->query("SELECT nom_chambre FROM chambre where nom_mh = '$nom_mh'");
                                                 $i = 1;
@@ -188,7 +189,7 @@ width: 100%;
 height: 40px;
 background-color: white;
 color: #f00;
-//opacity: 0.6;
+/*opacity: 0.6;*/
 text-align: center;
 font-size: 150%;
 z-index: 100;
@@ -339,38 +340,116 @@ while ($donnees = $reponse->fetch())
                             
                     </p>
 <?php if (preg_match ("/ihm_fr/", $_SERVER['REQUEST_URI'])): ?>
-                            <p>The arrival time is at <?php echo $donnees['heure_arr']; ?> and the time of departure is at <?php echo $donnees['heure_dep']; ?>.<br /></p>
+                            <p>Arrival time is at <?php echo $donnees['heure_arr']; ?> et l'heure de départ est à <?php echo $donnees['heure_dep']; ?>.<br /></p>
 <?php else: ?>
-                            <p>The arrival time is at <?php echo date("g:i a", strtotime($donnees['heure_arr'])) ?> and the time of departure is at <?php echo  date("g:i a", strtotime($donnees['heure_dep'])) ?>.<br /></p>
+                            <p>Arrival time is at <?php echo date("g:i a", strtotime($donnees['heure_arr'])) ?> and the departure time is at: <?php echo  date("g:i a", strtotime($donnees['heure_dep'])) ?>.<br /></p>
 <?php endif; ?>
             
                 </div>
-
-
+               
                 <div class="div_25 toSize">
                     <div class="sous_div">
-                        <p style="font-weight:bold; font-size:18px; text-align: center;">Select your visit dates:</p>
+                        <p style="font-weight:bold; font-size:18px; text-align: center;">Selection your visit date:</p>
+                    <div class="row">  
+                        <div class="col-xs-12 col-sm-12 col-md-12">    
                             <form action="fonctionAdd.php" method="get">
+                                <div class="form-group">
+                            <!-- Include Required Prerequisites -->
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+
+ 
+
+<!-- Include Date Range Picker -->
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
+<input class="form-control" type="text"  class="calendrier" id="date" name="date"  required>
+
+<script> $('input[name="date"]').daterangepicker(
+
+{
+
+    locale: {
+
+      format: 'YYYY-MM-DD'
+
+    },
+
+    startDate: '2018-02-19',
+    minDate:moment().startOf("day"),
+    endDate: '2019-06-30'
+
+}, 
+
+
+        function(start, end, label) {
+
+    alert("A new date range was chosen: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+
+});</script>
+
+
+            <? if (isset($_GET['start'])){
+
+                $date_debut=$_GET['start'];
+            }              
+            else                   {
+                $date_debut='';
+            }
+                               
+            if isset($_GET['end']){
+                
+                                $date_fin=$_GET['end'];
+                            }              
+                            else                   {
+                                $date_fin='';
+                            }             
+                 ?>              
                                 <input type="hidden" name="cookie_name" value="gh">
                                 <input type="hidden" name="type" value="gh">
                                 <input type="hidden" name="cookie_val" value="<?php echo $donnees['nom_chambre']; ?>">
-                                <label class="label" for="date_debut">
+                               <!-- <label class="label" for="date_debut">
                                     Arrival date :<br />
-                                    <input type="text" class="calendrier" id="date_debut<?php echo $a; ?>" name="date_debut">
+                                    <input type="text"  class="calendrier" id="date_debut<?php// echo $a; ?>" name="date_debut" required>
+                                  
                                 </label>
                                 <br /><br />
                                 <label class="label" for="date_fin">
                                     Departure date :<br />
-                                    <input type="text" class="calendrier" id="date_fin<?php echo $a; ?>" name="date_fin"/>
-                                </label>
-                            
+                                    <input type="text"  class="calendrier" id="date_fin<?php// echo $a; ?>" name="date_fin" required/>
+                                </label>-->
+                                <?if (isset($_GET['date_debut'])){
+                                    $date_debut=$_GET['date_debut'];
+                                                                 }
+                                    else{
+                                        $date_debut="";
+                                        }
+                                    if (isset($_GET['date_fin'])){
+                                            $date_fin=$_GET['date_fin'];
+                                                        }
+                                                    else{
+                                            $date_fin="";
+                                                        }
+
+                                  if ($date_fin<$date_debut){
+                                      $date_fin=false;
+                                      echo "Vos date sont incorrect !";
+                                  }                      
+                                                        ?>
                                 <script src="js/jquery-1.9.1.min.js"></script>
                                 <script src="js/bootstrap-datepicker.js"></script>
                                 <script type="text/javascript">
                                     // When the document is ready
-                                    $(document).ready(function () {
+                                  /*  $(document).ready(function () {
 
-                                        $('#date_debut<?php echo $a; ?>').datepicker({
+                                        $('#date_debut<?php// echo $a; ?>').datepicker({
                                             format: "dd/mm/yyyy",
                                             startDate: "today",
                                             autoclose: true
@@ -379,24 +458,51 @@ while ($donnees = $reponse->fetch())
 
                                         });
                                         
-                                        $('#date_fin<?php echo $a; ?>').datepicker({
+                                        $('#date_fin<?php// echo $a; ?>').datepicker({
                                             format: "dd/mm/yyyy",
                                             startDate: "today",
                                             autoclose: true,
 
                                            
 
-                                        });  
-                                    });
+                                        }); 
+                                        function compar(sdate1, sdate2)
+{
+var sdate_debut = document.getElementById('date_debut').value
+var date_debut = new Date();
+date_debut.setFullYear(sdate1.substr(6,4));
+date_debut.setMonth(sdate1.substr(3,2));
+date_debut.setDate(sdate1.substr(0,2));
+var d1=date_debut.getTime()
+ 
+var sdate_fin = document.getElementById('date_fin').value
+var date_fin = new Date();
+date_fin.setFullYear(sdate2.substr(6,4));
+date_fin.setMonth(sdate2.substr(3,2));
+date_fin.setDate(sdate2.substr(0,2));
+var d2=date_fin.getTime()
+ 
+//si la date d'arrviée et superieur a la date de depart en afficher un message d'erreur
+if(d1>d2)
+{  
+    alert('Vous avez selection un date incorrect!!')
+}
+else
+{
+    alert('Correct')
+}
+ 
+}
+                                    });*/ 
                                 </script>
                                 <br /><br />
 				<div>
-                                    Persons <select name="nb_places" style="color: black">
+                                    Number of persons: <select class="form-control" name="nb_places" style="color: black">
 				    <?php for ($p = 1; $p <= $donnees['nb_places']; $p++)
 					echo "<option value=$p>$p</option>";
 				    ?>
-				    
-				    <input type="checkbox" name="with-babies" class="pull-right"/><span class="pull-right">Babies (- 3 yrs old)</span>
+                                    </select><br>
+				    <br><input type="checkbox" name="with_babies" id="with_babies" class="pull-right"/><span class="pull-right">Bébé (- 3 ans)</span>
 				  </div>
                                 <br /><br />
                                 
@@ -406,7 +512,12 @@ while ($donnees = $reponse->fetch())
 
                                 
                                 <a><input type="submit" value="Book" class="submit_btn"/></a>
+                                </div>
                         </form>
+                    </div>
+                </div>
+
+
                             <br /><br />
                     </div>
                 </div>
@@ -422,10 +533,12 @@ while ($donnees = $reponse->fetch())
         ?>
 
 <link href="css/members.css" rel="stylesheet">
-            <h3 style="color:#923e67; text-align:center" > Other guest houses close to you in <?= $nom_ville ?></h3>	
+            
+            <h3 style="color:#FF0000; text-align:center" > Discover the other guest houses in <?= htmlspecialchars($nom_ville) ?></h3>	
 <div class="tableau_select_region">	
 	<?php
-          $vq = $bdd->query('SELECT * FROM maison_hote WHERE ville = "' . $nom_ville . '" AND nom_mh <> "' . $nom_mh . '" ORDER BY RAND() LIMIT 8');
+    
+          $vq = $bdd->query('SELECT * FROM maison_hote WHERE ville = "' . $nom_ville . '" ');
 
 while ($donnees = $vq->fetch()) {
 if (file_exists('img/presentation_mh/'.$donnees['nom_mh'].'_pres.jpg')) echo '
@@ -538,7 +651,7 @@ if (file_exists('img/presentation_mh/'.$donnees['nom_mh'].'_pres.jpg')) echo '
 
 
 <script language="javascript">
-function compar()
+function compar(d1,d2)
 {
 var sdate_debut = document.getElementById('date_debut').value
 var date_debut = new Date();
@@ -566,6 +679,3 @@ else
  
 }
 </script>
-
-
-

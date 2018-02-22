@@ -1,0 +1,408 @@
+/**********************
+Style général
+**********************/
+a{
+    text-decoration: none !important;
+}
+
+/*Menu*/
+
+/* Navigation Menu - Background */
+.navigation {
+  /* critical sizing and position styles */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  
+  /* non-critical appearance styles */
+  list-style: none;
+  background: #111;
+}
+
+/* Navigation Menu - List items */
+.nav-item {
+  /* non-critical appearance styles */
+  width: 200px;
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #000;
+}
+
+.nav-item a {
+  /* non-critical appearance styles */
+  display: block;
+  padding: 1em;
+  /*background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);*/
+  color: white;
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: color 0.2s, background 0.5s;
+}
+
+.nav-item a:hover {
+  color: #c74438;
+  /*background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);*/
+}
+
+/* Site Wrapper - Everything that isn't navigation */
+.site-wrap {
+  /* Critical position and size styles */
+  min-height: 100%;
+  min-width: 100%;
+  background-color: white; /* Needs a background or else the nav will show through */
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+  
+  /* non-critical apperance styles */
+  padding: 4em;
+  /*background-image: linear-gradient(135deg, rgb(254,255,255) 0%,rgb(221,241,249) 35%,rgb(160,216,239) 100%);*/
+  background-size: 200%;
+}
+
+/* Nav Trigger */
+.nav-trigger {
+  /* critical styles - hide the checkbox input */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+  /* critical positioning styles */
+  position: fixed;
+  left: 15px; top: 15px;
+  z-index: 2;
+  
+  /* non-critical apperance styles */
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+  background-size: contain;
+}
+
+/* Make the Magic Happen */
+.nav-trigger + label, .site-wrap {
+  transition: left 0.2s;
+}
+
+.nav-trigger:checked + label {
+  left: 215px;
+}
+
+.nav-trigger:checked ~ .site-wrap {
+  left: 200px;
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+}
+
+body {
+	/* Without this, the body has excess horizontal scroll when the menu is open */
+  overflow-x: hidden;
+}
+
+/* Additional non-critical styles */
+
+h1, h3, p {
+  max-width: 600px;
+  margin: 0 auto 1em;
+}
+
+code {
+	padding: 2px;
+	background: #ddd;
+}
+
+/* Micro reset */
+*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;}
+html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }
+
+/**********************
+v_connexionClient
+**********************/
+
+#titreconormale{
+    margin-left : 20%;
+    margin-top: 5%;
+}
+#conormale{
+    margin-left : 20%;
+}
+
+#blockquote{
+    background-color: #FFF;
+}
+
+.connetwork{
+/*    border-radius:20px;*/
+/*    border-left: 2px solid #140266;*/
+/*    box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;*/
+    padding: 20px;
+    margin-left: 100px;
+}
+#coFacebook{
+    width: 75%;
+}
+#coGoogle{
+    width: 75%; 
+}
+.iconNetwork{
+    border-right: 3px solid white;
+    padding-right: 10px;
+    border-radius: 1px;
+}
+/**********************
+v_accueilClient
+**********************/
+
+#logo{
+   /* position:fixed; */
+}
+
+#imageEncadreBienvenue{
+    background-image: url(../img/espace_membre/dessin_ef.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height : 100%;
+    position: relative;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+
+#encadreBienvenue{
+    background-color: white;
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 28%;
+    width: 568px;
+    height: 241px;
+}
+
+#h2_encadreBienvenue{
+    color: #140266;
+    font-size: 60px;
+    text-align: center;
+    letter-spacing: 0.5;
+}
+
+#cadreEssentiels{
+    color: white;
+    background-color: #140266;
+    height: 137px;
+    width: 980px;
+    margin-top: 50%;
+    margin-left: 13%;
+/*    position: absolute;*/
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 0.25em;
+    padding-top: 55px;
+    position: relative;
+}
+
+#wishlist-factures{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 125px;
+    text-align: center;
+    color: #1B1464;
+}
+
+#image-wishlist{
+    background-image: url(../img/espace_membre/ma_wishlist.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 80%;
+    height : 100%;
+}
+
+#image-factures{
+    background-image: url(../img/espace_membre/mes_factures.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 80%;
+    height : 100%;
+}
+
+.w-f-white-div{
+    background-color: white;
+    position: absolute;
+    top: 80px;
+    left: 105px;
+    padding: 10px 90px 0px 90px;
+    width: 491px;
+    height: 440px;
+    letter-spacing: 0.25em;
+}
+
+.link-w-f{
+    background-color: rgba(220, 34, 68, 1);
+    font-size: 30px;
+    color: white !important;
+    letter-spacing: 0.25em;
+    border-radius: 0px 0px 0px 0px !important;
+    width: 130px;
+    height: 40px;
+}
+
+.link-w-f:hover{
+    background-color: #871111;
+}
+
+
+.hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+#resa-a-venir{
+    background-image: url(../img/espace_membre/mes_reservations_a_venir_3.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 80%;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+#resa-passees{
+    background-image: url(../img/espace_membre/mes_reservations_passees.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 80%;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+.r_div{
+    display: block;
+    color: #1B1464;
+    background-color: white;
+    top: 230px;
+    left: 25%;
+    margin: auto;
+    padding: 70px 0px;
+    width: /*463px*/50%;
+    height: 240px;
+    text-align: center;
+    letter-spacing: 0.25em;
+    opacity: 0.85;
+}
+
+#white_div{
+    background-color: white; 
+    height: 150px;
+    position: relative;
+}
+
+
+
+/**********************
+v_voirFactures
+**********************/
+
+
+#carousel-div{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#titre-factures{
+    margin-left: 30%;
+    text-align: center;
+    letter-spacing: 0.25em;
+}
+
+.img-slide{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+}
+
+.bouton_ef{
+    /*background: rgba(0,0,0,0.8);*/
+    background-color: #183e67;
+    border: 5px solid white;
+    color: white;
+    font-weight: bold;
+    padding: 10px 60px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/**********************
+v_wishlist
+**********************/
+
+#titreWish{
+    text-align: center;
+    letter-spacing: 0.25em;
+    margin-top: 20px;
+    font-size: 20px;
+}
+    
+/*Carousel*/
+
+  .carousel {
+    margin: 0 auto;
+    width:800px;
+    height: 300px;
+    display: relative;
+  }
+  .carousel img {
+    display: hidden; /* hide images until carousel prepares them */
+    cursor: pointer; /* not needed if you wrap carousel items in links */
+  }
+  
+/**********************
+v_reservations
+**********************/
+
+.titreMenuReservation{
+    text-align: center;
+    letter-spacing: 0.25em;
+    padding-bottom: 20px;
+}
+  
+.menuReservation{
+    margin: auto;
+    margin-left: 34%;
+    letter-spacing: 0.25em;
+    text-align: center;
+}
+
+#listeReservationChambre{
+    margin-left: 20%;
+    
+}
+
+.listeReservation{
+    list-style: none;
+    margin-left: 10% !important;
+    padding: 20px;
+}
+
+.listeReservation li{
+    padding: 20px;
+    margin-left: 2px;
+    float: left;
+    text-align: center;
+    letter-spacing: 0.10em;
+}
+  
+  
+  
+  
+     
+#bulle {
+    text-align: center ;
+    color: white ;
+    background-color: #ffa238;
+    border-radius:0px 0px 5px 5px;
+    height: 30px;
+    width: 240px;
+    letter-spacing: 0.5;
+}

@@ -102,7 +102,7 @@
         <br>
         <br>
         <br>
-        <a href="contactus.php?"><input type="button" style="color:white; background-color:#183e67" value="CONTACT US" style='font-size:13px;width:118px;'></a>
+        <a href="contact_form.php"><input type="button" style="color:white; background-color:#183e67" value="CONTACT US" style='font-size:13px;width:118px;'></a>
 
         <a href="travel_agency.php?"><input type="button" style="color:white; background-color:#183e67" value="TRAVEL AGENCY" style='font-size:13px;width:118px;'></a>
 

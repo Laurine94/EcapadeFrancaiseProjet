@@ -24,7 +24,7 @@
                     <div class="espace">
                         <label for="title">
                             Title:<br />
-                            <select id="title" name="sexe_client" class="">
+                            <select id="title" name="sexe_client" class=""required>
                                 <option value="Mr">Mr.</option>
                                 <option value="M">Mrs.</option>
                                 <option value="M">Miss.</option>
@@ -37,13 +37,13 @@
                             <div class="petite_div_50">
                                 <label for="first_name">
                                     First name:<br />
-                                    <input type="text" id="first_name" name="prenom_client" placeholder="First name" class="bleu"/>
+                                    <input type="text" id="first_name" name="prenom_client" placeholder="First name" class="bleu"required/>
                                 </label>
                             </div>
                             <div class="petite_div_50">
                                 <label for="last_name">
                                     Last name:<br />
-                                    <input type="text" id="last_name" name="nom_client" placeholder="Last name" class="bleu"/>
+                                    <input type="text" id="last_name" name="nom_client" placeholder="Last name" class="bleu"required/>
                                 </label>
                             </div>
                         </div>
@@ -52,13 +52,13 @@
                             <div class="petite_div_50">
                                 <label for="email">
 				  Mail:<br />
-                                    <input type="text" id="email" name="mail_client" placeholder="Mail" class="bleu"/>
+                                    <input type="text" id="email" name="mail_client" placeholder="Mail" class="bleu"required/>
                                 </label>
                             </div>
                             <div class="petite_div_50">
                                 <label for="phone">
                                     Phone number:<br />
-                                    <input type="text" id="phone" name="tel_client" placeholder="Phone number" class="bleu"/>
+                                    <input type="text" id="phone" name="tel_client" placeholder="Phone number" class="bleu"required/>
                                 </label>
                             </div>
                         </div>
@@ -69,13 +69,13 @@
                             <div class="petite_div_75">
                                 <label for="address">
                                     Address:<br />
-                                    <input type="text" id="address" name="adresse_client" placeholder="Address" class="bleu"/>
+                                    <input type="text" id="address" name="adresse_client" placeholder="Address" class="bleu"required/>
                                 </label>
                             </div>
                             <div class="petite_div_25">
                                 <label for="zip_code">
                                      Post code:<br />
-                                    <input type="text" id="zip_code" name="code_postal_client" placeholder="Post code" class="bleu"/>
+                                    <input type="text" id="zip_code" name="code_postal_client" placeholder="Post code" class="bleu"required/>
                                 </label>
                             </div>
                         </div>
@@ -84,13 +84,13 @@
                             <div class="petite_div_50">
                                 <label for="city">
                                     City:<br />
-                                    <input type="text" id="city" name="ville_client" placeholder="City" class="bleu"/>
+                                    <input type="text" id="city" name="ville_client" placeholder="City" class="bleu"required/>
                                 </label>
                             </div>
                             <div class="petite_div_50">
                                 <label for="country">
                                     Country:<br />
-                                    <input type="text" id="country" name="pays_client" placeholder="Country" class="bleu"/>
+                                    <input type="text" id="country" name="pays_client" placeholder="Country" class="bleu"required/>
                                 </label>
                             </div>
                         </div>

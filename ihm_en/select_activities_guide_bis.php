@@ -104,7 +104,7 @@ while ($languages = $req->fetch()) {
                 if (file_exists('img/actgui/'.$donnees['nom_activite'].'.jpg')) 
                     echo '
                     <div class="photo">
-                        <a href="select_activites_final.php?nom_activite='.$donnees['nom_activite'].'&ville='.$donnees['ville']. '&nom='.urlencode ($infos["nom"]).'&id='.urlencode ($guide).'">
+                        <a href="select_activites_guide_final.php?nom_activite='.$donnees['nom_activite'].'&ville='.$donnees['ville']. '&nom='.urlencode ($infos["nom"]).'&id='.urlencode ($guide).'">
                             <img src="img/actgui/'.$donnees['nom_activite'].'.jpg" />
                             <div class="overlay">
                                 <p style="font-family:\'Cutive\', serif;">'.$donnees['nom_activite'].'</p>
@@ -125,3 +125,4 @@ while ($languages = $req->fetch()) {
     <?php include 'footer.php'; ?>
 </body>
 </head>
+

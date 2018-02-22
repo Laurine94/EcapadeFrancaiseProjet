@@ -91,7 +91,7 @@ body p, body input[type=button]{
 <div id="navbar">
 <div id="logo">
     <a href="index.php"><img class="img_logo_1" src="img/logos/logo_basic.png" alt="logo_ef"></a>
-    <a href="../ihm/" id="language-ch"><img src="../lng/fr.png" alt="english"> Français</a>
+    <a href="../ihm_fr/" id="language-ch"><img src="../lng/fr.png" alt="english"> Français</a>
 </div>
 
 <ul id="nav">
@@ -99,5 +99,6 @@ body p, body input[type=button]{
     <li><a href="genrebis.php"> CHOOSE YOUR ACTIVITIES </a></li>
     <li><a href="guide_plus.php">OUR LOCAL GUIDES </a></li>
     <li><a href="onglets.php">OUR HISTORY & OUR VALUES</a></li>
+    <li><a href="EspaceClient/indexClient.php">MY ACCOUNT</a></li>
 </ul>
 </div>

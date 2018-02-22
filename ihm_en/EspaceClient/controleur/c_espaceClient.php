@@ -1,0 +1,164 @@
+﻿<?php
+include "../connexion.php";
+require_once ("include/class.pdoef.inc.php");
+require_once ("include/fct.inc.php");
+if (!isset($_REQUEST['action'])) {
+    $_REQUEST['action'] = 'accueil';
+}
+$action = $_REQUEST['action'];
+$id = $_SESSION['mail'];
+//var_dump($id);
+//include("vues/v_menu.html");
+//echo "<div class='site-wrap'>";
+include("vues/v_headClient.php");
+switch ($action) {
+    case 'valideConnexion': {
+            $mail = $_POST['mail'];
+            $mdp = $_POST['mdp'];
+            //Cryptage de mot de passe
+//            $mdp = sha1($mdp);
+
+            $client = $pdo->getInfosClient($mail, sha1($mdp));
+            if (!is_array($client)) {
+                ajouterErreur("Incorrect E-mail address or incorrect password");
+                include("vues/v_erreurs.php");
+                include("vues/v_connexionClient.php");
+            } else {
+                $num = $client['num'];
+                $nom = $client['nom'];
+                $prenom = $client['prenom'];
+                connecter($num, $nom, $prenom);
+                include("vues/v_accueilClient.php");
+                // header("Location:http://localhost/escapadefrancaisev3/ihm_fr/EspaceClient/indexClient.php?uc=espaceClient&action=accueil");
+            }
+
+            break;
+        }
+    case 'accueil': {
+            $mail = $_SESSION['mail'];
+            var_dump($mail);
+            $client = $pdo->getMailClient($mail);
+            $num = $client['num'];
+            $nom = $client['nom'];
+            $prenom = $client['prenom'];
+            include("vues/v_accueilClient.php");
+//            include("../../index.php");
+            break;
+        }
+    case 'voirWishlist': {
+            include("vues/v_wishlist.php");
+            break;
+        }
+    case 'voirFacture': {
+            $lesFactures = $pdo->getReservationDisponible($id);
+            $lesFactures2 = $pdo->getReservationDisponibleCarousel($id);
+            $Cles = array_keys($lesFactures);
+            $factureASelectionner = $Cles[0];
+            $Cles2 = array_keys($lesFactures2);
+            $factureASelectionner2 = $Cles2[0];
+            include("vues/v_voirFactures.php");
+            break;
+        }
+    case 'genererpdf': {
+            $numRes = $_REQUEST['numRes'];
+            var_dump($numRes);
+            $lesVoyageurs = $pdo->getVoyageur($numRes);
+            $reservationf = $pdo->getReservation($id, $numRes);
+            $voyageurf = $pdo->getVoyageur($numRes);
+            $donneeRes = $pdo->getReservationPdf($id, $numRes);
+
+            include("vues/v_pdf.php");
+            creerPdf($reservationf);
+            break;
+        }
+
+    case 'menuReservationsAVenir': {
+
+            include('vues/v_menuReservationsAVenir.php');
+
+            $lesRes = $pdo->getReservationAVenir($id);
+            if (empty($lesRes)) {
+                echo"There is no reservation to come.";
+            } else {
+                $Cles = array_keys($lesRes);
+                $resASelectionner = $Cles[0];
+                include('vues/v_toutesReservationsAVenir.php');
+            }
+            break;
+        }
+
+    case 'voirActivitesLesResAVenir': {
+            include('vues/v_menuReservationsAVenir.php');
+            $lesRes = $pdo->getActiviteReservationAVenir($id);
+            if (empty($lesRes)) {
+                echo"There is no reservation to come.";
+            } else {
+                $Cles = array_keys($lesRes);
+                $resASelectionner = $Cles[0];
+                include('vues/v_ActiviteReservationsAVenir.php');
+            }
+            break;
+        }
+
+    case 'voirHebergementLesResAVenir': {
+            include('vues/v_menuReservationsAVenir.php');
+            $lesRes = $pdo->getHebergementReservationAVenir($id);
+            if (empty($lesRes)) {
+                echo"Il n'y a aucune réservation à venir.";
+            } else {
+                $Cles = array_keys($lesRes);
+                $resASelectionner = $Cles[0];
+                include('vues/v_hebergementsReservationsAVenir.php');
+            }
+            break;
+        }
+
+    case 'menuReservationsPassees': {
+            include('vues/v_menuReservationsPassees.php');
+
+            $lesRes = $pdo->getReservationPassees($id);
+            if (empty($lesRes)) {
+                echo"Il n'y a aucune réservation passée.";
+            } else {
+                $Cles = array_keys($lesRes);
+                $resASelectionner = $Cles[0];
+                include('vues/v_toutesReservationsPassees.php');
+            }
+            break;
+        }
+
+    case 'voirHebergementLesResPassee': {
+            include('vues/v_menuReservationsPassees.php');
+            $lesRes = $pdo->getHebergementReservationPassees($id);
+            if (empty($lesRes)) {
+                echo"There is no reservation of hosting past.";
+            } else {
+                $Cles = array_keys($lesRes);
+                $resASelectionner = $Cles[0];
+                include('vues/v_hebergementsReservationsPassees.php');
+            }
+            break;
+        }
+
+    case 'voirActivitesPassees': {
+            include('vues/v_menuReservationsPassees.php');
+            $lesRes = $pdo->getActiviteReservationPassees($id);
+            if (empty($lesRes)) {
+                echo"There is no reservation of acivities past.";
+            } else {
+                $Cles = array_keys($lesRes);
+                $resASelectionner = $Cles[0];
+                include('vues/v_ActiviteReservationsPassees.php');
+            }
+            break;
+        }
+
+
+
+    default: {
+            include("vues/v_accueilClient.php");
+
+            break;
+        }
+}
+include("vues/v_footer.php");

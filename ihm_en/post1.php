@@ -13,30 +13,11 @@
         <title>ESCAPADE FRANCAISE</title>
         
     </head>
-<div class="animsition">
-    <div id="global">
-            <div id="entete">
-                <div id="navbar">
-                
-                
-                    <div id="logo">
-                        <a href="index.php"><img class="img_logo_1" src="img/logos/logo_v2.png" alt="logo_ef"></a>
-                        <a href="../ihm/" id="language-ch"><img src="../lng/fr.png" alt="english"> French</a>
-                    </div>
-                    <ul id="nav">
-                        <li><a href="guesthouse.php">CHOOSE YOUR GUEST HOUSE  </a></li>
-                        <li><a href="select_activities.php"> CHOOSE YOUR ACTIVITIES </a></li>
-                        <li><a href="guide_plus.php">OUR LOCAL GUIDES </a></li>
-                        <li><a href="onglets.php">OUR HISTORY & OUR VALUES</a></li>
-                    </ul>
-                </div>            
-            </div>
-    </div>
-</div>
+
+<?php require 'navbar.php' ?>
 
 
-
-<div class="container1">
+<div class="container1" style="font-family: 'Montserrat', sans-serif; color: black">
 
     <div class="row">
         <h2>The French Riviera</h2>
@@ -63,17 +44,50 @@
         <br>       
     </div>    
 </div>
+
 <div class="case1">
+    <!--<p style="background-color:white; color:black; font-size:16px; margin-left:-2%;">Share on :</p>-->
     <div class="row">
-        <a href="http://www.facebook.com"> <img src="img/ff.jpg" width="109px" height="30px" ></a>
-        <a href="http://www.twitter.com"> <img src="img/twi.jpg" width="109px" height="30px" ></a>
-        <a href="http://www.linkedin.com"> <img src="img/inn.jpg" width="32px" height="30px" ></a>
-        <a href="http://www.pinterest.com"> <img src="img/pp.jpg" width="32px" height="30px" ></a>
-        <a href="http://www.account.google.com"> <img src="img/gg.jpg" width="32px" height="30px" ></a>
+        <!--Facebook-->
+        <div id="fb-root"></div>
+        <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/en_EN/sdk.js#xfbml=1&version=v2.11&appId=139490473398600&autoLogAppEvents=1';
+                fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <div class="fb-share-button" data-href="http://localhost/escapadefrancaisebis-master-a1d272ea9f21aac76bc0beb4361af1a62156fd63/ihm_en/post1.php" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2Fescapadefrancaisebis-master-a1d272ea9f21aac76bc0beb4361af1a62156fd63%2Fihm_en%2Fpost1.php&amp;src=sdkpreparse">Share</a></div>
+        <!--Twitter-->
+        <script>
+        function(d,s,id){
+            var js,fjs=d.getElementsByTagName(s)[0];
+            if(!d.getElementById(id)){js=d.createElement(s);
+                js.id=id;
+                js.src="//platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js,fjs);}
+            }(document,"script","twitter-wjs");
+        </script>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false" data-size="large">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <!--Linkedin-->
+        <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+        <script type="IN/Share" data-url="http://localhost/escapadefrancaisebis-master-a1d272ea9f21aac76bc0beb4361af1a62156fd63/ihm_en/post1.php" data-counter="top"></script>
+        <!--Pinterest-->
+        <a href="http://www.pinterest.com"> <img src="img/pinterest.png" width="32px" height="30px" style="margin-top:2%;"></a>
+        <!--Google+-->
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <g:plusone></g:plusone>
+        <a style="margin-left:43%;">
+            <?php
+            echo '<a href="select_guesthouse.php?genre=SEA&ville=French%20Riviera"><input type="button" value="See the guest houses"/></a>'
+            ?>
+        </a>
     </div>
 </div>
 
-<div class="case2">
+<div class="case2" style="font-family: 'Montserrat', sans-serif;">
     <div class="row">
         <div class="col-md-6">
             <h2>You Might Also Like:</h2>

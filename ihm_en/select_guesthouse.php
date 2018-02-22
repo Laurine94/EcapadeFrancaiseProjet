@@ -11,6 +11,15 @@ $reponse = $bdd->query('
 
 <html>
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111755406-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111755406-1');
+</script>
        <meta charset="utf-8"> 
        <link href="css/select_guesthouse.css" rel="stylesheet">
        <link href="css/select_activities.css" rel="stylesheet">
@@ -45,10 +54,10 @@ $reponse = $bdd->query('
             <br>
             <div id="center">
                 <ul class="menu_guesthouse">
-                    <li><a href="guesthouse.php" style="text-decoration:none;color:grey;">1. Choose your city</a></li>
-                    <li class="guesthouse_active">2. Choose your guest house</li>
-                    <li>3. Book your room </li>
-                    <li>4. Confirm</li>
+                    <li><a href="guesthouse.php" style="text-decoration:none;color:grey;">Choose your city</a></li>
+                    <li class="guesthouse_active">Choose your guesthouse</li>
+                    <li>Book your room</li>
+                    <li>Confirm</li>
                 </ul>
             </div>
             <br><br><br>
@@ -113,7 +122,7 @@ $reponse = $bdd->query('
             <br>
             <br>
                 
-                <div id="intro"><h2 style="font-family:align-center; text-align: center">Our guest houses</h2></div>
+                <div id="intro"><h2 style="font-family:align-center; text-align: center">OUR GUESTHOUSES</h2></div>
                 <br>
                 <br>
                 <br>
@@ -143,7 +152,7 @@ $reponse = $bdd->query('
                         echo '<p>' . $donnees['description_mh'] . '</p>';
                         echo '<p><b>Number of rooms: ' . $donnees['rooms_nbr'] . '</b></p>';
                                                 echo '<span>' . $donnees['note_mh'] . '</span>';
-
+                            $nom_mh=$donnees['nom_mh'];
                         $adr = $bdd->query("SELECT adresse_mh FROM maison_hote where nom_mh = '$nom_mh'");
                     $infos = $adr->fetch();
                     $adresse_mh = $infos['adresse_mh'];
@@ -156,7 +165,7 @@ $reponse = $bdd->query('
                         echo '<br />';
                         echo '<div class="droite">';
                         //echo '<form method="post" action="test_chambres.php?nom_mh=' . $donnees['nom_mh'] . '>';
-                        echo '<a href="select_room.php?nom_mh=' . $donnees['nom_mh'] . '"><input type="button" value="See the rooms"/></a>';
+                        echo '<a href="select_room.php?nom_mh=' . $donnees['nom_mh'] . '"><input type="button" value="See the room"/></a>';
                         //echo '</form>';
                         echo '</div>';
                         echo '</div>';

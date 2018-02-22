@@ -1,10 +1,15 @@
-
-
-
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111755406-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111755406-1');
+</script>
         <meta charset="UTF-8">
         <link href="css/index.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -69,10 +74,10 @@ if (!empty($_GET['ville'])) $ville = $_GET['ville']; else $ville = '';
     <?php
         $reponse = $bdd->query("SELECT * FROM ville WHERE genre='$genre'");
         while ($donnees = $reponse->fetch()) {
-			if (file_exists('img/villes_activites/'.$donnees['id'].'_acti.jpg')) echo '
+			if (file_exists('img/villes_activites/'.$donnees['ville'].'_acti.jpg')) echo '
                     <div class="bloc5">
                         <a href="select_activities_ville_bis.php?ville='.$donnees['id'].'">
-							<img src="img/villes_activites/'.$donnees['id'].'_acti.jpg" alt="'.$donnees['ville'].'"/>
+							<img src="img/villes_activites/'.$donnees['ville'].'_acti.jpg" alt="'.$donnees['ville'].'"/>
                             <div class="overlay">
                                 <p style="font-family:\'Open-sans\', serif;">'.$donnees['ville'].'</p>
                             </div></a>

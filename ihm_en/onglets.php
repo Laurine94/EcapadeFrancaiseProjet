@@ -2,6 +2,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111755406-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111755406-1');
+</script>
 		<link type="text/css" rel="stylesheet" href="css/onglets.css"/>
         <style>.rederror input, .rederror textarea {border-color:#c00;}</style>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -10,7 +19,7 @@
 	</head>
 	<body>
     	<?php include 'div_panier.php'; ?>
-<!--------------------->
+<!---------------------->
 <div id="entete">
     <?php include 'navbar.php'; ?>
 </div>
@@ -30,7 +39,7 @@
 		<div<?php echo (!empty($_POST))?' class="contenu-actif" ':'' ?>><?php include ('contact_form.php'); ?></div>
 	</div>
 </div>
-<!--------------------->
+<!---->
         
     <?php include 'footer.php'; ?>
 	</body>

@@ -52,7 +52,7 @@
 			$jours_dispo=$donnees['jours_dispo'];
             echo '<div class="grande_div">';
             echo '<div class="img_act adapt">';
-            echo '<img src="img/activities/' . $donnees['id_activite'] . '.jpg" alt="...">';
+            echo '<img src="img/slide1/' . $donnees['id_activite'] . '_slide1.jpg" alt="...">';
             echo '</div>';
             echo '<div class="desc_act adapt">';
             echo '<div class="sous_div">';

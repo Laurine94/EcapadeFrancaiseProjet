@@ -1,6 +1,15 @@
 <html>
 
 <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111755406-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111755406-1');
+</script>
     <link rel="stylesheet" type="text/css" href="css/select_activities_ville.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <title>Activités</title>

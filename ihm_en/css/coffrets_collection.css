@@ -1,7 +1,7 @@
 .background{
 		background: url("../img/cadeaux/Mockup1.jpg");
 		background-repeat: no-repeat;
-		background-size: 1480px 800px;
+		background-size: 1380px 800px;
 		background-position: center;
 		opacity: 1.75;
 		padding-top: 50%;
@@ -19,7 +19,6 @@
 .carre1{
 		/*background:rgba(0,0,0,0.3);*/
 		background:white;
-
 		left:30%;
 		right:30%;
 		top:400px;
@@ -68,6 +67,12 @@
 		color: white;
 }
 
+#button1 p{
+    text-align: center;
+    color: white;
+    font-size: 12pt;
+}
+
 .parti{
 		background-color: white;
 		width:100%;
@@ -86,8 +91,15 @@
 
 .col-md-4 p{
 		text-align: center;
-	 	color: #0436B3;
+	 	color: #183e67;
+	 	font-family: 'Montserrat', sans-serif;
+	 	text-transform: uppercase;
 }
+
+.case2 figure p {
+	color: #183e67;
+}
+
 /* **************** case 03 start ************* */
 .case3{
 
@@ -119,7 +131,7 @@
 		margin-right: 240px;
 }
 .line{
-		margin-left: 240PX;
+		margin-left: 240px;
 		margin-right: 240px;
 		margin-top: 30px;
 
@@ -177,10 +189,10 @@
 		
 }
 .parti2 h1{
-		color: blue;
+		color: #183e67;
 }
 .parti2 p{
-		color: blue;
+		color: #183e67;
 		font-size: 30px;
 }
 
@@ -243,7 +255,7 @@
 
 .case6{
 		width: 100%;	
-		margin-top: 1250px;
+		margin-top: 825px;
 
 }
 
@@ -286,3 +298,118 @@
 @media (max-width: 110px) {
 
 }*/
+
+.view {
+    position: relative;
+    width: 100%;
+}
+
+.img-thumbnail {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.view:hover .img-thumbnail {
+  opacity: 0.5;
+}
+
+.view:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #183e67;
+  color: white;
+  font-size: 16px;
+  padding: 8px 28px;
+}
+
+.middle .text a {
+	text-decoration: none;
+	color: white;
+}
+
+/*Menu vertical*/
+element.style {
+    top: -208px;
+    bottom: 0px;
+    right: 76px;
+    position: fixed;
+    margin: auto;
+    z-index: 50;
+    width: 123px;
+    height: 84px;
+}
+
+/*.style-ih1tlgxxmenuContainer.style-ih1tlgxx_orientation-right .style-ih1tlgxx_item .style-ih1tlgxx_link {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+.style-ih1tlgxxmenuContainer .style-ih1tlgxx_item .style-ih1tlgxx_link {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+    cursor: default;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+
+.style-ih1tlgxxmenuContainer .style-ih1tlgxx_item .style-ih1tlgxx_link .style-ih1tlgxx_symbol {
+    cursor: pointer;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    pointer-events: all;
+    fill: transparent;
+    stroke: rgba(94, 93, 93, 1);
+    stroke-width: 4px;
+}
+
+a, abbr, acronym, address, applet, b, big, blockquote, body, button, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, footer, form, h1, h2, h3, h4, h5, h6, header, html, i, iframe, img, ins, kbd, label, legend, li, nav, object, ol, p, pre, q, s, samp, section, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, title, tr, tt, u, ul, var {
+    margin: 0;
+    padding: 1;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+ol, ul {
+    list-style: none;
+}*/
+
+/*Fin menu vertical*/
+
+
+.case3 .parti02 {
+	background-color: #183e67;
+}
+
+.col-md-6{
+	height:0px;
+}
+

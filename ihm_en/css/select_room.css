@@ -78,8 +78,8 @@ body{
         background-color: #183e67;
         width: 27%;
         display: inline-block;
-        float: right;
-        right:10%;
+        /*float: right;*/
+        right:-2%;
         color: white;
         /*color: #183e67;*/
         border-radius: -5px;

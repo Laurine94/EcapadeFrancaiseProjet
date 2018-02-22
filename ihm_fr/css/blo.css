@@ -1,0 +1,235 @@
+ 
+
+ /* ************************nav bar start ************* */
+#nav {
+    list-style-type: none;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+    white-space: nowrap;
+    overflow-y : auto;
+    border: 1px solid #e7e7e7;
+    background-color: #183e67;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+}
+
+#nav li {
+    display: inline;
+}
+
+#nav li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 17px 30px;
+    text-decoration: none;
+}
+
+#nav li a:hover:not(.active) {
+    background-color: #697f9c;
+}
+    
+#logo{
+    text-align: center;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+    
+#logo img {
+    max-width: 10%;
+    height: auto;
+}
+    
+body{
+    margin: 0;
+    padding: 0;
+}
+    
+body p, body input[type=button]{
+    /*font-family: 'Verdana, sans-serif;*/
+    /*font-family: 'Pacifico', cursive;*/
+    /*font-family: 'Slabo 27px', serif;*/
+    /*font-family: 'Open Sans', sans-serif;*/
+    /*font-family: 'Lobster', cursive;*/
+    /*font-family: 'Carter One', cursive;*/
+    /*font-family: 'Racing Sans One', cursive;*/
+    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Ubuntu', sans-serif;*/
+    /*font-family: 'Roboto', sans-serif;*/
+}
+
+#language-ch {
+    position: absolute;
+    z-index: 9999999999;
+    top: 10px;
+    right: 20px;
+    color: #183E67;
+    text-decoration: none;
+    font: normal 16px/16px 'Arial', serif;
+}
+
+#language-ch img {
+    position: relative;
+    max-width: none;
+    max-height: 15px;
+    top: -2px;
+}
+#buttion1{
+    position: absolute;
+    max-width: none;
+    max-height: 15px;
+    margin-top: 55px;
+    margin-left: 100px;
+
+    top: -4px;
+}
+/* ******************** for video  ************************ */
+
+.video-bg{
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 60%;
+    text-align: center;
+    position: relative;
+}
+.repertoire{
+    position: absolute;
+    margin-top: -43%;
+    margin-left: 18%;
+    z-index: 12;
+    color: white;
+    padding: 10px;
+    /*text-transform: uppercase;*/
+}
+.repertoire h1{
+    font-style: normal;
+    font-size: 60px;
+}
+.repertoire p{
+    font-style: normal;
+    font-size: 20px;
+}
+
+/* *******************case 1 **************************** */
+.case1{
+    margin-left: 150px;
+    margin-right: 150px;
+}
+/* **********************case 2************************** */
+
+.case2{
+    height: 70px;
+    margin-top: 15px;
+    width: auto;
+    background-color: #002E5D;
+    text-align: center;
+   
+}
+/* *****************************case 3*************** */
+.case3slideshow{
+    height: 400px;
+    width: auto;
+    /*background-color: #5D89FF;*/
+    margin: 0 auto;
+}
+
+.case3slideshow img{
+    float: left;
+    overflow: hidden;
+}
+
+/* *********************case 4************************* */
+
+.case4 .ss{
+    margin-left: 150px;
+    margin-right: 150px;
+    background-color: green;
+}
+
+/* *******************footer css end***************** */
+footer{
+        background-color: #183e67;
+        position:relative;
+        bottom:0;
+        width:100%;
+        padding-top:10px;
+        padding-bottom:10px;
+        text-align: center;
+        font-size: 15px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .footer3{
+        width: 33%;
+        display: inline-block;
+        color: white;
+    }
+    
+    .droite p{
+        padding: 0 10px 0px;
+        float: right;
+        margin: 0;
+    }
+    
+    .form{
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        top: 10px;
+        position: absolute;
+        width: 33%;
+    }
+    
+    .form input[type=text]{
+        width: 75%;
+        padding: 5px;
+        border: none;
+        outline: none;
+    }
+    
+    .form input[type=submit]{
+        width: 20%;
+        padding: 5px;
+        background-color: #6666ff;
+        color: white;
+        border: none;
+        font-weight: bold;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+    
+    .partenaires{
+        position: absolute;
+        bottom: 5px;
+        left: 43%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .social_media img{
+        width: auto;
+        height: 40px;
+    }
+    
+    .social_media{
+        padding-right: 10px;
+        padding-top: 0;
+        margin-top: 0;
+    }
+    
+    .liens{
+        float: left;
+        top: 10px;
+        position: absolute;
+    }
+    
+    .sous_div_footer{
+        text-align: center;
+    }
+    
+/* *******************footer css end**************** */
+
+    
+    

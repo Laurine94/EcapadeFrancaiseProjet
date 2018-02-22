@@ -1,3 +1,6 @@
+<?php
+require '_header.php';
+?>
 <?php $activities_work =0; ?>
 <style>  
 #nav {
@@ -7,7 +10,7 @@
     padding: 0;
     white-space: nowrap;
     overflow-y : auto;
-    border: 1px solid green;
+    border: 1px white;
     background-color: #183e67;
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
@@ -36,7 +39,7 @@
 }
     
 #logo img {
-	max-width: 10%;
+	max-width: 15%;
 	height: auto;
 }
     
@@ -94,10 +97,11 @@ body p, body input[type=button]{
 </div>
 
 <ul id="nav">
-    <li><a href="index.php">Home  </a></li>
-    <li><a href="#shop"> Shop </a></li>
-    <li><a href="#about">About </a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="index.php">Home</a></li>
+    <li><a href="coffrets.php #shop"> Shop </a></li>
+    <li><a href="coffrets.php #about">About </a></li>
+    <li><a href="coffrets_contact.php">Contact</a></li>
+    <li><a href="panier.php">Cart (<span id="count"><?= $panier->count(); ?></span>)</a></li>
     <!--
     <li><a href="#">
         <img src="img/panierion.jpg"></li> 
