@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <?php
     $nb_gh = 1;
     $nb_act = 1;

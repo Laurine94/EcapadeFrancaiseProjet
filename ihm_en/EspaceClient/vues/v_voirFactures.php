@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> My invoices</title>
+        <title> Mes factures</title>
         <meta charset="UTF-8">
     </head>
 
@@ -10,8 +10,8 @@
         <div class="container-fluid" id="background">
             <div class="row" id="titre-factures">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h1> My invoices</h1>
-                    <p>Download and consult here all your invoices.</p>
+                    <h1> Mes factures</h1>
+                    <p>Téléchargez et consultez ici toutes vos factures.</p>
                 </div>
             </div>
             <div class="row" id="carousel-div">
@@ -30,8 +30,8 @@
                                                 <div class="item active img-slide" id="" style="background-image: url(../img/espace_membre/mes_reservations_passees.jpg);">
                                                     <div class="carousel-caption" >
                                                         <h3 data-animation="animated zoomIn" style="font-family: 'Arial', serif;"></h3>
-                                                        <h1>Download here all your invoices</h1>
-                                                        <h1> of your last reservation</h1>
+                                                        <h1>Ici téléchargez les factures</h1>
+                                                        <h1> de vos dernières réservation</h1>
                                                     </div>
 						</div>
                                             <?php
@@ -51,7 +51,7 @@
                                                         <h3 data-animation="animated zoomIn" style="font-family: 'Arial', serif;">Nom ville</h3>
                                                         <h2><?php echo $nomMh ?></h2>
                                                         <h2><?php echo $prix ?>€</h2>
-                                                        <a href='indexClient.php?uc=espaceClient&action=genererpdf'><input type="button" class="bouton_ef" data-animation="animated zoomIn" value="Download pdf " style="font-family: 'Arial', serif;"></a>
+                                                        <a href='indexClient.php?uc=connexion&action=genererpdf'><input type="button" class="bouton_ef" data-animation="animated zoomIn" value="Télécharger la facture " style="font-family: 'Arial', serif;"></a>
                                                     </div>
 						</div>
                                             <?php } ?>
@@ -85,7 +85,7 @@
                                                 <div class=''><?php echo $nomChambre ?> - <?php echo $nomMh ?> - <?php echo $activite ?></div>
                                                 <div class=''> Du <?php echo $dateDebut ?> au <?php echo $dateFin ?></div>
                                                 <div class=''><?php echo $prix ?>€ </div>
-                                                <div class=''> <a href='indexClient.php?uc=espaceClient&action=genererpdf'>Download pdf</a></div>
+                                                <div class=''> <a href='indexClient.php?uc=espaceClient&action=genererpdf'>Télécharger pdf</a></div>
                                                 <hr class="hr">
                                             </li>
                                             

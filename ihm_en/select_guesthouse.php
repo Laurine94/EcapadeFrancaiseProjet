@@ -1,5 +1,9 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <?php
+var_dump($_SESSION['id']);
 include 'connexion.php';
 $ville = $_GET['ville'];
 

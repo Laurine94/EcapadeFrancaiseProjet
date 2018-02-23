@@ -1,4 +1,7 @@
-<html>
+<?php
+session_start();
+var_dump($_SESSION['id']);
+?><html>
 
     <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->

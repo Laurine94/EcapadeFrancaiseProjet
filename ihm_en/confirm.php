@@ -1,4 +1,7 @@
 <?php
+session_start();
+var_dump($_SESSION['id']);
+?><?php
 	function traiter_cookies_v($cookie_code) {
 		$cookie_array= array();
 		if (!empty($cookie_code)) @$cookie_code=explode('||', $cookie_code);

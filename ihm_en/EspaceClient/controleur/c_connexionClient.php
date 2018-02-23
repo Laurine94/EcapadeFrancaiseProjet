@@ -5,13 +5,28 @@ require_once ("include/fct.inc.php");
 if (!isset($_REQUEST['action'])) {
     $_REQUEST['action'] = 'demandeConnexion';
 }
-$action = $_REQUEST['action'];
 
+if (!empty($_REQUEST['mail'])) {
+    $id = $_REQUEST['mail'];
+    $_SESSION['mail'] = $id;
+}
+var_dump($_SESSION['mail']);
+var_dump($_REQUEST['mail']);
+$action = $_REQUEST['action'];
 
 switch ($action) {
     case 'demandeConnexion': {
-            include("vues/v_navbar.php");
-            include("vues/v_connexionClient.php");
+        $code = "";
+            if (!empty($_SESSION['mail'])) {
+                $id = $_SESSION['mail'];
+                $code=1;
+                $_SESSION['code']=$code;
+                header("Location:http://localhost/escapadefrancaisev3/ihm_en/EspaceClient/indexClient.php?uc=connexion&action=valideConnexion&code=$code");
+            } else {
+                include("vues/v_navbar.php");
+                include("vues/v_connexionClient.php");
+            }
+
             break;
         }
 
@@ -66,7 +81,7 @@ switch ($action) {
             for ($i = 1; $i < $longueurkey; $i++) {
                 $key = $key . mt_rand(0, 9);
             }
-            $pdo->sauvegardeClient($nom, $prenom, $sexe, $mail, $tel, $adresse, $ville, $cp, $pays, $mdp, $key);
+            $pdo->sauvegardeClient($nom, $prenom, $sexe, $mail, $tel, $adresse, $ville, $cp, $pays, sha1($mdp), $key);
 
             //envoie d'un mail de confirmation
             $header = "MIME-Version: 1.0\r\n";
@@ -78,18 +93,17 @@ switch ($action) {
             <html>
                 <body>
                     <div align="center">
-                    <a href="http://localhost/escapadefrancaisev3/IHM_en/EspaceClient/indexClient.php?mail=' . urlencode($mail) . '&key=' . $key . '&uc=connexion&action=confirmationMail">Confirmez votre compte.</a> 
-                       We thank you for your registration on our site Escapade Française.<br/>
-                        Please confirm your registration by clicking the link below.<br/>
-                        <a href="localhost/escapadefrancaisev3/ihm_fr/EspaceClient/indexClient.php> back to the site</a>"
+                    <a href="http://localhost/escapadefrancaisev3/IHM_EN/EspaceClient/indexClient.php?mail=' . urlencode($mail) . '&key=' . $key . '&uc=connexion&action=confirmationMail">Confirmez votre compte.</a> 
+                        Nous vous remercions pour votre inscription sur notre site Escapade Française.<br/>
+                        Veuillez confirmer votre inscription en cliquant sur le lien ci-dessous.<br/>
+                        <a href="localhost/escapadefrancaisev4/ihm_fr/EspaceClient/indexClient.php> retour vers le site </a>"
                        <br/>---------------<br/>
-                        This is an automatic e-mail, Thank you for not answering it.
-
+                        Ceci est un mail automatique, Merci de ne pas y répondre.
                     </div>
                 </body>
             </html>
             ';
-            mail($mail, "Confirmation of the account", $message, $header);
+            mail($mail, "Confirmation du compte", $message, $header);
 
             include('vues/v_confirmationMail.php');
 
@@ -115,12 +129,12 @@ switch ($action) {
 
 
                         include('vues/v_connexionClient.php');
-                        echo"<p>Your account was well confirmed!</p> ";
+                        echo"<p>Votre compte a bien été confirmé!</p> ";
                     } else {
-                        echo "Your account was already confirmed!";
+                        echo "Votre compte a déjà été confirmé!";
                     }
                 } else {
-                    echo"The user does not exist.";
+                    echo"L'utilisateur n'existe pas.";
                     var_dump($userexist);
                 }
             }
@@ -165,18 +179,18 @@ switch ($action) {
                             $message = '
                                 <html>
                                 <head>
-                                    <title>Recovery of password- Escapade Française</title>
+                                    <title>Récupération de mot de passe- Escapade Française</title>
                                 </head>
                                     <body>
                                         <div align="center">
-                                            Dear <b>' . $nomClient . ' ' . $prenomClient . '</b>,            </div><br/>
-                                                Here is your code of récupératon: <b>' . $recup_code . '</b><br/>
+                                            Bonjour <b>' . $nomClient . ' ' . $prenomClient . '</b>,            </div><br/>
+                                                Voici  votre code de récupératon: <b>' . $recup_code . '</b><br/>
 
-                                               See you soon on our site escapade francaise!<br/>
+                                                A bientôt sur notre site d escapade francaise!<br/>
                                                 <br/><br/><br/><br/>
 
 
-                                            This is an automatic e-mail, Thank you for not answering it.
+                                            Ceci est un mail automatique, Merci de ne pas y répondre.
 
                                     </body>
                                 </html>
@@ -186,13 +200,13 @@ switch ($action) {
                         }
                         //si le mail n'existe pas dans la BDD
                         else {
-                            echo "<span style='color:red'>You are not registered on our site.</span>";
+                            echo "<span style='color:red'>Vous n'êtes pas inscrit sur notre site.</span>";
                         }
                     }
                 }
                 //si le client n'a rien saisi
                 else {
-                    echo "<span style='color:red'>You did not seize e-mail.</span>";
+                    echo "<span style='color:red'>Vous n'avez pas saisi de mail.</span>";
                 }
             }
 
@@ -204,12 +218,12 @@ switch ($action) {
                     var_dump($verif_req);
                     if ($verif_req == 1) {
                         $del_req = $pdo->deleteCode($_SESSION['recup_mail']);
-                        header('Location:http://localhost/escapadefrancaisev3/ihm_fr/EspaceClient/indexClient.php?uc=connexion&action=valideEmailMdpOublie&section=changemdp');
+                        header('Location:http://localhost/escapadefrancaisev3/ihm_en/EspaceClient/indexClient.php?uc=connexion&action=valideEmailMdpOublie&section=changemdp');
                     } else {
-                        echo"<span style='color:red'>Invalid code</span>";
+                        echo"<span style='color:red'>Code invalide</span>";
                     }
                 } else {
-                    echo "<span style='color:red'>Please enter your code of confirmation..</span>";
+                    echo "<span style='color:red'>Veuillez entrer votre code de confirmation..</span>";
                 }
             }
 
@@ -221,15 +235,15 @@ switch ($action) {
                         if ($mdp == $mdpc) {
                             $mdp = sha1($mdp);
                             $ins_mdp = $pdo->insertNouveauMdp($mdp, $_SESSION['recup_mail']);
-                            header("Location:http://localhost/escapadefrancaisev3/ihm_fr/EspaceClient/indexClient.php");
+                            header("Location:http://localhost/escapadefrancaisev3/ihm_en/EspaceClient/indexClient.php");
                         } else {
-                            echo"<span style='color:red'>Your passwords do not correspond.</span>";
+                            echo"<span style='color:red'>Vos mots de passe de correspondent pas.</span>";
                         }
                     } else {
-                        echo"<span style='color:red'>Please fill all the fields</span>";
+                        echo"<span style='color:red'>Veuillez remplir tous les champs</span>";
                     }
                 } else {
-                    echo"<span style='color:red'>Please fill all the fields</span>";
+                    echo"<span style='color:red'>Veuillez remplir tous les champs.</span>";
                 }
             }
 
@@ -237,25 +251,192 @@ switch ($action) {
             include('vues/v_demandeDEmailMdpOublie.php');
             break;
         }
+    /* case 'valideConnexion':{
+      include ("controleur/c_espaceClient.php");
+      header("Location:http://localhost/escapadefrancaisev4/ihm_fr/EspaceClient/indexClient.php?uc=espaceClient&action=valideConnexion&mail=".$_SESSION['mail']."");
+      break;
+      } */
+
     case 'valideConnexion': {
-//            $id = $_SESSION['client_submit'];
-//            var_dump($id);
-            $mail=$_REQUEST['mail'];
-            $mdp=$pdo->getMdpClient($mail);
-            require_once ("controleur/c_espaceClient.php");
-            if ($_POST['mdp'] == sha1($mdp)) {
-                header("Location:http://localhost/escapadefrancaisev3/ihm_fr/EspaceClient/indexClient.php?uc=espaceClient&action=valideConnexion&mail=" . $_SESSION['mail'] . "");
+            include("vues/v_headClient.php");
+            //si le client est dejà connecté
+            $code=$_SESSION['code'];
+            var_dump($code);
+            if ($code == 1) {
+                $id = $_SESSION['mail'];
+                $client = $pdo->getLeClient($id);
+                $prenom=$client['prenom_client'];
+                 $nom = $client['nom_client'];
+                include("vues/v_accueilClient.php");
+            } 
+            //si le client n'est pas encore connecté
+            else {
+                
+                $mail = $_POST['mail'];
+                $mdp = $_POST['mdp'];
+
+                $client = $pdo->getInfosClient($mail, sha1($mdp));
+                if (!is_array($client)) {
+                    ajouterErreur("Adresse mail ou mot de passe incorrect");
+                    include("vues/v_erreurs.php");;;
+                    include("vues/v_connexionClient.php");
+                } else {
+                    $num = $client['num'];
+                    $nom = $client['nom'];
+                    $prenom = $client['prenom'];
+                    connecter($num, $nom, $prenom);
+                    include("vues/v_accueilClient.php");
+                }
             }
             break;
         }
+    case 'accueil': {
+
+            $id = $_SESSION['mail'];
+            header("Location:http://localhost/escapadefrancaisev3/ihm_en?id=$id");
+            break;
+        }
+    case 'voirWishlist': {
+            include("vues/v_headClient.php");
+            include("vues/v_wishlist.php");
+            break;
+        }
+    case 'voirFacture': {
+            include("vues/v_headClient.php");
+
+            $id = $_SESSION['mail'];
+
+
+            $lesFactures = $pdo->getReservationDisponible($id);
+            $lesFactures2 = $pdo->getReservationDisponibleCarousel($id);
+            $Cles = array_keys($lesFactures);
+            $factureASelectionner = $Cles[0];
+            $Cles2 = array_keys($lesFactures2);
+            $factureASelectionner2 = $Cles2[0];
+            include("vues/v_voirFactures.php");
+            break;
+        }
+    case 'genererpdf': {
+            $id = $_SESSION['mail'];
+            $numRes = $_REQUEST['numRes'];
+            var_dump($numRes);
+            $lesVoyageurs = $pdo->getVoyageur($numRes);
+            $reservationf = $pdo->getReservation($id, $numRes);
+            $voyageurf = $pdo->getVoyageur($numRes);
+            $donneeRes = $pdo->getReservationPdf($id, $numRes);
+
+            include("vues/v_pdf.php");
+            creerPdf($reservationf);
+            break;
+        }
+
+    case 'menuReservationsAVenir': {
+            include("vues/v_headClient.php");
+            include('vues/v_menuReservationsAVenir.php');
+
+            $id = $_SESSION['mail'];
+            $lesRes = $pdo->getReservationAVenir($id);
+            if (empty($lesRes)) {
+                echo"Il n'y a aucune réservation à venir.";
+            } else {
+                $Cles = array_keys($lesRes);
+                $resASelectionner = $Cles[0];
+                include('vues/v_toutesReservationsAVenir.php');
+            }
+            break;
+        }
+
+    case 'voirActivitesLesResAVenir': {
+            $id = $_SESSION['mail'];
+            include("vues/v_headClient.php");
+            include('vues/v_menuReservationsAVenir.php');
+            $lesRes = $pdo->getActiviteReservationAVenir($id);
+            if (empty($lesRes)) {
+                echo"Il n'y a aucune réservation à venir.";
+            } else {
+                $Cles = array_keys($lesRes);
+                $resASelectionner = $Cles[0];
+                include('vues/v_ActiviteReservationsAVenir.php');
+            }
+            break;
+        }
+
+    case 'voirHebergementLesResAVenir': {
+            $id = $_SESSION['mail'];
+            include("vues/v_headClient.php");
+            include('vues/v_menuReservationsAVenir.php');
+            $lesRes = $pdo->getHebergementReservationAVenir($id);
+            if (empty($lesRes)) {
+                echo"Il n'y a aucune réservation à venir.";
+            } else {
+                $Cles = array_keys($lesRes);
+                $resASelectionner = $Cles[0];
+                include('vues/v_hebergementsReservationsAVenir.php');
+            }
+            break;
+        }
+
+    case 'menuReservationsPassees': {
+            $id = $_SESSION['mail'];
+            include("vues/v_headClient.php");
+            include('vues/v_menuReservationsPassees.php');
+
+            $lesRes = $pdo->getReservationPassees($id);
+            if (empty($lesRes)) {
+                echo"Il n'y a aucune réservation passée.";
+            } else {
+                $Cles = array_keys($lesRes);
+                $resASelectionner = $Cles[0];
+                include('vues/v_toutesReservationsPassees.php');
+            }
+            break;
+        }
+
+    case 'voirHebergementLesResPassee': {
+            $id = $_SESSION['mail'];
+            include("vues/v_headClient.php");
+            include('vues/v_menuReservationsPassees.php');
+            $lesRes = $pdo->getHebergementReservationPassees($id);
+            if (empty($lesRes)) {
+                echo"Il n'y a aucune réservation d'hebergement Passées.";
+            } else {
+                $Cles = array_keys($lesRes);
+                $resASelectionner = $Cles[0];
+                include('vues/v_hebergementsReservationsPassees.php');
+            }
+            break;
+        }
+
+    case 'voirActivitesPassees': {
+            $id = $_SESSION['mail'];
+            include("vues/v_headClient.php");
+            include('vues/v_menuReservationsPassees.php');
+            $lesRes = $pdo->getActiviteReservationPassees($id);
+            if (empty($lesRes)) {
+                echo"Il n'y a aucune reservation d'activité passée.";
+            } else {
+                $Cles = array_keys($lesRes);
+                $resASelectionner = $Cles[0];
+                include('vues/v_ActiviteReservationsPassees.php');
+            }
+            break;
+        }
+
+    case 'accueilEspaceClient': {
+            $id = $_SESSION['mail'];
+            include("vues/v_headClient.php");
+            include ('vues/v_accueilClient.php');
+            break;
+        }
     case'deconnexion': {
-            include("vues/v_navbar.php");
+
             deconnecter();
-            header("Location:http://localhost/escapadefrancaisev3/ihm_fr/");
+            include("vues/v_navbar.php");
+            include("vues/v_connexionClient.php");
             break;
         }
     default : {
-            include("vues/v_navbar.php");
+            var_dump($action);
             include("vues/v_connexionClient.php");
             break;
         }

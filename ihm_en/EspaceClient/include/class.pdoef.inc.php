@@ -62,14 +62,6 @@ class PdoEf {
         $ligne = $rs->fetch();
         return $ligne;
     }
-    
-    public function getMdpClient($mail){
-        $req = "select mdp from client 
-		where client.mail_client='$mail' ";
-        $rs = PdoEf::$monPdo->query($req);
-        $ligne = $rs->fetch();
-        return $ligne;
-    }
 
     public function getMailClient($mail) {
         $req = "select client.num_client as num, client.nom_client as nom, client.prenom_client as prenom from client 
@@ -237,5 +229,12 @@ class PdoEf {
     function insertNouveauMdp($mdp,$recup_mail){
         $ins_mdp=PdoEf::$monPdo->prepare('update client set mdp=? where mail_client=?');
         $ins_mdp->execute(array($mdp,$recup_mail));
+    }
+    function getLeClient($id){
+        $req="select * from client where num_client=$id";
+        $res = PdoEf::$monPdo->query($req);
+        $laLigne = $res->fetch();
+        return $laLigne;
+        
     }
 }

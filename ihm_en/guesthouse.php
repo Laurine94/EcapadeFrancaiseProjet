@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -12,7 +15,8 @@ and open the template in the editor.
         <link href="css/guesthouse.css" rel="stylesheet">
         <title>Maisons d'hôtes</title>
         
-        <?php include 'connexion.php';?>
+        <?php include 'connexion.php';
+            var_dump($_SESSION['id']);?> 
 
     </head>
     <body>

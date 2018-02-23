@@ -31,7 +31,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                    <h2>Sign up :</h2>
+                    <h2>Inscrivez vous :</h2>
                 </div>
             </div>
             <div class="row">
@@ -40,16 +40,16 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-6">    
                             <div class="form-group">
-                                <label>Surname*</label><input type="text" name="nom" class="form-control" id="" placeholder=" Enter your surname" required>
+                                <label>Nom*</label><input type="text" name="nom" class="form-control" id="" placeholder=" Saisissez votre nom" required>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <div class="form-group">
-                                <label>Name*</label><input type="text" name="prenom" class="form-control" id="" placeholder=" Enter your name" required>
+                                <label>Prenom*</label><input type="text" name="prenom" class="form-control" id="" placeholder=" Saisissez votre prenom" required>
                             </div>
                         </div>
                     </div>
-                            <label>Sex </label>
+                            <label>Sexe </label>
                             <div class="row">
                                 <div class="col-md-2 col-sm-2 col-xs-2">
                                     <div class="form-group">
@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>e-mail address*</label><input type="email" name="mail" class="form-control" placeholder="ex : my.mail@gmail.com" value="
+                                <label>Adresse email*</label><input type="email" name="mail" class="form-control" placeholder="ex : un.mail@gmail.com" value="
                                     <?php if(isset($mail))
 						{
 							echo $mail; 
@@ -76,7 +76,7 @@
                                 <?php } ?> 
                             </div>
                             <div class="form-group">
-                                <label>Retype e-mail address*</label><input type="text" name="mailconfirm" class="form-control" id="" placeholder="Enter your adress mail again" required>
+                                <label>Confirmation email*</label><input type="text" name="mailconfirm" class="form-control" id="" placeholder="Saisir à nouveau email" required>
                                     <?php if(isset($erreuremaildiff) && $erreuremaildiff){ ?>
 					<div id="bulle">
 						email différents
@@ -88,24 +88,24 @@
                 <div class="col-md-3 col-sm-3 col-xs-3">
                             
                             <div class="form-group">
-                                <label>Phone number</label><input type="text" name="tel" class="form-control" id="" placeholder="ex : +623584868">
+                                <label>Téléphone</label><input type="text" name="tel" class="form-control" id="" placeholder="ex : +623584868">
                             </div>
                             <div class="form-group">
-                                <label>Adress*</label><input type="text" name="adresse" class="form-control" id="" placeholder="Enter your adress" required>
+                                <label>Adresse*</label><input type="text" name="adresse" class="form-control" id="" placeholder="Saisissez votre adresse" required>
                             </div>
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-6">            
                             <div class="form-group">
-                                <label>City*</label><input type="text" name="ville" class="form-control" id="" placeholder="Enter your city" required>
+                                <label>Ville*</label><input type="text" name="ville" class="form-control" id="" placeholder="Saisissez votre ville" required>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6">    
                             <div class="form-group">
-                                <label>Postal code*</label><input type="text" name="cp" class="form-control" id="" placeholder="Enter your zip" required>
+                                <label>Code postal*</label><input type="text" name="cp" class="form-control" id="" placeholder="Saisissez votre CP" required>
                             </div>
                         </div>
                     </div>
-                            <label>Country*</label>
+                            <label>Pays*</label>
                             <div class="form-group">
                                 <select name="pays" class="form-control" required>
                                     <option>selectionner pays</option>
@@ -351,14 +351,14 @@
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="form-group">
-                                <label>Password*</label><input type="password" name="mdp" class="form-control" placeholder="Enter your password" required>
+                                <label>Mot de passe*</label><input type="password" name="mdp" class="form-control" placeholder="Saisissez un mot de passe" required>
                             </div>
                             <div class="form-group">
-                                <label>Retype password*</label><input type="password" name="mdpconfirm" class="form-control" id="" placeholder="Enter your password again" required>
+                                <label>Confirmation mot de passe*</label><input type="password" name="mdpconfirm" class="form-control" id="" placeholder="Saisir à nouveau mot de passe" required>
                             </div>
-                            <p>* mandatory field </p>
+                            <p>* Champs obligatoire</p>
                             <div>
-                                <a href='#'><button type="submit" class="btn btn-primary submit">Sign in</button></a>
+                                <a href='#'><button type="submit" class="btn btn-primary submit">S'inscrire</button></a>
                             </div>
                 </div>
             </form>

@@ -1,6 +1,6 @@
 <html>
     <body>
-        <p>We thank you for sign up on our site.</p>
-        <p>You will receive an e-mail of confirmation</p>
+        <p>Nous vous remercions de vous être inscrit sur notre site.</p>
+        <p>Vous allez recevoir un mail de confirmation</p>
     </body>
 </html>

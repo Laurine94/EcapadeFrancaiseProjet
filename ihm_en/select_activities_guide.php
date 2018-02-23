@@ -1,4 +1,7 @@
-<?php if (!empty($_GET['guide']) && filter_var($_GET['guide'], FILTER_VALIDATE_INT)!==false) $guide = $_GET['guide']; else header('Location: guide_plus.php');?>
+<?php
+session_start();
+var_dump($_SESSION['id']);
+?><?php if (!empty($_GET['guide']) && filter_var($_GET['guide'], FILTER_VALIDATE_INT)!==false) $guide = $_GET['guide']; else header('Location: guide_plus.php');?>
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111755406-1"></script>

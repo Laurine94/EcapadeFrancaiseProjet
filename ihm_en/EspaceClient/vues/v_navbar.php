@@ -97,10 +97,23 @@ body p, body input[type=button]{
 </div>
 
 <ul id="nav">
-    <li><a href="../guesthouse.php">CHOOSE YOUR HOST'S HOUSE  </a></li>
-    <li><a href="../select_activities.php"> CHOOSE YOUR ACTIVITIES </a></li>
-    <li><a href="../guide_plus.php">OUR LOCAL GUIDES </a></li>
-    <li><a href="../onglets.php">OUR STORY AND OUR VALUES</a></li>
-    <li><a href="../EspaceClient/indexClient.php"> MY ACCOUNT </a></li>
+    <li><a href="../guesthouse.php">CHOISISSEZ VOTRE MAISON D'HOTES  </a></li>
+    <li><a href="../select_activities.php"> CHOISISSEZ VOS ACTIVITES </a></li>
+    <li><a href="../guide_plus.php">NOS GUIDES LOCAUX </a></li>
+    <li><a href="../onglets.php">NOTRE HISTOIRE ET NOS VALEURS</a></li>
+    <?php
+  /*  if(!isset($_SESSION['id'])){
+        
+        $id=$_SESSION['id'];
+       // $_SESSION['id']=$id;
+        var_dump($_SESSION['id']);
+        ?> <li><a href="EspaceClient/indexClient.php?uc=connexion&action=accueilEspaceClient&id=<?php echo $id?>">MON COMPTE</a></li>
+    <?php
+    }
+    else{*/
+        ?><li><a href="indexClient.php">MON COMPTE</a></li>
+    <?php
+   // }
+    ?>
 </ul>
 </div>

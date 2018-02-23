@@ -1,4 +1,5 @@
 <?php
+session_start();
 error_reporting(E_ALL ^ E_NOTICE);
 ?>
 <!DOCTYPE html>
@@ -64,7 +65,9 @@ error_reporting(E_ALL ^ E_NOTICE);
                 <?php include 'navbar.php'; ?>
             </div>
         </div>
-            <?php //include 'slideshow.php'; ?> 
+            <?php //include 'slideshow.php'; 
+             $_SESSION['id']=$_GET['id'];
+            var_dump($_SESSION['id']);?> 
 
             <div class="intro-header">
                 <div class="video-bg">

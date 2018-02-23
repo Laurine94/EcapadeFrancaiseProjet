@@ -1,4 +1,7 @@
 <?php
+session_start();
+var_dump($_SESSION['id']);
+?><?php
 	if (!empty($_GET['city'])) $sel_city=$_GET['city']; else $sel_city='';
 	include 'connexion.php';
 	$req = $bdd->prepare("SELECT * FROM ville WHERE id=:ville");// j'ai sécurisé la requete SQL avec 'prepare' pour éviter le SQL injection 

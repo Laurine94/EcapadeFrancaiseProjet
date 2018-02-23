@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+session_start();
+var_dump($_SESSION['id']);
+?><!DOCTYPE html>
 <?php include 'connexion.php';
         
 // Si tout va bien, on peut continuer
@@ -497,11 +500,16 @@ else
                                 </script>
                                 <br /><br />
 				<div>
-                                    Number of persons: <select class="form-control" name="nb_places" style="color: black">
+                            
+                                    <label>Number of persons: </label>
+                            <div class="row">  
+                                <div class="col-xs-3 col-sm-3 col-md-3"><select class="form-control" name="nb_places" style="color: black">
 				    <?php for ($p = 1; $p <= $donnees['nb_places']; $p++)
 					echo "<option value=$p>$p</option>";
 				    ?>
                                     </select><br>
+                                </div>
+                            </div>
 				    <br><input type="checkbox" name="with_babies" id="with_babies" class="pull-right"/><span class="pull-right">Bébé (- 3 ans)</span>
 				  </div>
                                 <br /><br />
