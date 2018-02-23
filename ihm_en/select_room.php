@@ -510,9 +510,9 @@ else
                                     </select><br>
                                 </div>
                             </div>
-				    <br><input type="checkbox" name="with_babies" id="with_babies" class="pull-right"/><span class="pull-right">Bébé (- 3 ans)</span>
+				    <input type="checkbox" name="with_babies" id="with_babies" class="pull-right"/><span class="pull-right">Bébé (- 3 ans)</span>
 				  </div>
-                                <br /><br />
+                                <br />
                                 
                     <?php
                         echo '<p style="font-size:20px;" id="prix_' . $donnees['nom_chambre'] . '">Price: <strong>' . $donnees['prix_chambre'] . '€</strong></p>';

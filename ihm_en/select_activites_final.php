@@ -154,12 +154,11 @@ var_dump($_SESSION['id']);
 );
 
 </script>
-<label>Hour of departure:</label>
+<label>Hour of departure :</label>
 <div class="row">  
     <div class="col-xs-4 col-sm-4 col-md-4">
         <select class="form-control" name="hours" style="color: black">
-    </div>
-</div>
+    
 <?php 
 for ($i=10;$i<=17;$i++){
     echo"<option value=$i>$i H</option>";
@@ -167,7 +166,8 @@ for ($i=10;$i<=17;$i++){
 ?>
 
 </select>
-                                <input type="hidden" name="cookie_name" value="act">
+    </div>
+</div>                                <input type="hidden" name="cookie_name" value="act">
                                 <input type="hidden" name="type" value="act">
                                 <input type="hidden" name="cookie_val" value="<?php echo $infos['nom_activite']; ?>">
                                
@@ -178,24 +178,25 @@ for ($i=10;$i<=17;$i++){
                                    
                                     
                                 </script>-->
-                                 <br /><br />
+                                 <br />
 				<div>
-                                    <label>Number of persons:</label>
+                                    <label>Number of persons :</label>
                             <div class="row">  
                                 <div class="col-xs-4 col-sm-4 col-md-4">
                                     <input class="form-control" type="number" value="0" name="nb_places" style="color: black">
                                 </div>
                             </div>
-                                    <br /><br />
+                                    <br />
+                                    <label>Child between 6/11 years old :</label>
                             <div class="row">  
                                 <div class="col-xs-4 col-sm-4 col-md-4">
-				    <input class="form-control" type="number" name="with_babies" value="0" id="with_babies" class="pull-right" style="color: black"/><span class="pull-right">Child between 6/11 years old</span>
+				    <input class="form-control" type="number" name="with_babies" value="0" id="with_babies" class="pull-right" style="color: black"/>
                                 </div>
                             </div>
 				  </div>
                                
                                 
-                                <br /><br />
+                                <br />
 				
                                 
                     <?php
