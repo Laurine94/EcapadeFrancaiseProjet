@@ -1,6 +1,10 @@
+<?php
+    $prix = $_GET["prix"];
+?>
 <head>
     <title>Informations du client</title>
     <link rel="stylesheet" type="text/css" href="css/customer_infos.css">
+<!--    <link href="css/bootstrap.min.css" rel="stylesheet">-->
 </head>
 
 
@@ -20,7 +24,9 @@
             <h1>Customers informations</h1>
         </div>
 
-        <form action="" method="">
+        <form action="charge.php" method="POST">
+<!--            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">-->
                     <div class="espace">
                         <label for="title">
                             Title:<br />
@@ -94,13 +100,36 @@
                                 </label>
                             </div>
                         </div>
-
                     </div>
+<!--                </div>
+            </div>-->
 
-                    <div class="decale_droite">
+                    <!--<div class="decale_droite">
                         <a><input type="submit" class="submit_btn" value="Payment"/></a>
-                    </div>
+                    </div>-->
+<!--                    <div class="row">
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-xs-offset-10 col-sm-offset-10 col-md-offset-10">-->
+                            <h4>Montant à payer : <?php echo $prix ?> €</h4>
+                            <script
+                                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                data-key="pk_test_2Kx8f7hKtHWtF7iq1lqnlAIa" 
+                                data-image="img/logos/ESP.jpg" 
+                                data-name="ESCAPADE FRANÇAISE"
+                                data-description="Payment"
+                                data-amount= rand(0000,99999)>
+                            </script>
+<!--                        </div>
+                    </div>-->
                 </form>
+        <div class="petite_div_75">
+            <img src="img/payment/visa.png" >
+            <img src="img/payment/mastercard.png" >
+            <img src="img/payment/maestro.png" >
+            <img src="img/payment/amex.png" >
+            <img src="img/payment/discover.png" >
+            <img src="img/payment/diners.png" >
+            <img src="img/payment/jcb.png" >
+        </div>
         </div>
     
         <br />

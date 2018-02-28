@@ -291,7 +291,7 @@ echo '</table>';
     <br />
     
     <div class="payment_btn">
-        <a href="customer_infos.php"><input type="button" class="submit_btn" value="Confirm"></a>
+        <a href="customer_infos.php?prix=<?php echo $prix_ttc ?>"><input type="button" class="submit_btn" value="Confirm"></a>
     </div>
     
     <br />

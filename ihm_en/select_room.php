@@ -1,6 +1,5 @@
 <?php
 session_start();
-var_dump($_SESSION['id']);
 ?><!DOCTYPE html>
 <?php include 'connexion.php';
         
@@ -245,9 +244,33 @@ while ($donnees = $reponse->fetch())
         <br>
         <br>
         <div class="bloc1">
+            
+           <?php
+           $nom_chambre=$donnees['nom_chambre'];
+           if(isset($_SESSION['id'])){
+           $id=$_SESSION['id'];
+           $infos = $bdd->query("SELECT * FROM favorisc where nom_chambre = '$nom_chambre' and num_client=$id");
+           $donnees_fav = $infos->fetch();
+        
+            if($donnees_fav==FALSE){
+                ?><a href="ajouterWishlist.php?action=ajouterFav&nom_mh=<?php echo $nom_mh;?>&nom_chambre=<?php echo $nom_chambre?>"><button>Add in wishlist</button></a>
+           <?php }
+           else if($donnees_fav['favoris']==1){
+                ?><a href="ajouterWishlist.php?action=enleverFav&nom_mh=<?php echo $nom_mh;?>&nom_chambre=<?php echo $nom_chambre?>"><button>Add in wishlist</button></a>
+           <?php
+           }
+           else{
+               ?><a href="ajouterWishlist.php?action=remettreFav&nom_mh=<?php echo $nom_mh;?>&nom_chambre=<?php echo $nom_chambre?>"><button>Add in wishlist</button></a>
+           <?php
+           }
+           } else{
+                ?><a href="#"><button>Add in wishlist</button></a>
+           <?php
+           } ?>
+            
             <div class="div_75 toSize">
                 <div class="w3-content" style="width:95%; margin-left:15%;"> 
-      
+                    
                     <?php
                         $texte = "img/guesthouses/" . $nom_mh . "/" . $donnees['nom_chambre'];
                         $rp= suppr_accents($texte); // nom du répertoire à lister
@@ -510,9 +533,9 @@ else
                                     </select><br>
                                 </div>
                             </div>
-				    <input type="checkbox" name="with_babies" id="with_babies" class="pull-right"/><span class="pull-right">Bébé (- 3 ans)</span>
+				    <br><input type="checkbox" name="with_babies" id="with_babies" class="pull-right"/><span class="pull-right">Bébé (- 3 ans)</span>
 				  </div>
-                                <br />
+                                <br /><br />
                                 
                     <?php
                         echo '<p style="font-size:20px;" id="prix_' . $donnees['nom_chambre'] . '">Price: <strong>' . $donnees['prix_chambre'] . '€</strong></p>';

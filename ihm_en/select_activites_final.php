@@ -105,7 +105,30 @@ var_dump($_SESSION['id']);
                 <br>
                 <br>
                 <br>
+                <?php
+           $nom_actvite=$infos['nom_activite'];
+           if(isset($_SESSION['id'])){
+           $id=$_SESSION['id'];
+           $requete = $bdd->query("SELECT * FROM favorisa where nom_activite = '$nom_activite' and num_client=$id");
+           $donnees_fav = $requete->fetch();
+        
+            if($donnees_fav==FALSE){
+                ?><a href="ajouterWishlistActivite.php?action=ajouterFavActivite&nom_activite=<?php echo $nom_activite;?>&ville=<?php echo $ville?>&type_activite=<?php echo $type_activite;?>"><button>Add in wishlist</button></a>
+           <?php }
+           else if($donnees_fav['favoris']==1){
+               ?><a href="ajouterWishlistActivite.php?action=enleverFavActivite&nom_activite=<?php echo $nom_activite;?>&ville=<?php echo $ville?>&type_activite=<?php echo $type_activite;?>"><button>Add in wishlist</button></a>
+           <?php
+           }
+           else{
+               ?><a href="ajouterWishlistActivite.php?action=remettreFavActivite&nom_activite=<?php echo $nom_activite;?>&ville=<?php echo $ville?>&type_activite=<?php echo $type_activite;?>"><button>Add in wishlist</button></a>
+           <?php
+           }
+           }  else{
+                ?><a class="glyphicon glyphicon-heart href="#">Add in wishlist</a>
+           <?php
+           }?>
                 <div class="container_2">
+                    
                        <!-- <div style="width: 60%; display:inline-block">
                             <div class="form-group">
                                 <div class="row">
@@ -154,11 +177,12 @@ var_dump($_SESSION['id']);
 );
 
 </script>
-<label>Hour of departure :</label>
+<label>Hour of departure:</label>
 <div class="row">  
     <div class="col-xs-4 col-sm-4 col-md-4">
         <select class="form-control" name="hours" style="color: black">
-    
+    </div>
+</div>
 <?php 
 for ($i=10;$i<=17;$i++){
     echo"<option value=$i>$i H</option>";
@@ -166,8 +190,7 @@ for ($i=10;$i<=17;$i++){
 ?>
 
 </select>
-    </div>
-</div>                                <input type="hidden" name="cookie_name" value="act">
+                                <input type="hidden" name="cookie_name" value="act">
                                 <input type="hidden" name="type" value="act">
                                 <input type="hidden" name="cookie_val" value="<?php echo $infos['nom_activite']; ?>">
                                
@@ -178,25 +201,24 @@ for ($i=10;$i<=17;$i++){
                                    
                                     
                                 </script>-->
-                                 <br />
+                                 <br /><br />
 				<div>
-                                    <label>Number of persons :</label>
+                                    <label>Number of persons:</label>
                             <div class="row">  
                                 <div class="col-xs-4 col-sm-4 col-md-4">
                                     <input class="form-control" type="number" value="0" name="nb_places" style="color: black">
                                 </div>
                             </div>
-                                    <br />
-                                    <label>Child between 6/11 years old :</label>
+                                    <br /><br />
                             <div class="row">  
                                 <div class="col-xs-4 col-sm-4 col-md-4">
-				    <input class="form-control" type="number" name="with_babies" value="0" id="with_babies" class="pull-right" style="color: black"/>
+				    <input class="form-control" type="number" name="with_babies" value="0" id="with_babies" class="pull-right" style="color: black"/><span class="pull-right">Child between 6/11 years old</span>
                                 </div>
                             </div>
 				  </div>
                                
                                 
-                                <br />
+                                <br /><br />
 				
                                 
                     <?php
@@ -245,7 +267,7 @@ for ($i=10;$i<=17;$i++){
             ?>
 		    <br>
 		    </div>
-		  </div>-->
+		  </div>
 
                 
                 <div class="container_3">

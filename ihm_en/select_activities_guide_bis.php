@@ -65,7 +65,33 @@ var_dump($_SESSION['id']);
                         <br>
                         <div>
                           <h3 class="media-heading" style="color:#183e67; padding-left:20%"><?php echo $infos['nom'] ?></h3>
-            <ul class="guide-langue">
+            
+                          <?php
+           $num_guide=$infos['id'];
+           if(isset($_SESSION['id'])){
+           $id=$_SESSION['id'];
+           $requete = $bdd->query("SELECT * FROM favorisg where num_guide =$num_guide and num_client=$id");
+           $donnees_fav = $requete->fetch();
+        
+            if($donnees_fav==FALSE){
+                ?><a href="ajouterWishlistGuide.php?action=ajouterFavGuide&guide=<?php echo $num_guide;?>"><button>Add in wishlist</button></a>
+           <?php }
+           else if($donnees_fav['favoris']==1){
+                ?><a href="ajouterWishlistGuide.php?action=enleverFavGuide&guide=<?php echo $num_guide;?>"><button>Add in wishlist</button></a>
+           <?php
+           }
+           else{
+               ?><a href="ajouterWishlistGuide.php?action=remettreFavGuide&guide=<?php echo $num_guide;?>"><button>Add in wishlist</button></a>
+           <?php
+               
+           }
+           } 
+           else{
+                ?><a href="#"><button>Add in wishlist</button></a>
+           <?php
+           }
+?>
+                          <ul class="guide-langue">
 <?php
 $req = $bdd->prepare("SELECT A.*, B.langue AS lng FROM activity_guide_langue A LEFT JOIN activity_langues B ON B.id=A.langue WHERE A.guide=:guide");
 $req->execute(array('guide'=>$infos['id']));

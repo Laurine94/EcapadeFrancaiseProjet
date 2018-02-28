@@ -161,8 +161,12 @@ error_reporting(E_ALL ^ E_NOTICE);
         <!-- end header-->  
 
         <div class="container" style="width:90%">
+            <div class="row" style="text-align: center; margin-top: 20px; ">
+                <div class="col-md-12 col-sm-12 col-xs-12">
             <p>Beyond reservations, we wish to offer you emotional feeling: discover the cultural richness of France by living as a local.</p>
             <p style="font-size:35px; font-family:Open Sans">Select, Book, Meet</p>
+                </div>
+            </div>
         </div>
 
                                                 
@@ -193,7 +197,7 @@ x<br>
                 <br>
                 <figure>
                  <a href="https://www.instagram.com/escapadefrancaise/" target="_blank">
-                    <img src="img/new8.jpg" width="100%" height="250" style="margin-top: 20px;" >
+                    <img src="img/new8.jpg" width="100%" height="250" style="margin-top: 16%;" >
                 </figure>
                 </a>
             </div>
@@ -203,7 +207,7 @@ x<br>
            <div class="border3" style="border:0px solid #245580; background-color: #245580; color: white; height: 200px;">
             <br>
             <br>
-                <h3><br>THIS SEPTEMBER<br></h3>
+                <h3><br>THIS FEBRUARY<br></h3>
                 <br>
                 <figure>
                     <a href="blog.php">
