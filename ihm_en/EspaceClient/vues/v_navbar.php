@@ -97,10 +97,10 @@ body p, body input[type=button]{
 </div>
 
 <ul id="nav">
-    <li><a href="../guesthouse.php">CHOISISSEZ VOTRE MAISON D'HOTES  </a></li>
-    <li><a href="../select_activities.php"> CHOISISSEZ VOS ACTIVITES </a></li>
-    <li><a href="../guide_plus.php">NOS GUIDES LOCAUX </a></li>
-    <li><a href="../onglets.php">NOTRE HISTOIRE ET NOS VALEURS</a></li>
+    <li><a href="../guesthouse.php">CHOOSE YOUR GUEST HOUSE  </a></li>
+    <li><a href="../select_activities.php"> CHOOSE YOUR ACTIVITIES </a></li>
+    <li><a href="../guide_plus.php">OUR LOCAL GUIDES </a></li>
+    <li><a href="../onglets.php">OUR HISTORY AND VALUES</a></li>
     <?php
   /*  if(!isset($_SESSION['id'])){
         
@@ -111,7 +111,7 @@ body p, body input[type=button]{
     <?php
     }
     else{*/
-        ?><li><a href="indexClient.php">MON COMPTE</a></li>
+        ?><li><a href="indexClient.php">MY ACCOUNT</a></li>
     <?php
    // }
     ?>

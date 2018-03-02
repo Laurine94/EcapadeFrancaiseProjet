@@ -22,7 +22,10 @@
                 
                 
                 <div class="col-md-12 col-sm-12 col-xs-12 carousel"
-                    <h1 id="titreWish">Réservez vos chambres favorites</h1>
+                     
+                    <h1 id="titreWish">Book your favourite rooms</h1>
+                    <br>
+                    <a href="v_wishlistGuide.php"></a>
                     <div class=""> 
                     <?php
                         foreach ($fav_chambres as $fav_chambre){

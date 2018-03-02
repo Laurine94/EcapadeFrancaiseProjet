@@ -11,13 +11,13 @@
 				<h2>Our </br> Home </br> Masters</h2>
 			</div>
 			<div class="texte11">
-				<p>Our House Masters,
+				<p>Our Home Owners,
 ​				<br>
-				Fall under the spell of our residences and our <b>exceptional guest rooms</b>. You will be <b>warmly welcomed by our hosts</b> within their home.
+				Fall under the charm of our residences and our <b>exceptional guest rooms</b>. You will be <b>warmly welcomed by our guests</b> in their home.
  				<br>
-				Ready to welcome you <b>with open arms, our hosts are passionate about their profession and have a taste for sharing.</b> With their sense of hospitality, they are eager to let you <b>discover their home full of charm and history. </b>
+				Ready to welcome you <b>with open arms, our guests are passionate about their profession and have a taste for sharing.</b> With their sense of hospitality, they are eager to make you <b>discover their house full of charm and history. </b>
  				<br>
-				Whatever your destination, they will be able to give you their good addresses: restaurants, shops, unmissable activities ... With our hosts on your side, <b> our regions will have no secrets for you! </b> </p>
+				Whatever your destination, they will be able to give you their good addresses: restaurants, shops, inescapable  activities ... With our hosts at your side, <b> our regions will have no more secrets for you! </b> </p>
 			</div>
 			<div class="photo11">
 				<div>
@@ -30,13 +30,13 @@
 		<div>
 			<div class="texte222">
 				<p>Our guides,
-​				<br>
-				Passionate about <b> culture and French history </b>, our guides will reveal the hidden secrets of Hexagon and will make you travel in time. <b> Their role is to make you discover the most beautiful places in France by answering your needs. </b>
-				<br>
-				We have a common passion: sharing our knowledge and <b> making you discover new sites and stories. </b> Our guides are <b> highly qualified and have state-certified degrees.</b> 				
-				<br>
-				With them, you will experience incredible moments. </p>	
-				<br>		
+                                    ​				<br>
+                                  
+                                Fascinated by <b> French culture and history</b> , our guides will reveal the hidden secrets of France and make you travel through time.<b>  Their role is to make you discover the most beautiful places in France while meeting your needs.</b> 
+                                <br>
+                                We share a common passion: sharing our knowledge and<b>  making you discover new sites and stories.</b>  Our guides are <b> highly qualified and have state-certified diplomas.</b> 
+                                <br> 
+                                With them, you will live incredible moments.</p><br>	
 			</div>
 			<div class="photo222">
 				<div>
@@ -56,14 +56,16 @@
 				<br>
 				<p>Our Activities
 ​				<br>
-				Discover our <b>unavoidable activities</b> carrefully <b>selected by our team. Passion, liveliness, and adrenaline</b> will be at the rendezvous.
-				<br>
-				In the program? <b>Parachute jumping, cooking classes, mountain trips</b>, our activities are aimed at all, whether you are <b> with family, friends or alone! </b>
-				<br>
-				We offer you a catalog <b> of local activities but mostly authentic and tested by us.</b> These will make you experiment, discover and perhaps even make you reveal a hidden passion.
-				<br>
-				No matter where you are, we will be able to offer you the <b> activities that fit you </b> and you will never stop going from surprise to surprise. So do not wait any longer and come and discover what we have concocted for you!</p>				
-			</div>
+				
+                                Discover our <b> inescapable activities </b>carefully <b>selected by our team. Passion, vivacity, and adrenaline</b> will be there.
+                                <br>
+                                On the agenda?<b> From parachute jumping to cooking lessons to mountain excursions</b>, our activities are for everyone, whether you're <b>with family, friends or alone!</b>
+                                <br>
+                                We propose you a catalogue <b> of local activities but above all authentic and tested by us.</b> These will make you experience, discover and perhaps even reveal a hidden passion.
+                                <br>
+                                No matter where you are, we will propose you the <b>activities that correspond to your needs</b> and you will never stop going from surprise to surprise. So don't wait any longer and discover what we have done for you!</p>	
+                                 <br>    
+                        </div>
 			<div class="photo33">
 
 				<div>

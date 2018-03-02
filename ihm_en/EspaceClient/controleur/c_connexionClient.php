@@ -10,8 +10,6 @@ if (!empty($_REQUEST['mail'])) {
     $id = $_REQUEST['mail'];
     $_SESSION['mail'] = $id;
 }
-var_dump($_SESSION['mail']);
-var_dump($_REQUEST['mail']);
 $action = $_REQUEST['action'];
 
 switch ($action) {
@@ -52,7 +50,6 @@ switch ($action) {
             $mdpconfirm = $_POST['mdpconfirm'];
 
 
-            var_dump($nom);
             /* $valid = true;
               $verifMail=$pdo->mailExiste($mail);
               //verification que le mail n'est pas encore utilisé
@@ -93,17 +90,17 @@ switch ($action) {
             <html>
                 <body>
                     <div align="center">
-                    <a href="http://localhost/escapadefrancaise/IHM_EN/EspaceClient/indexClient.php?mail=' . urlencode($mail) . '&key=' . $key . '&uc=connexion&action=confirmationMail">Confirmez votre compte.</a> 
-                        Nous vous remercions pour votre inscription sur notre site Escapade Française.<br/>
-                        Veuillez confirmer votre inscription en cliquant sur le lien ci-dessous.<br/>
-                        <a href="localhost/escapadefrancaisev4/ihm_fr/EspaceClient/indexClient.php> retour vers le site </a>"
+                    <a href="http://localhost/escapadefrancaise/IHM_EN/EspaceClient/indexClient.php?mail=' . urlencode($mail) . '&key=' . $key . '&uc=connexion&action=confirmationMail">Confirm your account.</a> 
+                        We thank you for your registration on our website Escapade Française.<br/>
+                        Please confirm your registration by clicking on the link below.<br/>
+                        <a href="localhost/escapadefrancaisev4/ihm_fr/EspaceClient/indexClient.php> Back to the site </a>"
                        <br/>---------------<br/>
-                        Ceci est un mail automatique, Merci de ne pas y répondre.
+                        This is an automatic mail, please do not reply.
                     </div>
                 </body>
             </html>
             ';
-            mail($mail, "Confirmation du compte", $message, $header);
+            mail($mail, "Account Confirmation", $message, $header);
 
             include('vues/v_confirmationMail.php');
 
@@ -129,13 +126,12 @@ switch ($action) {
 
 
                         include('vues/v_connexionClient.php');
-                        echo"<p>Votre compte a bien été confirmé!</p> ";
+                        echo"<p>Your account has been confirmed!</p> ";
                     } else {
-                        echo "Votre compte a déjà été confirmé!";
+                        echo "Your account has already been confirmed!";
                     }
                 } else {
-                    echo"L'utilisateur n'existe pas.";
-                    var_dump($userexist);
+                    echo"User does not exist.";
                 }
             }
             break;
@@ -179,34 +175,34 @@ switch ($action) {
                             $message = '
                                 <html>
                                 <head>
-                                    <title>Récupération de mot de passe- Escapade Française</title>
+                                    <title>Password recovery - Escapade Française</title>
                                 </head>
                                     <body>
                                         <div align="center">
-                                            Bonjour <b>' . $nomClient . ' ' . $prenomClient . '</b>,            </div><br/>
-                                                Voici  votre code de récupératon: <b>' . $recup_code . '</b><br/>
+                                            Hello <b>' . $nomClient . ' ' . $prenomClient . '</b>,            </div><br/>
+                                                 Here s your recovery code: <b>' . $recup_code . '</b><br/>
 
-                                                A bientôt sur notre site d escapade francaise!<br/>
+                                                See you soon on our website of Escapade Française!<br/>
                                                 <br/><br/><br/><br/>
 
 
-                                            Ceci est un mail automatique, Merci de ne pas y répondre.
+                                            This is an automatic mail, please do not reply.
 
                                     </body>
                                 </html>
                                     ';
-                            mail($recup_mail, "Récupération de mot de passe", $message, $header);
+                            mail($recup_mail, "Password recovery", $message, $header);
                             header("Location:http://localhost/escapadefrancaise/ihm_en/EspaceClient/indexClient.php?uc=connexion&action=valideEmailMdpOublie&section=code");
                         }
                         //si le mail n'existe pas dans la BDD
                         else {
-                            echo "<span style='color:red'>Vous n'êtes pas inscrit sur notre site.</span>";
+                            echo "<span style='color:red'>You are not registered on our site.</span>";
                         }
                     }
                 }
                 //si le client n'a rien saisi
                 else {
-                    echo "<span style='color:red'>Vous n'avez pas saisi de mail.</span>";
+                    echo "<span style='color:red'>You did not enter any mail.</span>";
                 }
             }
 
@@ -215,15 +211,15 @@ switch ($action) {
                 if (!empty($_POST['verif_code'])) {
                     $verif_code = htmlspecialchars($_POST['verif_code']);
                     $verif_req = $pdo->recuperCode($_SESSION['recup_mail'], $verif_code);
-                    var_dump($verif_req);
+                    
                     if ($verif_req == 1) {
                         $del_req = $pdo->deleteCode($_SESSION['recup_mail']);
                         header('Location:http://localhost/escapadefrancaise/ihm_en/EspaceClient/indexClient.php?uc=connexion&action=valideEmailMdpOublie&section=changemdp');
                     } else {
-                        echo"<span style='color:red'>Code invalide</span>";
+                        echo"<span style='color:red'>Invalid code</span>";
                     }
                 } else {
-                    echo "<span style='color:red'>Veuillez entrer votre code de confirmation..</span>";
+                    echo "<span style='color:red'>Please enter your confirmation code...</span>";
                 }
             }
 
@@ -237,13 +233,13 @@ switch ($action) {
                             $ins_mdp = $pdo->insertNouveauMdp($mdp, $_SESSION['recup_mail']);
                             header("Location:http://localhost/escapadefrancaise/ihm_en/EspaceClient/indexClient.php");
                         } else {
-                            echo"<span style='color:red'>Vos mots de passe de correspondent pas.</span>";
+                            echo"<span style='color:red'>Your passwords don't match.</span>";
                         }
                     } else {
-                        echo"<span style='color:red'>Veuillez remplir tous les champs</span>";
+                        echo"<span style='color:red'>Please fill in all fields.</span>";
                     }
                 } else {
-                    echo"<span style='color:red'>Veuillez remplir tous les champs.</span>";
+                    echo"<span style='color:red'>Please fill in all fields.</span>";
                 }
             }
 
@@ -261,7 +257,6 @@ switch ($action) {
             include("vues/v_headClient.php");
             //si le client est dejà connecté
             $code = $_SESSION['code'];
-            var_dump($code);
             if ($code == 1) {
                 $id = $_SESSION['mail'];
                 $client = $pdo->getLeClient($id);
@@ -277,7 +272,7 @@ switch ($action) {
 
                 $client = $pdo->getInfosClient($mail, sha1($mdp));
                 if (!is_array($client)) {
-                    ajouterErreur("Adresse mail ou mot de passe incorrect");
+                    ajouterErreur("Incorrect email address or password");
                     include("vues/v_erreurs.php");
                     ;
                     ;
@@ -304,19 +299,19 @@ switch ($action) {
             $fav_activites = $pdo->getActiviteFavoris($id);
             $fav_guides=$pdo->geGuideFavoris($id);
             include("vues/v_headClient.php");
-
-            if (isset($fav_chambres)) {
+          
+            if (!empty($fav_chambres)) {
                 $Cles = array_keys($fav_chambres);
                 $ChambresASelectionner = $Cles[0];
                 include("vues/v_wishlist.php");
             }
-            if (isset($fav_activites)) {
+            if (!empty($fav_activites)) {
                 $Cles = array_keys($fav_activites);
                 $activiteASelectionner = $Cles[0];
                 include ("vues/v_wishlistActivite.php");
             }
 
-            if (isset($fav_guides)) {
+            if (!empty($fav_guides)) {
                 $Cles = array_keys($fav_guides);
                 $guidesASelectionner = $Cles[0];
                 include("vues/v_wishlistGuide.php");
@@ -331,18 +326,23 @@ switch ($action) {
 
 
             $lesFactures = $pdo->getReservationDisponible($id);
+            if(!empty($lesFactures)){
             $lesFactures2 = $pdo->getReservationDisponibleCarousel($id);
             $Cles = array_keys($lesFactures);
             $factureASelectionner = $Cles[0];
             $Cles2 = array_keys($lesFactures2);
             $factureASelectionner2 = $Cles2[0];
             include("vues/v_voirFactures.php");
+            }
+            else{
+                include("vues/v_aucuneFacture.php");
+            }
+            
             break;
         }
     case 'genererpdf': {
             $id = $_SESSION['mail'];
             $numRes = $_REQUEST['numRes'];
-            var_dump($numRes);
             $lesVoyageurs = $pdo->getVoyageur($numRes);
             $reservationf = $pdo->getReservation($id, $numRes);
             $voyageurf = $pdo->getVoyageur($numRes);
@@ -459,7 +459,6 @@ switch ($action) {
             break;
         }
     default : {
-            var_dump($action);
             include("vues/v_connexionClient.php");
             break;
         }

@@ -103,12 +103,12 @@ body p, body input[type=button]{
     <a href="../ihm/" id="language-ch"><img src="../../lng/en.png" alt="english"> English</a>
 </div>
     <ul id="nav">
-        <li><a href="indexClient.php?uc=connexion&action=accueil">ACCUEIL  </a></li>
-        <li><a href="indexClient.php?uc=connexion&action=voirWishlist">MA WISHLIST  </a></li>
-        <li><a href="indexClient.php?uc=connexion&action=voirFacture">MES FACTURES </a></li>
-        <li><a href="indexClient.php?uc=connexion&action=menuReservationsAVenir">MES RÉSERVATIONS</a></li>
-        <li><a href="indexClient.php?uc=connexion&action=menuReservationsPassees"> RÉSERVATIONS PASSÉES </a></li>
-        <li><a href="indexClient.php?uc=connexion&action=deconnexion">DECONNEXION </a></li>
+        <li><a href="indexClient.php?uc=connexion&action=accueil">HOME  </a></li>
+        <li><a href="indexClient.php?uc=connexion&action=voirWishlist">MY WISHLIST  </a></li>
+        <li><a href="indexClient.php?uc=connexion&action=voirFacture">MY INVOICES </a></li>
+        <li><a href="indexClient.php?uc=connexion&action=menuReservationsAVenir">MY BOOKINGS</a></li>
+        <li><a href="indexClient.php?uc=connexion&action=menuReservationsPassees"> PREVIOUS BOOKINGS </a></li>
+        <li><a href="indexClient.php?uc=connexion&action=deconnexion">LOGOUT </a></li>
     </ul>
 </div>
     

@@ -1,6 +1,5 @@
 <?php
 session_start();
-var_dump($_SESSION['id']);
 ?><?php if (!empty($_GET['guide']) && filter_var($_GET['guide'], FILTER_VALIDATE_INT)!==false) $guide = $_GET['guide']; else header('Location: guide_plus.php');?>
 
 <!DOCTYPE html>
@@ -74,20 +73,20 @@ var_dump($_SESSION['id']);
            $donnees_fav = $requete->fetch();
         
             if($donnees_fav==FALSE){
-                ?><a href="ajouterWishlistGuide.php?action=ajouterFavGuide&guide=<?php echo $num_guide;?>"><button>Add in wishlist</button></a>
+                ?><a href="ajouterWishlistGuide.php?action=ajouterFavGuide&guide=<?php echo $num_guide;?>" ><span class="glyphicon glyphicon-star-empty glyphicon-5x" style="font-size: 50px; color: yellow"></span>Add to wishlist</a>
            <?php }
            else if($donnees_fav['favoris']==1){
-                ?><a href="ajouterWishlistGuide.php?action=enleverFavGuide&guide=<?php echo $num_guide;?>"><button>Add in wishlist</button></a>
+                ?><a href="ajouterWishlistGuide.php?action=enleverFavGuide&guide=<?php echo $num_guide;?>"><span class="glyphicon glyphicon-star glyphicon-5x" style="font-size: 50px ;color: yellow"> </span>Add to wishlist</a>
            <?php
            }
            else{
-               ?><a href="ajouterWishlistGuide.php?action=remettreFavGuide&guide=<?php echo $num_guide;?>"><button>Add in wishlist</button></a>
+               ?><a href="ajouterWishlistGuide.php?action=remettreFavGuide&guide=<?php echo $num_guide;?>"><span class="glyphicon glyphicon-star-empty glyphicon-5x" style="font-size: 50px;color: yellow"></span>Add to wishlist</a>
            <?php
                
            }
            } 
            else{
-                ?><a href="#"><button>Add in wishlist</button></a>
+                ?><a href="#"><span class="glyphicon glyphicon-star-empty glyphicon-5x" style="font-size: 50px;color: yellow"></span>Add to wishlist</a>
            <?php
            }
 ?>

@@ -24,17 +24,17 @@
                 //formulaire qui s'affiche apres avoir recu le code de vérification
                 if ($section == 'code') {
                     ?>
-                    <span style='color:green'> Vous allez recevoir un code sur votre adresse mail.</span>
-                    <h4 class="title-element">Récupération de mot de passe</h4>
+                    <span style='color:green'> You will receive a code on your email address.</span>
+                    <h4 class="title-element">Password recovery</h4>
 
                     <form  method="POST" class="default-form">
 
                         <div class="form-group">
-                            Recupération de mot de passe pour <?= $_SESSION['recup_mail'] ?>
-                            <input id= "mail" type= "text" name= "verif_code" class="form-control" placeholder="Code de vérification">
+                            Password recovery for <?= $_SESSION['recup_mail'] ?>
+                            <input id= "mail" type= "text" name= "verif_code" class="form-control" placeholder="Verification Code">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-primary submit" name="verif_submit" value="Valider">
+                            <input type="submit" class="btn btn-primary submit" name="verif_submit" value="Confirm">
                         </div>
                     </form>
                     <?php
@@ -42,16 +42,16 @@
                     
                     //formulaire pour changer le mot de passe 
                 } elseif ($section == 'changemdp') {?>
-                      <h4 class="title-element">Changement de mot de passe</h4>
+                      <h4 class="title-element">Changing your password</h4>
                     <form  method="POST" class="default-form">
 
                         <div class="form-group">
-                          Nouveau mot de passe pour <?= $_SESSION['recup_mail'] ?><br/><br/>
-                          <input id= "mail" type= "password" name= "change_mdp" class="form-control" placeholder="Nouveau mot de passe">
-                          <br/><input id= "mail" type= "password" name= "change_mdpc" class="form-control" placeholder="Confirmation du mot de passe">
+                          New password for <?= $_SESSION['recup_mail'] ?><br/><br/>
+                          <input id= "mail" type= "password" name= "change_mdp" class="form-control" placeholder="New password">
+                          <br/><input id= "mail" type= "password" name= "change_mdpc" class="form-control" placeholder="Confirm password">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-primary submit" name="change_submit" value="Valider">
+                            <input type="submit" class="btn btn-primary submit" name="change_submit" value="Confirm">
                         </div>
                     </form>
                     <?php
@@ -59,13 +59,13 @@
 //formulaire qui s'affiche au moment ou le client veut recuperer le code de récupération de mdp
                 } else {
                     ?>
-                    <h4 class="title-element">Récupération de mot de passe</h4>
+                    <h4 class="title-element">Password recovery</h4>
                     <form  method="POST" class="default-form">
                         <div class="form-group">
-                            <input id= "mail" type= "email" name= "recup_mail" class="form-control" placeholder="Saisissez votre adresse mail">
+                            <input id= "mail" type= "email" name= "recup_mail" class="form-control" placeholder="Enter your email address">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-primary submit" name="recup_submit" value="Valider">
+                            <input type="submit" class="btn btn-primary submit" name="recup_submit" value="Confirm">
                         </div>
                     </form>
                 <?php } ?>

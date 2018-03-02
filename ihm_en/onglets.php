@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+             <meta charset="UTF-8"> 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111755406-1"></script>
 <script>

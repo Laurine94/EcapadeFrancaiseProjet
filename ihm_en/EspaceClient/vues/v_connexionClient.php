@@ -23,7 +23,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" id="titreconormale">
-                    <h2>Identifiez vous :</h2>
+                    <h2>Sign in:</h2>
                 </div>
             </div>
             <div class="row">
@@ -32,16 +32,16 @@
                     <form action="indexClient.php?uc=connexion&action=valideConnexion" method="POST">
 
                         <div class="form-group">
-                            <label for= "mail">Adresse email*</label>
+                            <label for= "mail">Email address*</label>
                             <input id= "mail" type= "email" name= "mail" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for= "mdp">Mot de passe*</label>
+                            <label for= "mdp">Password*</label>
                             <input id= "mdp" type= "password" name= "mdp" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-primary submit" value="Se connecter"  name="client_submit">
-                            <a href="indexClient.php?uc=connexion&action=valideEmailMdpOublie" >mot de passe oublié ?</a>
+                            <input type="submit" class="btn btn-primary submit" value="Log in"  name="client_submit">
+                            <a href="indexClient.php?uc=connexion&action=valideEmailMdpOublie" >Forgotten password ?</a>
                         </div>
                     </form>
                    
@@ -50,17 +50,17 @@
                     <blockquote id="blockquote">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            <button type="button" class="btn btn-primary" id="coFacebook" ><span class="iconNetwork"><i class="fab fa-facebook-f"></i></span> Se connecter avec Facebook</button><br><br>
+                            <button type="button" class="btn btn-primary" id="coFacebook" ><span class="iconNetwork"><i class="fab fa-facebook-f"></i></span> Login with Facebook</button><br><br>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            <button type="button" class="btn btn-danger" id="coGoogle"><span class="iconNetwork"><i class="fab fa-google-plus-g"></i></span> Se connecter avec Google+</button><br><br>
+                            <button type="button" class="btn btn-danger" id="coGoogle"><span class="iconNetwork"><i class="fab fa-google-plus-g"></i></span> Login with Google+</button><br><br>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            <a href="indexClient.php?uc=connexion&action=inscription" type="button" class="btn btn-default"> s'inscrire </a>
+                            <a href="indexClient.php?uc=connexion&action=inscription" type="button" class="btn btn-default"> Sign up </a>
                            
                         </div>
                     </div>

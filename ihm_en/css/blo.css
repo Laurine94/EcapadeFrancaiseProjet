@@ -98,7 +98,6 @@ body p, body input[type=button]{
 .repertoire{
     position: absolute;
     margin-top: -43%;
-    margin-left: 18%;
     z-index: 12;
     color: white;
     padding: 10px;

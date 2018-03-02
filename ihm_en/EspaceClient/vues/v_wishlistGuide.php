@@ -14,8 +14,10 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 carousel"
-                    <h1 id="titreWish">Réservez vos guides favorites</h1>
+                    <h1 id="titreWish">Book your tours with your guide</h1>
+                     <br> <br>
                     <div class=""> 
+                        <br> <br>
                     <?php
                         foreach ($fav_guides as $fav_guide){
                     if (file_exists('../img/guides_filters/' . $fav_guide['num_guide'] . '.png')) {

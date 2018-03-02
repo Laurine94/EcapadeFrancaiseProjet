@@ -35,7 +35,7 @@
                                     <div>€<?php echo $prix ?></div>
                                 </div>
                             </div>
-                            <?php } 
+                            <?php }
                             }
 
                             if ($nomActivite != ""){

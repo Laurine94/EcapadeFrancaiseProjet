@@ -14,7 +14,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 carousel"
-                     <h1 id="titreWish">Réservez vos activités favorites</h1>
+                     <h1 id="titreWish">Book your favourite activities</h1>
+                     <br>
                     <div class=""> 
                         <?php
                         foreach ($fav_activites as $fav_activite) {

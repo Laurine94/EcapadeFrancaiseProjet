@@ -118,6 +118,7 @@ body{
 
     .div_75{
         /*background-color: #183e67;*/
+        background-color:;
         width: 50%;
         height:50%;
         display: inline-block;
@@ -207,7 +208,7 @@ body{
     display: inline;
 }
 
-.menu_guesthouse li a:hover{
+.menu_guesthouse li a: hover{
     text-decoration: underline;
 }
 

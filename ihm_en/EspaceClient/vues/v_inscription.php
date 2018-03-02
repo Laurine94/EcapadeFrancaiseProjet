@@ -1,3 +1,4 @@
+<html lang="en">
 <head>
         <meta charset="UTF-8">
         <link href="../css/index.css" rel="stylesheet">
@@ -31,7 +32,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                    <h2>Inscrivez vous :</h2>
+                    <h2>Subscribe yourself:</h2>
                 </div>
             </div>
             <div class="row">
@@ -40,16 +41,16 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-6">    
                             <div class="form-group">
-                                <label>Nom*</label><input type="text" name="nom" class="form-control" id="" placeholder=" Saisissez votre nom" required>
+                                <label>Surname*</label><input type="text" name="nom" class="form-control" id="" placeholder=" Enter your name" required>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <div class="form-group">
-                                <label>Prenom*</label><input type="text" name="prenom" class="form-control" id="" placeholder=" Saisissez votre prenom" required>
+                                <label>First name*</label><input type="text" name="prenom" class="form-control" id="" placeholder=" Enter your first name" required>
                             </div>
                         </div>
                     </div>
-                            <label>Sexe </label>
+                            <label>Sex </label>
                             <div class="row">
                                 <div class="col-md-2 col-sm-2 col-xs-2">
                                     <div class="form-group">
@@ -63,7 +64,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Adresse email*</label><input type="email" name="mail" class="form-control" placeholder="ex : un.mail@gmail.com" value="
+                                <label> Email Address*</label><input type="email" name="mail" class="form-control" placeholder="ex : an.email@gmail.com" value="
                                     <?php if(isset($mail))
 						{
 							echo $mail; 
@@ -71,15 +72,15 @@
 				<?php if(isset($erreurMailExiste)&& $erreurMailExiste)
 						{?>
 							<div id="bulle">
-								ce login existe déjà
+								this login already exists
 							</div>
                                 <?php } ?> 
                             </div>
                             <div class="form-group">
-                                <label>Confirmation email*</label><input type="text" name="mailconfirm" class="form-control" id="" placeholder="Saisir à nouveau email" required>
+                                <label>Email confirmation*</label><input type="text" name="mailconfirm" class="form-control" id="" placeholder="Enter new email address" required>
                                     <?php if(isset($erreuremaildiff) && $erreuremaildiff){ ?>
 					<div id="bulle">
-						email différents
+						different email addresses
 					</div><br><br>
                                     <?php } ?>
 				
@@ -88,27 +89,27 @@
                 <div class="col-md-3 col-sm-3 col-xs-3">
                             
                             <div class="form-group">
-                                <label>Téléphone</label><input type="text" name="tel" class="form-control" id="" placeholder="ex : +623584868">
+                                <label>Phone number</label><input type="text" name="tel" class="form-control" id="" placeholder="ex : +623584868">
                             </div>
                             <div class="form-group">
-                                <label>Adresse*</label><input type="text" name="adresse" class="form-control" id="" placeholder="Saisissez votre adresse" required>
+                                <label>Address*</label><input type="text" name="adresse" class="form-control" id="" placeholder="Enter your address" required>
                             </div>
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-6">            
                             <div class="form-group">
-                                <label>Ville*</label><input type="text" name="ville" class="form-control" id="" placeholder="Saisissez votre ville" required>
+                                <label>City*</label><input type="text" name="ville" class="form-control" id="" placeholder="Enter your City" required>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6">    
                             <div class="form-group">
-                                <label>Code postal*</label><input type="text" name="cp" class="form-control" id="" placeholder="Saisissez votre CP" required>
+                                <label>Zip code*</label><input type="text" name="cp" class="form-control" id="" placeholder="Enter your Zip code" required>
                             </div>
                         </div>
                     </div>
-                            <label>Pays*</label>
+                            <label>Country*</label>
                             <div class="form-group">
                                 <select name="pays" class="form-control" required>
-                                    <option>selectionner pays</option>
+                                    <option>Select country</option>
                                     <option value="af">Afghanistan </option> 
                                     <option value="al">Albania </option> 
                                     <option value="dz">Algeria </option> 
@@ -351,14 +352,14 @@
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="form-group">
-                                <label>Mot de passe*</label><input type="password" name="mdp" class="form-control" placeholder="Saisissez un mot de passe" required>
+                                <label>Password*</label><input type="password" name="mdp" class="form-control" placeholder="Enter your Password" required>
                             </div>
                             <div class="form-group">
-                                <label>Confirmation mot de passe*</label><input type="password" name="mdpconfirm" class="form-control" id="" placeholder="Saisir à nouveau mot de passe" required>
+                                <label>Confirm password*</label><input type="password" name="mdpconfirm" class="form-control" id="" placeholder="Enter the password again" required>
                             </div>
-                            <p>* Champs obligatoire</p>
+                            <p>* Required field</p>
                             <div>
-                                <a href='#'><button type="submit" class="btn btn-primary submit">S'inscrire</button></a>
+                                <a href='#'><button type="submit" class="btn btn-primary submit">Sign up</button></a>
                             </div>
                 </div>
             </form>
@@ -366,3 +367,5 @@
         </div>
     </div>
 </body>
+
+</html>

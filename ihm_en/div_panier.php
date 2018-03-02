@@ -31,7 +31,20 @@ if (isset($_COOKIE['guides']))
 else
     $nb_guide = 0;
 
-echo '<div class="panier" id="sticky" style=" position: fixed; bottom: 148px;"><a title="Check your reservation"><p><U><strong>Your Reservation :</strong></U> &nbsp;&nbsp;&nbsp; Guesthouses (' . $nb_guesthouse . ') | Activities (' . $nb_activity . ') | Guides ('.$nb_guide.')</p></a></div>';
+?>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+               
+<?php
+echo '<div class="panier" style=" position: fixed; bottom: 50px; right:20px">'
+               .' <a href="#" class="btn btn-primary btn-lg pull-right" style="background-color:#284777">'
+         .' <span class="glyphicon glyphicon-menu-up "  ></span> '
+        .'</a>'
+   .' </div>'
+. '<div class="panier" id="sticky" style=" position: fixed; bottom: 148px;">'
+
+. '<a title="Check your reservation"><p><U><strong>Your Reservation :</strong></U> &nbsp;&nbsp;&nbsp; Guesthouses (' . $nb_guesthouse . ') | Activities (' . $nb_activity . ') | Guides ('.$nb_guide.')</p></a></div>';
 ?>
 
 
