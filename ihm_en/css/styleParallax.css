@@ -1,0 +1,135 @@
+body, html{
+  height:100%;
+  margin:0;
+  font-size:16px;
+  font-family:"Lato", sans-serif;
+  font-weight:400;
+  line-height:1.8em;
+  color:#666;
+}
+
+a{
+    text-decoration: none !important;
+}
+a:hover{
+    text-decoration: none !important;
+}
+
+.pimg1, .pimg2, .pimg3{
+  position:relative;
+  opacity:0.70;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+
+  /*
+    fixed = parallax
+    scroll = normal
+  */
+  background-attachment:fixed;
+}
+
+.pimg1{
+  background-image:url('../img/parallax/parallaximage3.png');
+  min-height:100%;
+}
+
+.pimg2{
+  background-image:url('../img/parallax/parallaximage2.jpg');
+  min-height:800px;
+}
+
+.pimg3{
+  background-image:url('../img/parallax/parallaximage1.jpg');
+  min-height:400px;
+}
+
+.section{
+  text-align:center;
+  padding:50px 80px;
+}
+
+.section-light{
+  background-color:#f4f4f4;
+  color:#666;
+}
+
+.section-dark{
+  background-color:#282e34;
+  color:#ddd;
+}
+
+.ptext{
+  position:absolute;
+  top:20%;
+  width:100%;
+  text-align:center;
+  color:#000;
+  font-size:64px;
+  font-weight: 900;
+  line-height: 2.5em;
+  letter-spacing:8px;
+  text-transform:uppercase;
+}
+
+.ptext .border{
+  background-color:#111;
+  color:#fff;
+  padding:20px;
+}
+
+.ptext .border.trans{
+  background-color:transparent;
+}
+
+@media(max-width:568px){
+  .pimg1, .pimg2, .pimg3{
+    background-attachment:scroll;
+  }
+}
+
+.carousel-fullscreen .carousel-caption{
+	top: 50%;  
+    bottom: auto;
+    -webkit-transform: translate(0, -50%); 
+    -ms-transform: translate(0, -50%); 
+    transform: translate(0, -50%);
+	letter-spacing: 0.25em;
+}
+
+.carousel-page{
+	width:155%;
+	height:400px;
+}
+
+.img-slide{
+    background-repeat: no-repeat;
+    height: 464px !important;
+    width: 619px !important;
+	
+}
+
+#backCar1{
+	background-color: #183e67;
+	/*background-image: url(img/parallaximage1);*/
+	background-size: 100% 100%;
+    height: 100%;
+}
+
+#backCar2{
+	background-color: #EBBA4D;
+	/*background-image: url(img/parallaximage2);*/
+	background-size: 100% 100%;
+    height: 100%;
+}
+
+#backCar3{
+	background-color: #BADA55;
+	/*background-image: url(img/parallaximage3);*/
+	background-size: 100% 100%;
+    height: 100%;
+}
+
+/*#BADA55
+#4FB30D
+#EBBA4D*/

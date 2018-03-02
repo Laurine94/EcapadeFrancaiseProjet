@@ -252,18 +252,20 @@ while ($donnees = $reponse->fetch())
            $infos = $bdd->query("SELECT * FROM favorisc where nom_chambre = '$nom_chambre' and num_client=$id");
            $donnees_fav = $infos->fetch();
         
-            if($donnees_fav==FALSE){
-                ?><a href="ajouterWishlist.php?action=ajouterFav&nom_mh=<?php echo $nom_mh;?>&nom_chambre=<?php echo $nom_chambre?>"><button>Add in wishlist</button></a>
-           <?php }
-           else if($donnees_fav['favoris']==1){
-                ?><a href="ajouterWishlist.php?action=enleverFav&nom_mh=<?php echo $nom_mh;?>&nom_chambre=<?php echo $nom_chambre?>"><button>Add in wishlist</button></a>
-           <?php
-           }
+                    if($donnees_fav==FALSE){
+                        ?><a href="ajouterWishlist.php?action=ajouterFav&nom_mh=<?php echo $nom_mh;?>&nom_chambre=<?php echo $nom_chambre?>"><button>Add in wishlist</button></a>
+                   <?php 
+                    }
+                   else if($donnees_fav['favoris']==1){
+                        ?><a href="ajouterWishlist.php?action=enleverFav&nom_mh=<?php echo $nom_mh;?>&nom_chambre=<?php echo $nom_chambre?>"><button>Add in wishlist</button></a>
+                   <?php
+                   }
+                   else{
+                       ?><a href="ajouterWishlist.php?action=remettreFav&nom_mh=<?php echo $nom_mh;?>&nom_chambre=<?php echo $nom_chambre?>"><button>Add in wishlist</button></a>
+                   <?php
+                   }
+           } 
            else{
-               ?><a href="ajouterWishlist.php?action=remettreFav&nom_mh=<?php echo $nom_mh;?>&nom_chambre=<?php echo $nom_chambre?>"><button>Add in wishlist</button></a>
-           <?php
-           }
-           } else{
                 ?><a href="#"><button>Add in wishlist</button></a>
            <?php
            } ?>

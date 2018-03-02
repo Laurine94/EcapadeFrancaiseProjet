@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Mes factures</title>
+        <title> My Wishlist</title>
         <meta charset="UTF-8">
         <link href="../css/carouStyle.scss">
         <script src="../js/waterwheel.js"></script>
@@ -13,20 +13,44 @@
         
         <div class="container-fluid">
             <div class="row">
+              
+                
+                
+                
+                
+                
+                
+                
                 <div class="col-md-12 col-sm-12 col-xs-12 carousel"
-                    <h1 id="titreWish">Réservez vos activités favorites</h1>
+                    <h1 id="titreWish">Réservez vos chambres favorites</h1>
                     <div class=""> 
                     <?php
-                        //foreach ($array as $key){
+                        foreach ($fav_chambres as $fav_chambre){
+                            $nomChambre=$fav_chambre['nom_chambre'];
+                            $nomMh=$fav_chambre['nom_mh'];
+                            $image=$fav_chambre['nom_img'];
                     ?>
-                        <a href="#"><img src="../img/villes_activites/Marseille_activites-min.jpg" alt="Image 1" /></a>
-                        <a href="#"><img src="../img/villes_activites/Deauville_activites-min-1.jpg" alt="Image 2" /></a>
-                        <a href="#"><img src="../img/villes_activites/French-Riviera_activites-min-1.jpg" alt="Image 3" /></a>
-                        <a href="#"><img src="../img/villes_activites/Haute-Savoie_activites-min-1.jpg" alt="Image 4" /></a>
-                        <a href="#"><img src="../img/villes_activites/Lyon_activites-min-1.jpg" alt="Image 5" /></a>
-                        <a href="#"><img src="../img/villes_activites/Martinique_activites-min-1.jpg" alt="Image 6" /></a>
-                        <a href="#"><img src="../img/villes_activites/saint-barthelemy_activites-min-1.jpg" alt="Image 7" /></a>
-                    <?php //} ?>
+                        <?php
+                            if ($nomChambre != "" && $nomMh != "") {
+
+                            $path = '../img/guesthouses/' . $nomMh . '/' . $nomChambre . '/'; // chemin vers le dossier contenant tes images (ne pas oublier le slash final)
+                            $tab = scandir($path); // Place tes images dans un tableau
+                            $tab = array_slice($tab, 2); // J'avais oublier que scandir listait . et .. donc on les vires aussi
+                           
+                            $tab = array_slice($tab, 0, 1); // Garde la première image
+                            // Enfin on fait une boucle du tableau pour l'affichage
+                            ?>
+                            <?php
+                            foreach ($tab as $img) {
+                            ?>
+                        <a href="../select_room.php?nom_mh=<?php echo $fav_chambre['nom_mh'];?>"><img src="<?php echo $path ?><?php echo $img ?>" width=250 alt="" /></a>
+                                <!--<div class="row"><h4 class=""><?php //echo $nomMh ?> - <?php// echo $nomChambre ?></h4></div></br>
+                               <hr class="separationH_foto">
+                                   <div>€<?php// echo $prix ?></div>-->
+                            <?php }
+                            }?>
+                        
+                        <?php } ?>
                     </div>
                 </div>
             </div>

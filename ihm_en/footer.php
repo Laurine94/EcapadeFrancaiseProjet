@@ -90,18 +90,37 @@
     .sous_div_footer{
         text-align: center;
     }
-    
+    #up {
+   //position:relative;
+   top:20%;
+   left:40%;
+   right:20px;
+   background:#4169E1;
+   
+}
 </style>
 
 <br />
 <br />
 <br />
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                <div class="container">
+                <a href="#" class="btn btn-primary btn-lg pull-right" style="background-color:#284777">
+          <span class="glyphicon glyphicon-menu-up "  ></span> 
+        </a>
+      </p> 
+    </div>
+                <br />
+<br />
+                <br>
 <footer id="footer">
+    
     <div class="footer3 droite">
         <br>
-        <br>
-        <br>
+      
         <a href="contact_form.php"><input type="button" style="color:white; background-color:#183e67" value="CONTACT US" style='font-size:13px;width:118px;'></a>
 
         <a href="travel_agency.php?"><input type="button" style="color:white; background-color:#183e67" value="TRAVEL AGENCY" style='font-size:13px;width:118px;'></a>
@@ -119,8 +138,7 @@
                     <input type="submit" value="Subscribe"  style="background-color: #f7f7f9;color: #183e67" title="S'abonner à la newsletter" class="bouton_newsletter">
                 </form>
                 <br>
-
-
+                <!--<a href="#" class="top"style="size:150px">^</a>-->
                 
             </div>
         </div>

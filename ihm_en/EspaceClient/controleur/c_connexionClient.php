@@ -16,12 +16,12 @@ $action = $_REQUEST['action'];
 
 switch ($action) {
     case 'demandeConnexion': {
-        $code = "";
+            $code = "";
             if (!empty($_SESSION['mail'])) {
                 $id = $_SESSION['mail'];
-                $code=1;
-                $_SESSION['code']=$code;
-                header("Location:http://localhost/escapadefrancaisev3/ihm_en/EspaceClient/indexClient.php?uc=connexion&action=valideConnexion&code=$code");
+                $code = 1;
+                $_SESSION['code'] = $code;
+                header("Location:http://localhost/escapadefrancaise/ihm_en/EspaceClient/indexClient.php?uc=connexion&action=valideConnexion&code=$code");
             } else {
                 include("vues/v_navbar.php");
                 include("vues/v_connexionClient.php");
@@ -93,7 +93,7 @@ switch ($action) {
             <html>
                 <body>
                     <div align="center">
-                    <a href="http://localhost/escapadefrancaisev3/IHM_EN/EspaceClient/indexClient.php?mail=' . urlencode($mail) . '&key=' . $key . '&uc=connexion&action=confirmationMail">Confirmez votre compte.</a> 
+                    <a href="http://localhost/escapadefrancaise/IHM_EN/EspaceClient/indexClient.php?mail=' . urlencode($mail) . '&key=' . $key . '&uc=connexion&action=confirmationMail">Confirmez votre compte.</a> 
                         Nous vous remercions pour votre inscription sur notre site Escapade Française.<br/>
                         Veuillez confirmer votre inscription en cliquant sur le lien ci-dessous.<br/>
                         <a href="localhost/escapadefrancaisev4/ihm_fr/EspaceClient/indexClient.php> retour vers le site </a>"
@@ -196,7 +196,7 @@ switch ($action) {
                                 </html>
                                     ';
                             mail($recup_mail, "Récupération de mot de passe", $message, $header);
-                            header("Location:http://localhost/escapadefrancaisev3/ihm_en/EspaceClient/indexClient.php?uc=connexion&action=valideEmailMdpOublie&section=code");
+                            header("Location:http://localhost/escapadefrancaise/ihm_en/EspaceClient/indexClient.php?uc=connexion&action=valideEmailMdpOublie&section=code");
                         }
                         //si le mail n'existe pas dans la BDD
                         else {
@@ -218,7 +218,7 @@ switch ($action) {
                     var_dump($verif_req);
                     if ($verif_req == 1) {
                         $del_req = $pdo->deleteCode($_SESSION['recup_mail']);
-                        header('Location:http://localhost/escapadefrancaisev3/ihm_en/EspaceClient/indexClient.php?uc=connexion&action=valideEmailMdpOublie&section=changemdp');
+                        header('Location:http://localhost/escapadefrancaise/ihm_en/EspaceClient/indexClient.php?uc=connexion&action=valideEmailMdpOublie&section=changemdp');
                     } else {
                         echo"<span style='color:red'>Code invalide</span>";
                     }
@@ -235,7 +235,7 @@ switch ($action) {
                         if ($mdp == $mdpc) {
                             $mdp = sha1($mdp);
                             $ins_mdp = $pdo->insertNouveauMdp($mdp, $_SESSION['recup_mail']);
-                            header("Location:http://localhost/escapadefrancaisev3/ihm_en/EspaceClient/indexClient.php");
+                            header("Location:http://localhost/escapadefrancaise/ihm_en/EspaceClient/indexClient.php");
                         } else {
                             echo"<span style='color:red'>Vos mots de passe de correspondent pas.</span>";
                         }
@@ -260,25 +260,27 @@ switch ($action) {
     case 'valideConnexion': {
             include("vues/v_headClient.php");
             //si le client est dejà connecté
-            $code=$_SESSION['code'];
+            $code = $_SESSION['code'];
             var_dump($code);
             if ($code == 1) {
                 $id = $_SESSION['mail'];
                 $client = $pdo->getLeClient($id);
-                $prenom=$client['prenom_client'];
-                 $nom = $client['nom_client'];
+                $prenom = $client['prenom_client'];
+                $nom = $client['nom_client'];
                 include("vues/v_accueilClient.php");
-            } 
+            }
             //si le client n'est pas encore connecté
             else {
-                
+
                 $mail = $_POST['mail'];
                 $mdp = $_POST['mdp'];
 
                 $client = $pdo->getInfosClient($mail, sha1($mdp));
                 if (!is_array($client)) {
                     ajouterErreur("Adresse mail ou mot de passe incorrect");
-                    include("vues/v_erreurs.php");;;
+                    include("vues/v_erreurs.php");
+                    ;
+                    ;
                     include("vues/v_connexionClient.php");
                 } else {
                     $num = $client['num'];
@@ -293,12 +295,33 @@ switch ($action) {
     case 'accueil': {
 
             $id = $_SESSION['mail'];
-            header("Location:http://localhost/escapadefrancaisev3/ihm_en?id=$id");
+            header("Location:http://localhost/escapadefrancaise/ihm_en?id=$id");
             break;
         }
     case 'voirWishlist': {
+            $id = $_SESSION['mail'];
+            $fav_chambres = $pdo->getChambreFavoris($id);
+            $fav_activites = $pdo->getActiviteFavoris($id);
+            $fav_guides=$pdo->geGuideFavoris($id);
             include("vues/v_headClient.php");
-            include("vues/v_wishlist.php");
+
+            if (isset($fav_chambres)) {
+                $Cles = array_keys($fav_chambres);
+                $ChambresASelectionner = $Cles[0];
+                include("vues/v_wishlist.php");
+            }
+            if (isset($fav_activites)) {
+                $Cles = array_keys($fav_activites);
+                $activiteASelectionner = $Cles[0];
+                include ("vues/v_wishlistActivite.php");
+            }
+
+            if (isset($fav_guides)) {
+                $Cles = array_keys($fav_guides);
+                $guidesASelectionner = $Cles[0];
+                include("vues/v_wishlistGuide.php");
+            }
+            
             break;
         }
     case 'voirFacture': {

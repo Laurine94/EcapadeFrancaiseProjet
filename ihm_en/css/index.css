@@ -35,6 +35,14 @@ body{
      /*border-radius: 5px;*/
  }
  
+ #followInsta{
+     margin: 50px 0px;
+     letter-spacing: 0.25em;
+     font-weight: 900;
+     text-align: center;
+     color: #0000CC
+ }
+ 
  /*---Réglage du bloc 1---*/
  .bloc1{ /*dimension des images du haut*/
    width: 49%;
@@ -241,7 +249,6 @@ body{
  .repertoire{
    position:absolute;
    margin-top: -4%;
-   margin-left: 25%;
    z-index:12;
    color:#183e67;
    padding:10px;

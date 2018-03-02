@@ -237,4 +237,70 @@ class PdoEf {
         return $laLigne;
         
     }
+    
+     function insertChambreFavoris($id,$nom_chambre){
+        $req="Insert into favorisc value($id,'$nom_chambre',1)";
+        PdoEf::$monPdo->exec($req);
+    }
+    
+     function majEnleverChambreFavoris($id,$nom_chambre){
+        $maj=("update favorisc set favoris=0 where num_client=$id and nom_chambre='$nom_chambre'");
+         PdoEf::$monPdo->exec($maj);
+    }
+    
+    function majRemettreChambreFavoris($id,$nom_chambre){
+        $maj=("update favorisc set favoris=1 where num_client=$id and nom_chambre='$nom_chambre'");
+        PdoEf::$monPdo->exec($maj);
+    }
+    
+    function insertActiviteFavoris($id, $nom_activite){
+        $req="Insert into favorisa value($id,'$nom_activite',1)";
+        PdoEf::$monPdo->exec($req);
+    }
+    
+    function majEnleverActiviteFavoris($id,$nom_activite){
+         $maj=("update favorisa set favoris=0 where num_client=$id and nom_activite='$nom_activite'");
+         PdoEf::$monPdo->exec($maj);
+    }
+    
+    function majRemettreActiviteFavoris($id,$nom_activite){
+        $maj=("update favorisa set favoris=1 where num_client=$id and nom_activite='$nom_activite'");
+        PdoEf::$monPdo->exec($maj);
+    }
+    
+    function insertGuideFavoris($id, $num_guide){
+        $req="Insert into favorisg value($id,'$num_guide',1)";
+        PdoEf::$monPdo->exec($req);
+    }
+    
+    function majEnleverGuideFavoris($id, $num_guide){
+        $maj=("update favorisg set favoris=0 where num_client=$id and num_guide='$num_guide'");
+         PdoEf::$monPdo->exec($maj);
+    }
+    
+    function majRemettreGuideFavoris($id, $num_guide){
+        $maj=("update favorisg set favoris=1 where num_client=$id and num_guide='$num_guide'");
+        PdoEf::$monPdo->exec($maj);
+    }
+    
+    function getChambreFavoris($id){
+        $req=("select favorisc.nom_chambre, nom_mh, nom_img from favorisc join chambre on favorisc.nom_chambre=chambre.nom_chambre where favorisc.num_client=$id and favoris=1");
+        $res = PdoEf::$monPdo->query($req);
+        $laLigne = $res->fetchAll();
+        return $laLigne;
+    }
+    
+    function getActiviteFavoris($id){
+        $req=("select favorisa.nom_activite, ville, type_activite from favorisa join activites on favorisa.nom_activite=activites.nom_activite where num_client=$id");
+        $res = PdoEf::$monPdo->query($req);
+        $laLigne = $res->fetchAll();
+        return $laLigne;
+    }
+    
+    function geGuideFavoris($id){
+         $req=("select favorisg.num_guide, activity_guide_ville.ville from favorisg join activity_guide on favorisg.num_guide=activity_guide.id join activity_guide_ville on activity_guide.id=activity_guide_ville.guide where num_client=$id");
+        $res = PdoEf::$monPdo->query($req);
+        $laLigne = $res->fetchAll();
+        return $laLigne;
+    }
 }

@@ -75,7 +75,7 @@ error_reporting(E_ALL ^ E_NOTICE);
                         <source src="video/sea.mp4" type="video/mp4"></source>
                     </video>
                     <div class="repertoire">
-                        <h3>Best guest houses, guides and activities of France.</h3>
+                        <h1 style="text-align: center;">DISCOVER OUR SELECTION OF GUEST HOUSES,ACTIVITIES AND PRIVATE GUIDED ALL AROUND FRANCE</h1>
                     </div>
                     <div class="rapide">
 
@@ -172,52 +172,13 @@ error_reporting(E_ALL ^ E_NOTICE);
                                                 
 <?php include "indexslides.php" ?>
 <br>
-x<br>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4" style="padding: 40px">
-            
-            <div class="border3" style="border:0px solid #245580; background-color: #245580; color: white; height: 200px;">
-            <br>
-            <br>
-                <h3><br>THE COLLECTION<br></h3>
-                <br>
-                <figure>
-                <a href="coffrets.php">
-                    <img src="img/cadeaux/Mockup1.jpg" width="100%" height="250" style="margin-top: 28px;">
-                </figure>
-             </a>   
-            </div>
-        </div>
-
-        <div class="col-md-4" style="padding: 40px">
-           <div class="border3" style="border:0px solid red; background-color: red; color: white; height: 200px;" >
-            <br>
-                <h3>WE ARE ON INSTAGRAM,<br>FOLLOW US</h3>
-                <br>
-                <figure>
-                 <a href="https://www.instagram.com/escapadefrancaise/" target="_blank">
-                    <img src="img/new8.jpg" width="100%" height="250" style="margin-top: 16%;" >
-                </figure>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4" style="padding: 40px"> 
-
-           <div class="border3" style="border:0px solid #245580; background-color: #245580; color: white; height: 200px;">
-            <br>
-            <br>
-                <h3><br>THIS FEBRUARY<br></h3>
-                <br>
-                <figure>
-                    <a href="blog.php">
-                    <img src="img/mm.jpg" width="100%" height="250" style="margin-top: 28px;" >
-                </figure>
-                </a>
-            </div>
-        </div>
-    </div>
+<br>
+<?php include "indexParallax.php" ?>
+<div id="followInsta">
+    <h1>FOLLOW US ON INSTAGRAM</h1>
 </div>
+<!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/9ee053ca92875759b81bfaf1e83d2421.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+
 <br>
 <br>
 <div class="container">
