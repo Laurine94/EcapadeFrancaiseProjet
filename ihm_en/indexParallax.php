@@ -31,7 +31,7 @@
     </div>
   </div>
 
-  <section class="section section-dark">
+  <section class="section section-dark index-carrousel-en">
 			<div class="row" id="carousel-div">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="carousel carousel-fullscreen fade-carousel slide" style="border:2px solid black" data-ride="carousel" data-interval="3000" id="bs-carousel">

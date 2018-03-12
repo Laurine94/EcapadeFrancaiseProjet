@@ -95,6 +95,9 @@ a:hover{
     -ms-transform: translate(0, -50%); 
     transform: translate(0, -50%);
 	letter-spacing: 0.25em;
+    width: 100%;
+    left: 0;
+    padding: 40px;
 }
 
 .carousel-page{
@@ -104,8 +107,8 @@ a:hover{
 
 .img-slide{
     background-repeat: no-repeat;
-    height: 464px !important;
-    width: 619px !important;
+    height: auto !important;
+    width: 35.5% !important;
 	
 }
 

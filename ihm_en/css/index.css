@@ -357,4 +357,11 @@ body{
    display: inline-block;
    top:37%;
  }
- 
+
+ .section.index-carrousel-en,
+ .col-md-12.col-sm-12.col-xs-12{
+     padding: 0;
+ }
+.section.index-carrousel-en #carousel-div {
+    margin: 0;
+}
